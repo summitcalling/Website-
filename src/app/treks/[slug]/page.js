@@ -39,7 +39,7 @@ export default async function TrekDetailPage({ params }) {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/20" />
-        <div className={`relative w-full pb-14 pt-36 ${CONTAINER}`}>
+        <div className={`relative w-full pb-14 pt-14 ${CONTAINER}`}>
           <Link href="/treks" className="text-sm text-white/70 hover:text-white">
             ← All Treks
           </Link>
@@ -72,7 +72,7 @@ export default async function TrekDetailPage({ params }) {
             <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {trek.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-2.5 text-sm text-ink/70">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange/15 text-orange">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue/15 text-blue">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                       <path d="M4 12l5 5L20 6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -101,7 +101,7 @@ export default async function TrekDetailPage({ params }) {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="sticky top-28 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-ink/5">
+            <div className="sticky top-24 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-ink/5">
               <div className="text-[11px] uppercase tracking-wide text-ink/45">
                 From
               </div>
@@ -123,7 +123,7 @@ export default async function TrekDetailPage({ params }) {
               </a>
               <a
                 href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink/15 py-3.5 text-sm font-semibold text-ink hover:bg-ink hover:text-white transition-colors"
+                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-sky/30 py-3.5 text-sm font-semibold text-sky hover:bg-sky hover:text-white transition-colors"
               >
                 Call {site.phoneDisplay}
               </a>
@@ -148,7 +148,7 @@ export default async function TrekDetailPage({ params }) {
                         </span>
                         <span
                           className={`text-xs font-medium ${
-                            d.status === "Filling Fast" ? "text-orange" : "text-ink/50"
+                            d.status === "Filling Fast" ? "text-blue" : "text-ink/50"
                           }`}
                         >
                           {d.seatsLeft} seats left

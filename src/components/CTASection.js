@@ -17,10 +17,10 @@ export default function CTASection() {
 
       <div className={`relative ${CONTAINER}`}>
         <div className="mx-auto flex max-w-2xl flex-col items-center rounded-3xl border border-white/10 bg-white/5 px-8 py-14 text-center backdrop-blur-sm sm:px-14">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-orange">
-            <span className="h-px w-6 bg-orange" />
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+            <span className="h-px w-6 bg-blue" />
             Fixed Departures 2026
-            <span className="h-px w-6 bg-orange" />
+            <span className="h-px w-6 bg-blue" />
           </span>
           <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-semibold text-white">
             Ready for your next adventure?
@@ -32,7 +32,7 @@ export default function CTASection() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/treks"
-              className="inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3.5 text-sm font-semibold text-white hover:bg-orange-dark transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-dark transition-colors"
             >
               Browse Treks
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

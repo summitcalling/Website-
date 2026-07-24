@@ -33,7 +33,7 @@ export default function ContactForm() {
             setForm({ name: "", trek: "", message: "" });
             setSent(false);
           }}
-          className="mt-4 text-sm font-semibold text-orange hover:text-orange-dark"
+          className="mt-4 text-sm font-semibold text-blue hover:text-blue-dark"
         >
           Send another message
         </button>
@@ -56,7 +56,7 @@ export default function ContactForm() {
           value={form.name}
           onChange={update("name")}
           placeholder="Jane Doe"
-          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-orange"
+          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-blue"
         />
       </label>
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
           value={form.trek}
           onChange={update("trek")}
           placeholder="e.g. Everest Base Camp"
-          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-orange"
+          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-blue"
         />
       </label>
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
           value={form.message}
           onChange={update("message")}
           placeholder="Tell us about your trip plans..."
-          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-orange resize-none"
+          className="mt-2 w-full rounded-xl border border-ink/15 bg-cream px-4 py-3 text-sm text-ink outline-none focus:ring-2 focus:ring-blue resize-none"
         />
       </label>
 

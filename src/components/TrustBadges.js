@@ -9,7 +9,7 @@ const badges = [
 
 function CheckIcon() {
   return (
-    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange/15 text-orange">
+    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue/15 text-blue">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
         <path d="M4 12l5 5L20 6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>

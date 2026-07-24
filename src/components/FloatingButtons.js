@@ -6,7 +6,7 @@ export default function FloatingButtons() {
       <a
         href={telLink()}
         aria-label={`Call ${site.name}`}
-        className="flex items-center justify-center rounded-full bg-orange text-white shadow-lg shadow-orange/30 transition-transform hover:scale-105"
+        className="flex items-center justify-center rounded-full bg-sky text-white shadow-lg shadow-sky/30 transition-transform hover:scale-105"
         style={{ height: 52, width: 52 }}
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">

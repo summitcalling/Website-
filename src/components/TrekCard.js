@@ -4,8 +4,8 @@ import { whatsappLink } from "@/data/site";
 
 const difficultyColor = {
   Easy: "#4ADE80",
-  "Easy–Moderate": "#8FCB6B",
-  Moderate: "#E2802E",
+  "Easy–Moderate": "#38BDF8",
+  Moderate: "#2563EB",
   Challenging: "#E2543D",
 };
 
@@ -39,7 +39,7 @@ export default function TrekCard({ trek, index }) {
 
       <div className="absolute inset-x-0 bottom-0 z-10 p-5">
         <Link href={`/treks/${trek.slug}`} className="block">
-          <h3 className="font-serif text-xl font-semibold text-white transition-colors group-hover:text-orange">
+          <h3 className="font-serif text-xl font-semibold text-white transition-colors group-hover:text-blue">
             {trek.name}
           </h3>
         </Link>
@@ -55,7 +55,7 @@ export default function TrekCard({ trek, index }) {
           <span className="inline-flex items-center gap-1.5">
             <span
               className="h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: difficultyColor[trek.difficulty] ?? "#E2802E" }}
+              style={{ backgroundColor: difficultyColor[trek.difficulty] ?? "#2563EB" }}
             />
             {trek.difficulty}
           </span>

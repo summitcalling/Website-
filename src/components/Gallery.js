@@ -7,10 +7,10 @@ export default function Gallery() {
     <section className="bg-cream">
       <div className={`${CONTAINER} py-20`}>
         <div className="max-w-xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-orange">
-            <span className="h-px w-6 bg-orange" />
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+            <span className="h-px w-6 bg-blue" />
             Photo Gallery
-            <span className="h-px w-6 bg-orange" />
+            <span className="h-px w-6 bg-blue" />
           </span>
           <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
             Postcards from the Himalayas

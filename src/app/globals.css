@@ -8,8 +8,10 @@
   --color-cream-dark: #ffffff;
   --color-ink: #16202e;
   --color-ink-light: #1f2c3d;
-  --color-orange: #e2802e;
-  --color-orange-dark: #c96a1f;
+  --color-blue: #2563eb;
+  --color-blue-dark: #1d4ed8;
+  --color-sky: #0ea5e9;
+  --color-sky-dark: #0284c7;
   --color-whatsapp: #25d366;
 }
 
@@ -20,8 +22,10 @@
   --color-cream-dark: var(--color-cream-dark);
   --color-ink: var(--color-ink);
   --color-ink-light: var(--color-ink-light);
-  --color-orange: var(--color-orange);
-  --color-orange-dark: var(--color-orange-dark);
+  --color-blue: var(--color-blue);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-sky: var(--color-sky);
+  --color-sky-dark: var(--color-sky-dark);
   --color-whatsapp: var(--color-whatsapp);
   --font-sans: var(--font-body);
   --font-serif: var(--font-display);

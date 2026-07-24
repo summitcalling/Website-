@@ -34,10 +34,10 @@ export default function WhyChooseUs() {
     <section className="bg-cream border-y border-ink/5">
       <div className={`${CONTAINER} py-20`}>
         <div className="max-w-2xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-orange">
-            <span className="h-px w-6 bg-orange" />
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+            <span className="h-px w-6 bg-blue" />
             Why Choose Us
-            <span className="h-px w-6 bg-orange" />
+            <span className="h-px w-6 bg-blue" />
           </span>
           <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
             Your Trusted Trekking Partner in Nepal
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
               key={feature.title}
               className="group flex flex-col items-center rounded-2xl border border-ink/10 bg-white p-7 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5"
             >
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-orange/10 text-orange transition-colors group-hover:bg-orange group-hover:text-white">
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-blue/10 text-blue transition-colors group-hover:bg-blue group-hover:text-white">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   {feature.icon}
                 </svg>

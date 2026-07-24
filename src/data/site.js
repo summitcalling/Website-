@@ -1,14 +1,15 @@
 export const site = {
-  name: "Wildridges",
+  name: "Summit Calling",
   tagline: "Himalayan Trekking Co.",
   description:
     "Guided Himalayan trekking adventures across Nepal — fixed departures, licensed local guides, and unforgettable mountain journeys.",
   founded: "2015",
   country: "Nepal",
+  logo: "/summit-calling-logo.jpeg",
   phone: "+977 981-2345678",
   phoneDisplay: "+977 981 234 5678",
   whatsapp: "9779812345678",
-  email: "hello@wildridges.com",
+  email: "hello@summitcalling.com",
   address: "Thamel, Kathmandu, Nepal",
   social: {
     instagram: "https://instagram.com",
@@ -18,6 +19,12 @@ export const site = {
 };
 
 export const navLinks = [
+  { href: "/treks", label: "Explore" },
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blogs" },
+];
+
+export const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/treks", label: "Treks" },
   { href: "/fixed-departures", label: "Fixed Departures" },

@@ -43,7 +43,7 @@ export default function FixedDeparturesPage() {
                       <td className="px-5 py-4">
                         <Link
                           href={`/treks/${trek.slug}`}
-                          className="font-medium text-ink hover:text-orange transition-colors"
+                          className="font-medium text-ink hover:text-blue transition-colors"
                         >
                           {trek.name}
                         </Link>
@@ -60,7 +60,7 @@ export default function FixedDeparturesPage() {
                         <span
                           className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${
                             d.status === "Filling Fast"
-                              ? "bg-orange/10 text-orange"
+                              ? "bg-blue/10 text-blue"
                               : "bg-whatsapp/10 text-whatsapp"
                           }`}
                         >

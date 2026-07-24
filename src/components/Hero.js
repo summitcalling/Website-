@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { site, whatsappLink } from "@/data/site";
 import { CONTAINER } from "@/lib/layout";
+import HeroVideo from "@/components/HeroVideo";
 
 const stats = [
   { value: "10+", label: "Years Guiding" },
@@ -11,25 +11,22 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink">
-      <Image
-        src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=75"
-        alt="Sunrise over the Himalayas"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-ink">
+      <HeroVideo
+        poster="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=75"
+        src="https://assets.mixkit.co/videos/4396/4396-1080.mp4"
+        className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
 
-      <div className={`relative w-full pb-28 pt-32 sm:pb-16 ${CONTAINER}`}>
+      <div className={`relative w-full pb-16 pt-16 ${CONTAINER}`}>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-medium tracking-wide text-white/90">
             {site.country} · Est. {site.founded} · Fixed Departures 2026
           </span>
 
           <h1 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] text-white">
-            Experience Nepal <em className="text-orange not-italic">like</em>{" "}
+            Experience Nepal <em className="text-blue not-italic">like</em>{" "}
             never before.
           </h1>
 
@@ -41,7 +38,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/treks"
-              className="inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3.5 text-sm font-semibold text-white hover:bg-orange-dark transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3.5 text-sm font-semibold text-white hover:bg-blue-dark transition-colors"
             >
               Explore Treks
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

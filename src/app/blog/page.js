@@ -43,7 +43,7 @@ export default function BlogPage() {
                     year: "numeric",
                   })}
                 </div>
-                <h2 className="mt-2 font-serif text-lg font-semibold text-ink group-hover:text-orange transition-colors">
+                <h2 className="mt-2 font-serif text-lg font-semibold text-ink group-hover:text-blue transition-colors">
                   {post.title}
                 </h2>
                 <p className="mt-2 text-sm text-ink/60 leading-relaxed">
