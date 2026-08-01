@@ -112,7 +112,7 @@ export default function TrekFinder() {
               <span className="h-px w-6 bg-blue" />
               Trek Finder
             </span>
-            <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-white">
+            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-white">
               Not Sure Which Trek Is Right for You?
             </h2>
             <p className="mt-4 text-white/60 max-w-md mx-auto lg:mx-0">

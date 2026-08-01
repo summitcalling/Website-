@@ -62,7 +62,7 @@ export default function AboutPage() {
               <span className="h-px w-6 bg-blue" />
               Our Mission
             </span>
-            <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
+            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
               Trekking done the right way.
             </h2>
             <p className="mt-4 text-ink/70 leading-relaxed">
@@ -102,7 +102,7 @@ export default function AboutPage() {
               What We Stand For
               <span className="h-px w-6 bg-blue" />
             </span>
-            <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
+            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
               Our Values
             </h2>
           </div>

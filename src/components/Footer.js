@@ -22,13 +22,13 @@ export default function Footer() {
       <div className={`${CONTAINER} py-16 grid gap-12 md:grid-cols-4`}>
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 text-white">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
+            <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
               <Image
                 src={site.logo}
                 alt={site.name}
-                width={140}
-                height={140}
-                className="h-full w-full object-contain"
+                width={496}
+                height={276}
+                className="h-full w-auto object-contain"
               />
             </span>
             <span className="font-serif font-semibold text-xl">{site.name}</span>

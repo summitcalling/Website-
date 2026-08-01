@@ -35,7 +35,7 @@ export default function TourCategories() {
             Beyond Trekking
             <span className="h-px w-6 bg-blue" />
           </span>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
+          <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
             More Ways to Explore Nepal
           </h2>
         </div>

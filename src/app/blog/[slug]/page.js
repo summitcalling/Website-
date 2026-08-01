@@ -36,11 +36,11 @@ export default async function BlogPostPage({ params }) {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/20" />
-        <div className={`relative w-full pb-14 pt-14 ${CONTAINER}`}>
+        <div className={`relative w-full pb-14 pt-28 ${CONTAINER}`}>
           <Link href="/blog" className="text-sm text-white/70 hover:text-white">
             ← All Articles
           </Link>
-          <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-semibold text-white">
+          <h1 className="mt-4 font-serif text-2xl sm:text-3xl font-semibold text-white">
             {post.title}
           </h1>
           <div className="mt-3 text-sm text-white/60">

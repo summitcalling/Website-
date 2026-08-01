@@ -12,7 +12,7 @@ export default function Gallery() {
             Photo Gallery
             <span className="h-px w-6 bg-blue" />
           </span>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
+          <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
             Postcards from the Himalayas
           </h2>
           <p className="mt-4 text-ink/60">

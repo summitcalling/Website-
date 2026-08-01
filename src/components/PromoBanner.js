@@ -20,7 +20,7 @@ export default function PromoBanner() {
             <span className="h-px w-8 bg-blue" />
             Early Bird Offer
           </span>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+          <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-wide text-white">
             Book 60 days ahead and save 10% on any 2026 departure.
           </h2>
         </div>

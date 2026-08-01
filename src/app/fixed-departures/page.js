@@ -64,7 +64,7 @@ export default function FixedDeparturesPage() {
                               : "bg-whatsapp/10 text-whatsapp"
                           }`}
                         >
-                          {d.status} · {d.seatsLeft} seats
+                          {d.status}
                         </span>
                       </td>
                       <td className="px-5 py-4 text-right">

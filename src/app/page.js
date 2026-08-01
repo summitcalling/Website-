@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import TrustBadges from "@/components/TrustBadges";
 import FeaturedTreks from "@/components/FeaturedTreks";
 import PromoBanner from "@/components/PromoBanner";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustBadges />
       <FeaturedTreks />
       <PromoBanner />
       <WhyChooseUs />

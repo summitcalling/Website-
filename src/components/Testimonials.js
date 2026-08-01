@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { testimonials } from "@/data/testimonials";
 import { CONTAINER } from "@/lib/layout";
 
@@ -17,13 +14,13 @@ function Stars({ count }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
-          width="16"
-          height="16"
+          width="14"
+          height="14"
           viewBox="0 0 24 24"
           fill={i < count ? "#0EA5E9" : "none"}
           stroke={i < count ? "#0EA5E9" : "currentColor"}
           strokeWidth="1.5"
-          className={i >= count ? "text-white/20" : ""}
+          className={i >= count ? "text-ink/15" : ""}
         >
           <path d="M12 3l2.6 5.6 6 .7-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6-4.4-4.2 6-.7z" />
         </svg>
@@ -32,78 +29,63 @@ function Stars({ count }) {
   );
 }
 
+function TestimonialCard({ t }) {
+  return (
+    <div className="w-[300px] shrink-0 rounded-2xl bg-cream/60 p-6 ring-1 ring-ink/5 sm:w-[340px]">
+      <Stars count={t.rating} />
+      <p className="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">
+        &ldquo;{t.quote}&rdquo;
+      </p>
+      <div className="mt-5 flex items-center gap-3 border-t border-ink/10 pt-4">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue to-sky text-sm font-semibold text-white">
+          {initials(t.name)}
+        </span>
+        <div>
+          <div className="text-sm font-semibold text-ink">{t.name}</div>
+          <div className="text-xs text-ink/45">
+            {t.country} · {t.trek}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Testimonials() {
-  const [active, setActive] = useState(0);
-  const t = testimonials[active];
+  const row1 = [...testimonials, ...testimonials];
+  const row2 = [...testimonials].reverse();
+  const row2Loop = [...row2, ...row2];
 
   return (
-    <section className="bg-cream border-y border-ink/5">
-      <div className={`${CONTAINER} py-20`}>
+    <section className="relative overflow-hidden bg-white border-t border-ink/5">
+      <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-sky/10 blur-3xl" />
+
+      <div className={`relative ${CONTAINER} py-20`}>
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
             <span className="h-px w-6 bg-blue" />
             Trekker Stories
             <span className="h-px w-6 bg-blue" />
           </span>
-          <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-semibold text-ink">
+          <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
             What Our Trekkers Say
           </h2>
         </div>
+      </div>
 
-        <div className="relative mx-auto mt-12 max-w-3xl overflow-hidden rounded-3xl bg-ink px-8 py-12 text-center shadow-xl sm:px-16 sm:py-16">
-          <svg
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 w-full text-white/[0.04]"
-            viewBox="0 0 1200 200"
-            preserveAspectRatio="none"
-            fill="currentColor"
-          >
-            <path d="M0 200 L150 60 L280 140 L420 20 L560 130 L700 50 L860 150 L1000 40 L1200 120 L1200 200 Z" />
-          </svg>
+      <div className="group relative mt-12 space-y-5">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-32" />
 
-          <svg
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="relative mx-auto text-blue/30"
-          >
-            <path d="M9.5 7C6.5 8.2 5 10.4 5 13.2c0 2.1 1.4 3.6 3.2 3.6 1.7 0 2.9-1.2 2.9-2.8 0-1.5-1-2.5-2.4-2.6.3-1.4 1.4-2.6 3-3.3L9.5 7zm9 0c-3 1.2-4.5 3.4-4.5 6.2 0 2.1 1.4 3.6 3.2 3.6 1.7 0 2.9-1.2 2.9-2.8 0-1.5-1-2.5-2.4-2.6.3-1.4 1.4-2.6 3-3.3L18.5 7z" />
-          </svg>
-
-          <p className="relative mt-4 font-serif text-xl leading-snug text-white sm:text-2xl">
-            {t.quote}
-          </p>
-
-          <div className="relative mt-6 flex justify-center">
-            <Stars count={t.rating} />
-          </div>
-
-          <div className="relative mt-6 flex flex-col items-center gap-1">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue to-sky text-base font-semibold text-white">
-              {initials(t.name)}
-            </span>
-            <div className="mt-2 text-base font-semibold text-white">{t.name}</div>
-            <div className="text-sm text-white/50">
-              {t.country} · {t.trek}
-            </div>
-          </div>
+        <div className="flex w-max gap-5 animate-[marquee-left_45s_linear_infinite] group-hover:[animation-play-state:paused]">
+          {row1.map((t, i) => (
+            <TestimonialCard key={`r1-${i}`} t={t} />
+          ))}
         </div>
-
-        <div className="mt-8 flex justify-center gap-3">
-          {testimonials.map((item, i) => (
-            <button
-              key={item.name}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-label={`Show testimonial from ${item.name}`}
-              className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold transition-all ${
-                i === active
-                  ? "bg-blue text-white scale-110"
-                  : "bg-ink/5 text-ink/50 hover:bg-ink/10"
-              }`}
-            >
-              {initials(item.name)}
-            </button>
+        <div className="flex w-max gap-5 animate-[marquee-right_45s_linear_infinite] group-hover:[animation-play-state:paused]">
+          {row2Loop.map((t, i) => (
+            <TestimonialCard key={`r2-${i}`} t={t} />
           ))}
         </div>
       </div>
