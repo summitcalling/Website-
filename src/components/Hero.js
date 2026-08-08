@@ -44,7 +44,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex h-screen flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-[75vh] min-h-[560px] flex-col overflow-hidden bg-ink">
       <HeroVideo
         poster="https://assets.mixkit.co/videos/4283/4283-thumb-720-0.jpg"
         src="https://assets.mixkit.co/videos/4283/4283-1080.mp4"
@@ -52,7 +52,7 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
 
-      <div className={`relative flex flex-1 items-center w-full pt-28 ${CONTAINER}`}>
+      <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
           <p className="text-3xl sm:text-4xl font-medium text-white/90">
             Your Journey Starts Here

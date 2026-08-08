@@ -2,10 +2,12 @@ import Hero from "@/components/Hero";
 import FeaturedTreks from "@/components/FeaturedTreks";
 import PromoBanner from "@/components/PromoBanner";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import FoundersSection from "@/components/FoundersSection";
 import TourCategories from "@/components/TourCategories";
 import TrekFinder from "@/components/TrekFinder";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
+import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 
 export default function Home() {
@@ -15,10 +17,12 @@ export default function Home() {
       <FeaturedTreks />
       <PromoBanner />
       <WhyChooseUs />
+      <FoundersSection />
       <TourCategories />
       <TrekFinder />
       <Testimonials />
       <Gallery />
+      <FAQSection />
       <CTASection />
     </>
   );

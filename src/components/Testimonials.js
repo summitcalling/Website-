@@ -31,9 +31,9 @@ function Stars({ count }) {
 
 function TestimonialCard({ t }) {
   return (
-    <div className="w-[300px] shrink-0 rounded-2xl bg-cream/60 p-6 ring-1 ring-ink/5 sm:w-[340px]">
+    <div className="flex h-[280px] w-[300px] shrink-0 flex-col rounded-2xl bg-cream/60 p-6 ring-1 ring-ink/5 sm:w-[340px]">
       <Stars count={t.rating} />
-      <p className="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">
+      <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/70 sm:text-base line-clamp-5">
         &ldquo;{t.quote}&rdquo;
       </p>
       <div className="mt-5 flex items-center gap-3 border-t border-ink/10 pt-4">
@@ -61,7 +61,7 @@ export default function Testimonials() {
       <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-sky/10 blur-3xl" />
 
-      <div className={`relative ${CONTAINER} py-20`}>
+      <div className={`relative ${CONTAINER} pt-16`}>
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
             <span className="h-px w-6 bg-blue" />
@@ -74,7 +74,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="group relative mt-12 space-y-5">
+      <div className="group relative mt-12 space-y-5 pb-16">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-32" />
 

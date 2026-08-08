@@ -2,7 +2,7 @@ import { CONTAINER } from "@/lib/layout";
 
 export default function PageHeader({ eyebrow, title, description }) {
   return (
-    <section className="bg-ink pt-28 pb-14">
+    <section className="bg-ink pt-14 pb-14">
       <div className={`${CONTAINER} flex flex-col items-center text-center`}>
         {eyebrow && (
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">

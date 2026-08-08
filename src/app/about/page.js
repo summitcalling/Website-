@@ -2,6 +2,7 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 import { site } from "@/data/site";
+import { founders } from "@/data/founders";
 import { CONTAINER } from "@/lib/layout";
 
 export const metadata = {
@@ -124,6 +125,57 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-ink/60 leading-relaxed">
                   {value.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="founders" className="bg-white scroll-mt-20">
+        <div className={`${CONTAINER} py-20`}>
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+              <span className="h-px w-6 bg-blue" />
+              The People
+              <span className="h-px w-6 bg-blue" />
+            </span>
+            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
+              Meet the Founders
+            </h2>
+          </div>
+
+          <div className="mt-14 space-y-16">
+            {founders.map((person, i) => (
+              <div
+                key={person.name}
+                className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 ${
+                  i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
+              >
+                <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-3xl">
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 400px, 90vw"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-serif text-2xl font-semibold text-ink">
+                    {person.name}
+                  </h3>
+                  <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-blue">
+                    {person.role}
+                  </div>
+                  <div className="mt-5 space-y-4">
+                    {person.bio.map((paragraph, j) => (
+                      <p key={j} className="text-ink/70 leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

@@ -10,6 +10,13 @@ export const treks = [
     bestSeason: "Mar–May, Sep–Nov",
     image:
       "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=1600&q=75",
+    gallery: [
+      "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&w=900&q=75",
+      "/treks/annapurna-2.jpg",
+      "/treks/annapurna-3.jpg",
+      "/treks/annapurna-4.jpg",
+      "/treks/annapurna-5.jpg",
+    ],
     summary:
       "Combine the breathtaking beauty of Tilicho Lake with the legendary crossing of Thorong La Pass (5,416m) — an unforgettable journey through diverse landscapes, traditional mountain villages, and some of the finest scenery in the Himalayas.",
     overview: [
