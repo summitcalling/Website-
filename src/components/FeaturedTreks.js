@@ -18,10 +18,6 @@ export default function FeaturedTreks() {
           <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
             Popular Himalayan Adventures
           </h2>
-          <p className="mt-4 text-ink/60">
-            Hand-picked routes our travellers love, from quick ridge walks to
-            the legendary trail to Everest.
-          </p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

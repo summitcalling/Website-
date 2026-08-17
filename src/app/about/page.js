@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 import { site } from "@/data/site";
 import { founders } from "@/data/founders";
@@ -7,87 +6,92 @@ import { CONTAINER } from "@/lib/layout";
 
 export const metadata = {
   title: `About Us — ${site.name}`,
-  description: `Learn about ${site.name}, a Nepal-based trekking company guiding travellers through the Himalayas since ${site.founded}.`,
+  description: `${site.name} is an adventure-based travel company specialising in Himalayan trekking, mountaineering, helicopter tours, and mountain flights.`,
 };
 
-const values = [
+const BODY_TEXT = "text-[17px] leading-relaxed text-ink";
+
+const pillars = [
   {
-    title: "Local First",
+    title: "Thoughtfully Planned",
     description:
-      "Every guide, porter, and lodge we work with is Nepali — the money you spend stays in the communities you trek through.",
-    icon: <path d="M12 21s-7-6.1-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.9 12 21 12 21z" />,
+      "Every itinerary is built around real acclimatization, not the fastest route to the summit — welcoming, well-planned, and safe from day one.",
   },
   {
-    title: "Safety Without Compromise",
+    title: "Never Compromised",
     description:
-      "Every itinerary is built around proper acclimatization, not the fastest possible route to the summit.",
-    icon: <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" />,
+      "Reasonable pricing that never trades away safety, quality, or genuine hospitality along the trail.",
   },
   {
-    title: "Honest Pricing",
+    title: "Genuinely Memorable",
     description:
-      "The price you see is the price you pay — no hidden permit fees, no surprise surcharges at altitude.",
-    icon: <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v12M9 9h4.5a2 2 0 010 4H9" />,
+      "First-time trekker or returning mountaineer — every journey with us is built to be truly memorable, not just completed.",
   },
 ];
 
-const milestones = [
-  { value: site.founded, label: "Founded in Kathmandu" },
-  { value: "10+", label: "Years on the trail" },
-  { value: "500+", label: "Trekkers guided" },
-  { value: "14", label: "Signature routes" },
-];
+function SectionHeading({ children, dark }) {
+  return (
+    <div>
+      <h2
+        className={`font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide ${
+          dark ? "text-white" : "text-ink"
+        }`}
+      >
+        {children}
+      </h2>
+      <span className={`mt-3 block h-1 w-14 rounded-full ${dark ? "bg-white/30" : "bg-blue"}`} />
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="About Us"
-        title={`The Story Behind ${site.name}`}
-        description="A small team of Nepali guides who believe the mountains are best experienced properly — slowly, safely, and led by people who grew up in their shadow."
-      />
-
-      <section className="bg-cream">
-        <div className={`${CONTAINER} py-20 grid grid-cols-1 items-center gap-14 lg:grid-cols-2`}>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-            <Image
-              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=75"
-              alt="Guide leading trekkers through the Himalayas"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 500px, 90vw"
-            />
-          </div>
-          <div>
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-              <span className="h-px w-6 bg-blue" />
-              Our Mission
+      <section className="relative overflow-hidden bg-ink">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9]">
+          <Image
+            src="/treks/ebc-1.jpg"
+            alt="Sunrise over the Everest range"
+            fill
+            priority
+            className="object-cover opacity-60"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+          <div className={`absolute inset-0 flex flex-col justify-end ${CONTAINER} pb-10 sm:pb-16`}>
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue">
+              About
             </span>
-            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
-              Trekking done the right way.
-            </h2>
-            <p className="mt-4 text-ink/70 leading-relaxed">
-              {site.name} started with a simple frustration: too many
-              trekking companies were run by agents in faraway offices who
-              had never carried a pack above 4,000 metres themselves. We
-              built a company run by the guides who actually lead the treks —
-              people from Khumbu, Annapurna, and Langtang who know these
-              trails better than anyone.
+            <h1 className="mt-2 font-serif text-4xl font-semibold leading-none text-white sm:text-6xl md:text-7xl">
+              {site.name}
+            </h1>
+            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-white/80">
+              An adventure-based travel company specialising in Himalayan trekking,
+              mountaineering, helicopter tours, and mountain flights.
             </p>
-            <p className="mt-4 text-ink/70 leading-relaxed">
-              Every fixed departure is capped at a small group size, every
-              itinerary has real acclimatization days built in, and every
-              rupee you spend goes back into the communities along the
-              route.
-            </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-10 grid grid-cols-2 gap-6 border-t border-ink/10 pt-8 sm:grid-cols-4">
-              {milestones.map((m) => (
-                <div key={m.label}>
-                  <div className="font-serif text-2xl font-semibold text-ink">
-                    {m.value}
-                  </div>
-                  <div className="mt-1 text-xs text-ink/50">{m.label}</div>
+      <section className="bg-white">
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading>About Us</SectionHeading>
+
+          <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <p className={BODY_TEXT}>
+                Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From remote Himalayan trails to high-altitude treks and expeditions, we create journeys that bring people closer to the mountains.
+              </p>
+              <p className={`mt-4 ${BODY_TEXT}`}>
+                Whether it&apos;s your first Himalayan trek or your next high-altitude challenge, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
+              </p>
+            </div>
+
+            <div className="space-y-6 lg:border-l lg:border-ink/10 lg:pl-8">
+              {pillars.map((pillar) => (
+                <div key={pillar.title}>
+                  <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">{pillar.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink">{pillar.description}</p>
                 </div>
               ))}
             </div>
@@ -96,81 +100,63 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-cream border-y border-ink/5">
-        <div className={`${CONTAINER} py-20`}>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-              <span className="h-px w-6 bg-blue" />
-              What We Stand For
-              <span className="h-px w-6 bg-blue" />
-            </span>
-            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
-              Our Values
-            </h2>
-          </div>
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading>Our Story</SectionHeading>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {values.map((value) => (
-              <div
-                key={value.title}
-                className="flex flex-col items-center rounded-2xl border border-ink/10 bg-white p-7 text-center shadow-sm"
-              >
-                <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-blue/10 text-blue">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    {value.icon}
-                  </svg>
-                </span>
-                <h3 className="mt-5 font-serif text-lg font-semibold text-ink">
-                  {value.title}
-                </h3>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+            <div className="space-y-4 lg:col-span-2">
+              <p className={BODY_TEXT}>
+                Shekhar and Gauri first met during the Everest Base Camp trek in 2021. What started as two people sharing the same trail gradually grew into a close friendship built around a shared passion for mountaineering, adventure, exploration, travel, and the outdoors.
+              </p>
+              <p className={BODY_TEXT}>
+                Over the years, our friendship grew alongside our shared passion for mountaineering, exploration, and adventure. We continued exploring, taking on different treks and adventures, each bringing new experiences, challenges, and memories along the way.
+              </p>
+              <p className={BODY_TEXT}>
+                At one point, we began discussing the idea of starting a trekking and adventure company of our own — something that could help more people experience the mountains and create memories of their own.
+              </p>
+              <p className={`${BODY_TEXT} font-semibold`}>
+                And in 2026, we officially launched Summit Calling.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src="/team/gauri-candid.jpg"
+                alt="Summit Calling co-founder on the trail"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 360px, 90vw"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <section id="founders" className="bg-white scroll-mt-20">
-        <div className={`${CONTAINER} py-20`}>
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-              <span className="h-px w-6 bg-blue" />
-              The People
-              <span className="h-px w-6 bg-blue" />
-            </span>
-            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
-              Meet the Founders
-            </h2>
-          </div>
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading>Meet the Founders</SectionHeading>
 
-          <div className="mt-14 space-y-16">
-            {founders.map((person, i) => (
-              <div
-                key={person.name}
-                className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 ${
-                  i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-3xl">
+          <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
+            {founders.map((person) => (
+              <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
+                <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
                   <Image
                     src={person.photo}
                     alt={person.name}
                     fill
                     className="object-cover"
-                    sizes="(min-width: 1024px) 400px, 90vw"
+                    sizes="220px"
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif text-2xl font-semibold text-ink">
+                  <h3 className="font-serif text-xl font-semibold text-ink">
                     {person.name}
                   </h3>
-                  <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-blue">
+                  <div className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-blue">
                     {person.role}
                   </div>
-                  <div className="mt-5 space-y-4">
+                  <div className="mt-3 space-y-3">
                     {person.bio.map((paragraph, j) => (
-                      <p key={j} className="text-ink/70 leading-relaxed">
+                      <p key={j} className="text-sm leading-relaxed text-ink">
                         {paragraph}
                       </p>
                     ))}
@@ -178,6 +164,67 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink">
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
+
+          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+            <div className="space-y-4 lg:col-span-2">
+              <p className="text-[17px] leading-relaxed text-white/80">
+                The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
+              </p>
+              <p className="font-serif text-xl italic text-white">
+                &ldquo;We don&apos;t just want people to experience the mountains. We want them to respect them.&rdquo;
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src="/treks/abc-5.jpg"
+                alt="A quiet forest trail in the Himalayas"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 360px, 90vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading>Our Vision</SectionHeading>
+
+          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <div className="space-y-4">
+                <p className={BODY_TEXT}>
+                  At Summit Calling, our vision is to create experiences that go beyond simply checking a destination off a list. We want our travellers to experience the sunrise from the mountains, the silence of a Himalayan trail, the excitement of stepping into the unknown, the challenge of pushing their limits, and the friendships formed along the way.
+                </p>
+                <p className={BODY_TEXT}>
+                  We want every journey to be safe, thoughtfully planned, fairly priced, and genuinely memorable — because we believe the best adventures aren&apos;t measured only by the distance travelled or the altitude reached. They are measured by the memories you create along the way.
+                </p>
+              </div>
+
+              <div className="mt-10 border-t border-ink/10 pt-8">
+                <div className="font-serif text-xl font-semibold text-ink">{site.name}</div>
+                <div className="mt-2 text-sm text-ink">
+                  Launched in 2026. Built by mountaineers. Driven by adventure.
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+              <Image
+                src="/treks/ebc-gokyo-1.jpg"
+                alt="Prayer flags on a Himalayan summit at sunrise"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 360px, 90vw"
+              />
+            </div>
           </div>
         </div>
       </section>

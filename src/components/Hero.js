@@ -44,7 +44,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[75vh] min-h-[560px] flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-[90vh] min-h-[600px] flex-col overflow-hidden bg-ink">
       <HeroVideo
         poster="https://assets.mixkit.co/videos/4283/4283-thumb-720-0.jpg"
         src="https://assets.mixkit.co/videos/4283/4283-1080.mp4"

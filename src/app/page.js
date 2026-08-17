@@ -2,7 +2,6 @@ import Hero from "@/components/Hero";
 import FeaturedTreks from "@/components/FeaturedTreks";
 import PromoBanner from "@/components/PromoBanner";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import FoundersSection from "@/components/FoundersSection";
 import TourCategories from "@/components/TourCategories";
 import TrekFinder from "@/components/TrekFinder";
 import Testimonials from "@/components/Testimonials";
@@ -16,9 +15,8 @@ export default function Home() {
       <Hero />
       <FeaturedTreks />
       <PromoBanner />
-      <WhyChooseUs />
-      <FoundersSection />
       <TourCategories />
+      <WhyChooseUs />
       <TrekFinder />
       <Testimonials />
       <Gallery />

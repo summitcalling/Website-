@@ -3,49 +3,50 @@ import Link from "next/link";
 import { founders } from "@/data/founders";
 import { CONTAINER } from "@/lib/layout";
 
+function SectionHeading({ children }) {
+  return (
+    <div className="text-center">
+      <h2 className="font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
+        {children}
+      </h2>
+      <span className="mx-auto mt-3 block h-1 w-14 rounded-full bg-blue" />
+    </div>
+  );
+}
+
 export default function FoundersSection() {
   return (
     <section className="bg-white border-t border-ink/5">
-      <div className={`${CONTAINER} py-20`}>
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-            <span className="h-px w-6 bg-blue" />
-            Who&apos;s Behind This
-            <span className="h-px w-6 bg-blue" />
-          </span>
-          <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
-            Meet the Founders
-          </h2>
-          <p className="mt-4 text-ink/60">
-            Two Nepali guides who got tired of watching agencies oversell
-            treks people weren&apos;t ready for.
-          </p>
-        </div>
+      <div className={`${CONTAINER} py-16`}>
+        <SectionHeading>Meet the Founders</SectionHeading>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
+        <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
           {founders.map((person) => (
-            <div
-              key={person.name}
-              className="flex flex-col items-center rounded-2xl border border-ink/10 bg-cream/60 p-7 text-center"
-            >
-              <div className="relative h-28 w-28 overflow-hidden rounded-full ring-2 ring-white shadow-sm">
+            <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
+              <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
                 <Image
                   src={person.photo}
                   alt={person.name}
                   fill
                   className="object-cover"
-                  sizes="112px"
+                  sizes="220px"
                 />
               </div>
-              <h3 className="mt-5 font-serif text-lg font-semibold text-ink">
-                {person.name}
-              </h3>
-              <div className="text-xs font-semibold uppercase tracking-wide text-blue">
-                {person.role}
+              <div>
+                <h3 className="font-serif text-xl font-semibold text-ink">
+                  {person.name}
+                </h3>
+                <div className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-blue">
+                  {person.role}
+                </div>
+                <div className="mt-3 space-y-3">
+                  {person.bio.map((paragraph, j) => (
+                    <p key={j} className="text-base leading-relaxed text-ink">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-ink/60">
-                {person.shortBio}
-              </p>
             </div>
           ))}
         </div>

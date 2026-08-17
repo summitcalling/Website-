@@ -1,6 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+function ItineraryPanel({ open, metaLines, description }) {
+  const innerRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState(0);
+
+  useEffect(() => {
+    if (!innerRef.current) return;
+    const el = innerRef.current;
+
+    if (open) {
+      setMaxHeight(el.scrollHeight);
+      const observer = new ResizeObserver(() => setMaxHeight(el.scrollHeight));
+      observer.observe(el);
+      return () => observer.disconnect();
+    }
+    setMaxHeight(0);
+  }, [open]);
+
+  return (
+    <div
+      style={{ maxHeight }}
+      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        open ? "mt-4 opacity-100" : "opacity-0"
+      }`}
+    >
+      <div ref={innerRef}>
+        {metaLines.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold uppercase tracking-wide text-blue">
+            {metaLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </div>
+        )}
+        <div className="space-y-3">
+          {description.split("\n\n").map((paragraph, j) => (
+            <p key={j} className="text-[17px] leading-relaxed text-ink">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Itinerary({ days }) {
   const [openIndex, setOpenIndex] = useState(0);
@@ -48,24 +92,7 @@ export default function Itinerary({ days }) {
                 </svg>
               </button>
 
-              {open && (
-                <div className="mt-4 rounded-2xl bg-cream/60 p-5">
-                  {metaLines.length > 0 && (
-                    <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold uppercase tracking-wide text-blue">
-                      {metaLines.map((line) => (
-                        <span key={line}>{line}</span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="space-y-3">
-                    {day.description.split("\n\n").map((paragraph, j) => (
-                      <p key={j} className="text-[17px] leading-relaxed text-ink">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <ItineraryPanel open={open} metaLines={metaLines} description={day.description} />
             </div>
           </div>
         );

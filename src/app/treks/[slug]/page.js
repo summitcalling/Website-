@@ -53,16 +53,12 @@ export default async function TrekDetailPage({ params }) {
     d?.faqs && { id: "faqs", label: "FAQs" },
   ].filter(Boolean);
 
-  const [titleFirstWord, ...titleRestWords] = trek.name.split(" ");
-  const titleRest = titleRestWords.join(" ");
-
   return (
     <>
       <section className="bg-white pt-8">
         <div className={`${CONTAINER} pb-12`}>
           <h1 className="text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-[42px]">
-            <span className="font-serif italic text-blue">{titleFirstWord}</span>{" "}
-            {titleRest}
+            {trek.name}
           </h1>
           <div className="mt-4 text-base text-ink/50">
             Duration: <span className="text-ink">{trek.duration} Days</span>

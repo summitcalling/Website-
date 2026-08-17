@@ -1,24 +1,24 @@
 export const founders = [
   {
-    name: "Pemba Sherpa",
-    role: "Co-Founder & Head Guide",
-    photo: "/team/founder-1.jpg",
+    name: "Shekhar Bijlani",
+    role: "Mountaineer | Co-Founder",
+    photo: "/team/shekhar-summit.jpg",
     shortBio:
-      "Born in the Khumbu region, Pemba has summited Everest twice and has spent over 15 years guiding trekkers safely through the Himalayas.",
+      "A member of the Indian Mountaineering Foundation, with years of experience across high-altitude Himalayan treks and expeditions.",
     bio: [
-      "Pemba grew up in a village three days' walk from Namche Bazaar, where the trail to Everest Base Camp was simply the way to school. He started porting for trekking groups at 16 and earned his guiding license at 21 — since then he's led over 300 expeditions across the Khumbu, Annapurna, and Langtang regions.",
-      "He co-founded Summit Calling after years of watching foreign agencies undercut local guides while overselling routes trekkers weren't prepared for. His rule for every itinerary he plans: build in the acclimatization days first, then plan the rest of the trip around them — never the other way round.",
+      "Shekhar is a mountaineer with experience in high-altitude Himalayan trekking, mountaineering expeditions, and challenging mountain environments. A member of the Indian Mountaineering Foundation, his journeys in the Himalayas have given him a good understanding of mountain conditions, preparation, acclimatization, and the importance of safety.",
+      "His journey in mountaineering has also been acknowledged by prominent public figures, including Shri Rajnath Singh, Defence Minister of India, and Shri Brajesh Pathak, Deputy Chief Minister of Uttar Pradesh.",
     ],
   },
   {
-    name: "Nima Gurung",
-    role: "Co-Founder & Operations",
-    photo: "/team/founder-2.jpg",
+    name: "Gauri Singh",
+    role: "Mountaineer | Co-Founder",
+    photo: "/team/gauri-summit.jpg",
     shortBio:
-      "Nima runs everything that happens off the trail — permits, logistics, and partnerships with the tea houses and communities along every route.",
+      "A mountaineer, certified scuba diver, and skydiver — drawn to experiences that test both nerve and curiosity.",
     bio: [
-      "Before co-founding Summit Calling, Nima spent eight years managing logistics for expedition teams across Nepal, from permit paperwork to emergency evacuation coordination. She built the company's network of tea house and lodge partnerships from scratch, working directly with families in Manang, Khangsar, and Muktinath rather than through middlemen.",
-      "Nima is the one trekkers usually talk to before they ever set foot in Nepal — she handles trip planning, fixed departure scheduling, and makes sure every rupee spent on a trek reaches the guides and communities who earn it.",
+      "Gauri is a mountaineer with experience across Himalayan trekking and challenging mountain environments, her journeys through high-altitude treks and mountain expeditions giving her a deep understanding of the mountains and the experiences they demand.",
+      "For Gauri, adventure comes in many forms. She is a certified scuba diver and has also taken to the skies through skydiving — drawn, above all, to experiences that test both nerve and curiosity. A passionate traveller and explorer, she carries that same curiosity into every new destination, culture, and story along the way.",
     ],
   },
 ];

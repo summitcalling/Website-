@@ -49,11 +49,11 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
         <div className="text-lg font-semibold text-ink">Book This Trek</div>
         <div className="mt-2 flex items-baseline gap-1">
           <span className="font-serif text-3xl font-semibold text-ink">
-            ₹{price.toLocaleString("en-IN")}
+            {price ? `₹${price.toLocaleString("en-IN")}` : "Price on Request"}
           </span>
         </div>
         <div className="mt-1 text-sm text-ink">
-          {selectedPkg?.note ?? "+ tax as applicable"}
+          {selectedPkg?.note ?? (price ? "+ tax as applicable" : "Contact us for a custom quote")}
         </div>
       </div>
 

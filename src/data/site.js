@@ -3,7 +3,7 @@ export const site = {
   tagline: "Himalayan Trekking Co.",
   description:
     "Guided Himalayan trekking adventures across Nepal — fixed departures, licensed local guides, and unforgettable mountain journeys.",
-  founded: "2015",
+  founded: "2026",
   country: "Nepal",
   logo: "/summit-calling-logo.png",
   phone: "+91 74599-29391",

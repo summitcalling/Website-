@@ -47,9 +47,6 @@ export default function FAQSection() {
           <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
             Got Questions?
           </h2>
-          <p className="mt-4 text-ink/60">
-            The answers we get asked most, before anyone even books.
-          </p>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
