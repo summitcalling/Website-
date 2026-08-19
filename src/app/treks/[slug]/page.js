@@ -5,6 +5,7 @@ import { site, whatsappLink } from "@/data/site";
 import { CONTAINER } from "@/lib/layout";
 import Accordion from "@/components/Accordion";
 import BookingCard from "@/components/BookingCard";
+import FixedDepartures from "@/components/FixedDepartures";
 import Itinerary from "@/components/Itinerary";
 import TrekSubNav from "@/components/TrekSubNav";
 
@@ -109,10 +110,36 @@ export default async function TrekDetailPage({ params }) {
               <SectionHeading>Overview</SectionHeading>
             </div>
             <div className="mt-6 grid grid-cols-2 divide-x divide-y sm:divide-y-0 divide-ink/10 rounded-2xl ring-1 ring-black/5 shadow-sm sm:grid-cols-4">
-              <Stat label="Duration" value={`${trek.duration} days`} />
-              <Stat label="Difficulty" value={trek.difficulty} />
-              <Stat label="Max Altitude" value={trek.maxAltitude} />
-              <Stat label="Best Season" value={trek.bestSeason} />
+              <Stat
+                label="Duration"
+                value={`${trek.duration} days`}
+                icon={
+                  <>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
+                  </>
+                }
+              />
+              <Stat
+                label="Difficulty"
+                value={trek.difficulty}
+                icon={<path d="M4 19h3V9H4v10zm6.5 0h3V5h-3v14zM17 19h3v-7h-3v7z" strokeLinejoin="round" />}
+              />
+              <Stat
+                label="Max Altitude"
+                value={trek.maxAltitude}
+                icon={<path d="M3 19h18L14.5 8l-3 4.5-2-2.5L3 19z" strokeLinejoin="round" />}
+              />
+              <Stat
+                label="Best Season"
+                value={trek.bestSeason}
+                icon={
+                  <>
+                    <rect x="4" y="5" width="16" height="15" rx="2" />
+                    <path d="M4 10h16M8 3v4M16 3v4" strokeLinecap="round" />
+                  </>
+                }
+              />
             </div>
 
             <div className="mt-8 space-y-4">
@@ -153,7 +180,10 @@ export default async function TrekDetailPage({ params }) {
                           Package
                         </th>
                         <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-ink">
-                          Price
+                          For Indians
+                        </th>
+                        <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-ink">
+                          For Foreigners
                         </th>
                         <th className="px-5 py-4" />
                       </tr>
@@ -161,7 +191,7 @@ export default async function TrekDetailPage({ params }) {
                     <tbody className="divide-y divide-ink/10">
                       {d.packages.map((pkg, i) => (
                         <tr key={pkg.name} className={i === 0 ? "bg-blue/[0.03]" : undefined}>
-                          <td className="px-5 py-5 align-top">
+                          <td className="px-5 py-5 align-middle">
                             <div className="flex items-center gap-2">
                               <span className="font-serif text-lg font-semibold text-ink">{pkg.name}</span>
                               {i === 0 && (
@@ -170,21 +200,18 @@ export default async function TrekDetailPage({ params }) {
                                 </span>
                               )}
                             </div>
-                            <ul className="mt-2 space-y-1">
-                              {pkg.features.map((feature) => (
-                                <li key={feature} className="text-sm text-ink">
-                                  · {feature}
-                                </li>
-                              ))}
-                            </ul>
                           </td>
                           <td className="px-5 py-5 align-middle">
                             <div className="font-serif text-xl font-semibold text-ink">
                               ₹{pkg.priceINR.toLocaleString("en-IN")}
                             </div>
-                            <div className="mt-1 text-xs text-ink">
-                              ≈ USD {pkg.priceUSD.toLocaleString("en-US")}
+                            <div className="mt-1 text-xs text-ink">+5% GST</div>
+                          </td>
+                          <td className="px-5 py-5 align-middle">
+                            <div className="font-serif text-xl font-semibold text-ink">
+                              USD {pkg.priceUSD.toLocaleString("en-US")}
                             </div>
+                            <div className="mt-1 text-xs text-ink">+ applicable taxes</div>
                           </td>
                           <td className="px-5 py-5 align-middle">
                             <a
@@ -204,7 +231,6 @@ export default async function TrekDetailPage({ params }) {
                     </tbody>
                   </table>
                 </div>
-                <p className="mt-3 text-xs text-ink">{d.packages[0]?.note}</p>
               </>
             )}
 
@@ -217,48 +243,6 @@ export default async function TrekDetailPage({ params }) {
                   {d.difficulty.level}
                 </span>
                 <p className={`mt-5 ${BODY_TEXT}`}>{d.difficulty.description}</p>
-              </>
-            )}
-
-            {d?.altitude && (
-              <>
-                <div className="mt-14">
-                  <SectionHeading>Altitude &amp; Acclimatization</SectionHeading>
-                </div>
-                <span className="mt-4 inline-block rounded-full bg-sky/10 px-3 py-1 text-xs font-semibold text-sky">
-                  {d.altitude.highestPoint}
-                </span>
-                <p className={`mt-5 ${BODY_TEXT}`}>{d.altitude.description}</p>
-                {d.altitude.tips && (
-                  <ul className="mt-4 space-y-2">
-                    {d.altitude.tips.map((tip) => (
-                      <li key={tip} className={`flex items-start gap-2.5 ${BODY_TEXT}`}>
-                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-sky" />
-                        {tip}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </>
-            )}
-
-            {d?.bestTime && (
-              <>
-                <div className="mt-14">
-                  <SectionHeading>Best Time to Trek</SectionHeading>
-                </div>
-                <div className="mt-6 space-y-6">
-                  {d.bestTime.map((season) => (
-                    <div key={season.season}>
-                      <h3 className="text-base font-semibold text-ink">{season.season}</h3>
-                      <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                        {season.points.map((point) => (
-                          <CheckItem key={point}>{point}</CheckItem>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
               </>
             )}
 
@@ -333,6 +317,48 @@ export default async function TrekDetailPage({ params }) {
               </>
             )}
 
+            {d?.altitude && (
+              <>
+                <div className="mt-14">
+                  <SectionHeading>Altitude &amp; Acclimatization</SectionHeading>
+                </div>
+                <span className="mt-4 inline-block rounded-full bg-sky/10 px-3 py-1 text-xs font-semibold text-sky">
+                  {d.altitude.highestPoint}
+                </span>
+                <p className={`mt-5 ${BODY_TEXT}`}>{d.altitude.description}</p>
+                {d.altitude.tips && (
+                  <ul className="mt-4 space-y-2">
+                    {d.altitude.tips.map((tip) => (
+                      <li key={tip} className={`flex items-start gap-2.5 ${BODY_TEXT}`}>
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-sky" />
+                        {tip}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            )}
+
+            {d?.bestTime && (
+              <>
+                <div className="mt-14">
+                  <SectionHeading>Best Time to Trek</SectionHeading>
+                </div>
+                <div className="mt-6 space-y-6">
+                  {d.bestTime.map((season) => (
+                    <div key={season.season}>
+                      <h3 className="text-base font-semibold text-ink">{season.season}</h3>
+                      <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                        {season.points.map((point) => (
+                          <CheckItem key={point}>{point}</CheckItem>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
             {d?.whyChooseUs && (
               <>
                 <div className="mt-14">
@@ -361,23 +387,8 @@ export default async function TrekDetailPage({ params }) {
                 <div id="dates" className="mt-14 scroll-mt-[170px]">
                   <SectionHeading>Fixed Departure Dates</SectionHeading>
                 </div>
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {d.fixedDepartures.map((dep) => (
-                    <div key={dep.departure} className="overflow-hidden rounded-xl ring-1 ring-black/5 shadow-sm">
-                      <div className="grid grid-cols-2 bg-ink/[0.03]">
-                        <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                          Departure
-                        </div>
-                        <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                          Return
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.departure}</div>
-                        <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.return}</div>
-                      </div>
-                    </div>
-                  ))}
+                <div className="mt-8">
+                  <FixedDepartures dates={d.fixedDepartures} />
                 </div>
               </>
             )}
@@ -414,11 +425,18 @@ export default async function TrekDetailPage({ params }) {
   );
 }
 
-function Stat({ label, value }) {
+function Stat({ icon, label, value }) {
   return (
-    <div className="px-5 py-4">
-      <div className="text-[11px] uppercase tracking-wide text-ink">{label}</div>
-      <div className="mt-1 text-sm font-semibold text-ink">{value}</div>
+    <div className="flex items-start gap-3 px-5 py-4">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue/10 text-blue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          {icon}
+        </svg>
+      </span>
+      <div>
+        <div className="text-[11px] uppercase tracking-wide text-ink">{label}</div>
+        <div className="mt-1 text-sm font-semibold text-ink">{value}</div>
+      </div>
     </div>
   );
 }

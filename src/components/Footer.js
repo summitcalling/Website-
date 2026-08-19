@@ -75,6 +75,21 @@ export default function Footer() {
               </a>
             </li>
             <li className="text-white/60">{site.address}</li>
+            <li className="pt-2">
+              <div className="text-sm font-semibold text-white">Bangalore Office</div>
+              <div className="mt-1 text-white/60">
+                Flat No: GF6, Malibu Homes-1, Green Garden Layout, Kundalahalli Gate,
+                Bangalore-560037
+              </div>
+              <div className="mt-2 flex flex-col gap-1">
+                <a href="tel:+919643032601" className="hover:text-blue transition-colors">
+                  +91 96430 32601
+                </a>
+                <a href="tel:+918951349974" className="hover:text-blue transition-colors">
+                  +91 89513 49974
+                </a>
+              </div>
+            </li>
           </ul>
         </div>
 
@@ -118,6 +133,9 @@ export default function Footer() {
             </Link>
             <Link href="/cancellation-policy" className="hover:text-blue transition-colors">
               Cancellation &amp; Refund Policy
+            </Link>
+            <Link href="/privacy-policy" className="hover:text-blue transition-colors">
+              Privacy Policy
             </Link>
           </div>
         </div>
