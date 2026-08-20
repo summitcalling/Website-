@@ -52,9 +52,11 @@ function TestimonialCard({ t }) {
 }
 
 export default function Testimonials() {
-  const row1 = [...testimonials, ...testimonials];
-  const row2 = [...testimonials].reverse();
-  const row2Loop = [...row2, ...row2];
+  const half = Math.ceil(testimonials.length / 2);
+  const row1Set = testimonials.slice(0, half);
+  const row2Set = testimonials.slice(half).reverse();
+  const row1 = [...row1Set, ...row1Set];
+  const row2Loop = [...row2Set, ...row2Set];
 
   return (
     <section className="relative overflow-hidden bg-white border-t border-ink/5">

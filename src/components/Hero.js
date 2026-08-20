@@ -1,23 +1,27 @@
+import Image from "next/image";
 import { CONTAINER } from "@/lib/layout";
 import HeroVideo from "@/components/HeroVideo";
 import RotatingWord from "@/components/RotatingWord";
 
 const stats = [
   {
-    value: "19 Years+",
-    label: "Experience",
+    value: "24/7",
+    label: "WhatsApp Support",
     icon: (
       <>
-        <circle cx="12" cy="8" r="3.3" />
-        <path d="M5 20c1.2-3.7 3.9-5.6 7-5.6s5.8 1.9 7 5.6" />
+        <path d="M4 5h16v10H9l-5 4V5z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 9h8M8 12h5" strokeLinecap="round" />
       </>
     ),
   },
   {
-    value: "3400+",
-    label: "TripAdvisor Reviews",
+    value: "Licensed",
+    label: "Local Guides",
     icon: (
-      <path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z" />
+      <>
+        <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </>
     ),
   },
   {
@@ -44,11 +48,19 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[90vh] min-h-[600px] flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-[93vh] min-h-[600px] flex-col overflow-hidden bg-ink">
+      <Image
+        src="/kala-patthar-hero.jpg"
+        alt="Sunrise view of Mount Everest from Kala Patthar"
+        fill
+        priority
+        className="absolute inset-0 object-cover sm:hidden"
+        sizes="100vw"
+      />
       <HeroVideo
-        poster="https://assets.mixkit.co/videos/4283/4283-thumb-720-0.jpg"
-        src="https://assets.mixkit.co/videos/4283/4283-1080.mp4"
-        className="absolute inset-0 h-full w-full object-cover"
+        poster="https://assets.mixkit.co/videos/45414/45414-thumb-720-1.jpg"
+        src="https://assets.mixkit.co/videos/45414/45414-720.mp4"
+        className="absolute inset-0 hidden h-full w-full object-cover sm:block"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
 
@@ -88,7 +100,7 @@ export default function Hero() {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex items-center justify-center gap-3 sm:justify-start ${i === 2 ? "sm:ml-8" : ""} ${i === 3 ? "sm:ml-6" : ""}`}
+              className="flex items-center justify-center gap-3 sm:justify-start"
             >
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-white">
                 {stat.icon}

@@ -1516,6 +1516,37 @@ export const treks = [
         description:
           "The Everest Base Camp via Gokyo Ri Trek is considered a moderate to difficult trek. It involves walking 5–8 hours a day over varied terrain, crossing the high-altitude Cho La Pass (5,420 m), and trekking above 5,000 metres for several days. With proper preparation, a good fitness level, and gradual acclimatization, most trekkers can successfully complete the trek.",
       },
+      altitude: {
+        highestPoint: "Cho La Pass — 5,420 m (17,782 ft)",
+        description:
+          "Gokyo Ri (5,357 m / 17,575 ft), Everest Base Camp (5,364 m / 17,598 ft), and Cho La Pass (5,420 m / 17,782 ft) — as this trek reaches elevations above 5,000 metres, proper acclimatization is essential. The Everest Base Camp with Gokyo Ri route involves significant altitude gain, making a gradual ascent and adequate rest crucial for a safe and enjoyable trek. Our itinerary includes dedicated acclimatization days at key points along the route, allowing your body to adjust naturally before continuing towards Gokyo Ri, Cho La Pass, and Everest Base Camp. Our experienced guides monitor every trekker throughout the journey and prioritize safety and proper acclimatization at all times.",
+        tips: [
+          "Walk at a comfortable and steady pace",
+          "Stay well hydrated throughout the trek",
+          "Eat nutritious, energy-rich meals",
+          "Avoid alcohol and smoking during the trek",
+          "Follow the recommended acclimatization schedule",
+          "Inform your guide immediately if you experience headaches, nausea, dizziness, shortness of breath, or unusual fatigue",
+        ],
+      },
+      bestTime: [
+        {
+          season: "Spring (March–May)",
+          points: ["Clear mountain views and excellent visibility", "Pleasant daytime temperatures", "Rhododendron forests in bloom at lower elevations", "Vibrant trekking atmosphere", "Ideal conditions for trekking, photography, and mountain views"],
+        },
+        {
+          season: "Autumn (September–November)",
+          points: ["Stable and generally dry weather", "Crystal-clear Himalayan views", "Comfortable daytime temperatures", "Excellent trail conditions", "One of the most popular seasons for the Everest and Gokyo region"],
+        },
+        {
+          season: "Winter (December–February)",
+          points: ["Snow-covered Himalayan landscapes", "Very clear skies and spectacular mountain views", "Fewer trekkers on the trail", "Extremely cold temperatures, especially at higher elevations", "Heavy snowfall may occasionally make Cho La Pass difficult or affect access to higher sections", "Suitable for experienced trekkers with proper winter equipment"],
+        },
+        {
+          season: "Monsoon (June–August)",
+          points: ["Lush green valleys and vibrant landscapes", "Fewer trekkers on the trail", "Frequent rainfall and slippery trails at lower elevations", "Cloud cover may limit mountain views", "Flight delays or cancellations to Lukla are more likely", "Cho La Pass conditions may become difficult", "Best suited for experienced trekkers comfortable with wet conditions"],
+        },
+      ],
       whyChooseUs: [
         { title: "Local Expertise", description: "Our experienced local guides know the Everest region inside out, ensuring a safe, informative, and enjoyable journey." },
         { title: "Flexible Packages", description: "Choose between the Standard and Full Board packages to suit your travel style and budget." },
@@ -1862,6 +1893,37 @@ export const treks = [
         description:
           "The Everest Base Camp Trek is considered a moderate to challenging trek. It involves walking for 5–8 hours a day over varied terrain at high altitude. With proper preparation, a good fitness level, and gradual acclimatization, most trekkers can successfully complete the trek.",
       },
+      altitude: {
+        highestPoint: "Everest Base Camp — 5,364 m (17,598 ft)",
+        description:
+          "Reaching an elevation of over 5,000 metres, the Everest Base Camp trek requires proper acclimatization and a gradual ascent. Our itinerary includes dedicated acclimatization days at key points along the route, allowing your body to adjust naturally to the increasing altitude before continuing towards Everest Base Camp. Our experienced guides monitor every trekker throughout the journey and prioritize safety and proper acclimatization at all times.",
+        tips: [
+          "Walk at a comfortable and steady pace",
+          "Stay well hydrated throughout the trek",
+          "Eat nutritious, energy-rich meals",
+          "Avoid alcohol and smoking during the trek",
+          "Follow the recommended acclimatization schedule",
+          "Inform your guide immediately if you experience headaches, nausea, dizziness, shortness of breath, or unusual fatigue",
+        ],
+      },
+      bestTime: [
+        {
+          season: "Spring (March–May)",
+          points: ["Clear mountain views and excellent visibility", "Pleasant daytime temperatures", "Rhododendron forests in bloom at lower elevations", "Vibrant trekking atmosphere", "Ideal conditions for trekking and photography"],
+        },
+        {
+          season: "Autumn (September–November)",
+          points: ["Stable and generally dry weather", "Crystal-clear Himalayan views", "Comfortable daytime temperatures", "Excellent trail conditions", "One of the most popular seasons for Everest Base Camp"],
+        },
+        {
+          season: "Winter (December–February)",
+          points: ["Snow-covered Himalayan landscapes", "Very clear skies and spectacular views", "Fewer trekkers on the trail", "Extremely cold temperatures, especially at higher elevations", "Heavy snowfall may occasionally affect higher sections of the route", "Suitable for experienced trekkers with proper winter equipment"],
+        },
+        {
+          season: "Monsoon (June–August)",
+          points: ["Lush green valleys and vibrant landscapes", "Fewer trekkers on the trail", "Frequent rainfall and slippery trails", "Cloud cover may limit mountain views", "Flight delays or cancellations to Lukla are more likely", "Best suited for experienced trekkers comfortable with wet conditions"],
+        },
+      ],
       whyChooseUs: [
         { title: "Local Expertise", description: "Our experienced local guides know the Everest region inside out, ensuring a safe, informative, and enjoyable journey." },
         { title: "Flexible Packages", description: "Choose between the Standard and Full Board packages to suit your travel style and budget." },
