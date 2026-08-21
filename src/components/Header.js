@@ -30,6 +30,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -38,6 +39,15 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!searchOpen) return;
@@ -65,7 +75,7 @@ export default function Header() {
                 width={496}
                 height={276}
                 priority
-                className="h-16 w-auto object-contain"
+                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}
               />
             </Link>
             <div className="flex items-center gap-2">
@@ -129,13 +139,24 @@ export default function Header() {
             </div>
           )}
 
-          <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
-            <div className="flex items-center gap-3">
+          <div className="hidden md:flex md:items-center md:justify-between">
+            <Link href="/" className="flex shrink-0 items-center" onClick={closeMenu}>
+              <Image
+                src={site.logo}
+                alt={site.name}
+                width={496}
+                height={276}
+                priority
+                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-14" : "h-20"}`}
+              />
+            </Link>
+
+            <div className="flex items-center gap-7">
               <form
                 action="/treks"
-                className="group flex w-full max-w-[240px] items-center gap-2.5 border-b border-ink/15 py-2 transition-colors focus-within:border-blue lg:max-w-[280px]"
+                className="group flex w-full max-w-[200px] items-center gap-2 rounded-full bg-ink/5 py-2 pl-4 pr-1.5 transition-colors focus-within:bg-ink/[0.07] lg:max-w-[220px]"
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-ink/35 transition-colors group-focus-within:text-blue">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-ink/40 transition-colors group-focus-within:text-blue">
                   <circle cx="11" cy="11" r="7" />
                   <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
                 </svg>
@@ -143,78 +164,69 @@ export default function Header() {
                   type="text"
                   name="q"
                   placeholder="Search treks"
-                  className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/40 outline-none"
+                  className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/50 outline-none"
                 />
+                <button
+                  type="submit"
+                  aria-label="Search treks"
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue text-white transition-colors hover:bg-blue-dark"
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
               </form>
 
-              <Link
-                href="/contact"
-                className="flex shrink-0 items-center gap-2 bg-blue px-5 py-[11px] text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
-              >
-                Contact
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-
-            <Link href="/" className="flex shrink-0 items-center justify-center" onClick={closeMenu}>
-              <Image
-                src={site.logo}
-                alt={site.name}
-                width={496}
-                height={276}
-                priority
-                className="h-14 w-auto object-contain"
-              />
-            </Link>
-
-            <nav className="flex items-center justify-end gap-7">
-              {navLinks.map((link) => {
-                const dropdown = DROPDOWN_MENUS[link.href];
-                if (!dropdown) {
+              <nav className="flex items-center gap-7">
+                {navLinks.map((link) => {
+                  const dropdown = DROPDOWN_MENUS[link.href];
+                  if (!dropdown) {
+                    return (
+                      <Link key={link.href} href={link.href} className={navLinkClass(pathname === link.href)}>
+                        {link.label}
+                      </Link>
+                    );
+                  }
                   return (
-                    <Link key={link.href} href={link.href} className={navLinkClass(pathname === link.href)}>
-                      {link.label}
-                    </Link>
-                  );
-                }
-                return (
-                  <div key={link.href} className="group relative">
-                    <Link
-                      href={link.href}
-                      className={`flex items-center gap-1 ${navLinkClass(pathname.startsWith(link.href))}`}
-                    >
-                      {link.label}
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:rotate-180">
-                        <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </Link>
-                    <div className="invisible absolute right-0 top-full w-72 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                      <div className="overflow-hidden bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/10">
-                        <div className="max-h-80 overflow-y-auto py-2">
-                          {dropdown.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="block px-4 py-2.5 text-sm font-medium text-ink hover:bg-ink/5 hover:text-blue"
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
+                    <div key={link.href} className="group relative">
+                      <Link
+                        href={link.href}
+                        className={`flex items-center gap-1 ${navLinkClass(pathname.startsWith(link.href))}`}
+                      >
+                        {link.label}
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:rotate-180">
+                          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                      <div className="invisible absolute right-0 top-full w-72 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                        <div className="overflow-hidden bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/10">
+                          <div className="max-h-80 overflow-y-auto py-2">
+                            {dropdown.items.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className="block px-4 py-2.5 text-sm font-medium text-ink hover:bg-ink/5 hover:text-blue"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                          <Link
+                            href={link.href}
+                            className="block border-t border-ink/10 px-4 py-3 text-sm font-semibold text-blue hover:bg-blue/5"
+                          >
+                            {dropdown.viewAllLabel}
+                          </Link>
                         </div>
-                        <Link
-                          href={link.href}
-                          className="block border-t border-ink/10 px-4 py-3 text-sm font-semibold text-blue hover:bg-blue/5"
-                        >
-                          {dropdown.viewAllLabel}
-                        </Link>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </nav>
+                  );
+                })}
+                <Link href="/contact" className={navLinkClass(pathname === "/contact")}>
+                  Contact Us
+                </Link>
+              </nav>
+            </div>
           </div>
         </div>
       </header>

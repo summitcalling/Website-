@@ -20,7 +20,7 @@ export const site = {
 
 export const navLinks = [
   { href: "/treks", label: "Treks" },
-  { href: "/experiences", label: "Helicopter Tours" },
+  { href: "/experiences", label: "Himalayan Tours" },
   { href: "/about", label: "About Us" },
 ];
 
