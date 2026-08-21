@@ -47,7 +47,7 @@ export default function ContactForm() {
       className="rounded-2xl bg-white p-6 sm:p-8 ring-1 ring-ink/5 space-y-5"
     >
       <label className="block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-ink/50">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink">
           Your Name
         </span>
         <input
@@ -61,7 +61,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-ink/50">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink">
           Trek You&apos;re Interested In
         </span>
         <input
@@ -74,7 +74,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-ink/50">
+        <span className="text-xs font-semibold uppercase tracking-wide text-ink">
           Message
         </span>
         <textarea

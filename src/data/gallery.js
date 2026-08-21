@@ -1,32 +1,32 @@
 export const gallery = [
   {
-    region: "Everest Region",
+    region: "Everest",
     image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1800&q=80",
   },
   {
-    region: "Annapurna Region",
+    region: "K2",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1732287932412-6bd1916b19cd?auto=format&fit=crop&w=1800&q=80",
   },
   {
-    region: "Langtang Region",
+    region: "Annapurna",
     image:
-      "https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1578589591337-864142c03335?auto=format&fit=crop&w=1800&q=80",
   },
   {
-    region: "Mustang Region",
+    region: "Cho Oyu",
     image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1745677617575-62b14956f2d1?auto=format&fit=crop&w=1800&q=80",
   },
   {
-    region: "Gokyo Valley",
+    region: "Shishapangma",
     image:
-      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1571119247874-ca1527785a0c?auto=format&fit=crop&w=1800&q=80",
   },
   {
-    region: "On the Trail",
+    region: "Lhotse",
     image:
-      "https://images.unsplash.com/photo-1571687949921-1306bfb24b72?auto=format&fit=crop&w=900&q=70",
+      "https://images.unsplash.com/photo-1682530633989-8ffe02334466?auto=format&fit=crop&w=1800&q=80",
   },
 ];

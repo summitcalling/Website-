@@ -4,17 +4,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navLinks, site, telLink, whatsappLink } from "@/data/site";
+import { navLinks, site } from "@/data/site";
+import { treks } from "@/data/treks";
+import { experiences } from "@/data/experiences";
 
 const HEADER_CONTAINER = "w-full px-5 sm:px-8 lg:px-12";
 
 const navLinkClass = (active) =>
-  `rounded-full px-4 py-1.5 text-sm font-semibold uppercase tracking-wide transition-colors ${
-    active ? "bg-blue/10 text-blue" : "text-ink hover:bg-ink/5 hover:text-blue"
+  `group relative py-2 text-[15px] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-blue after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+    active ? "text-blue after:scale-x-100" : "text-ink hover:text-blue"
   }`;
+
+const DROPDOWN_MENUS = {
+  "/treks": {
+    viewAllLabel: "View All Treks",
+    items: treks.map((t) => ({ href: `/treks/${t.slug}`, label: t.name })),
+  },
+  "/experiences": {
+    viewAllLabel: "View All Helicopter Tours",
+    items: experiences.map((e) => ({ href: `/experiences/${e.slug}`, label: e.name })),
+  },
+};
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -24,12 +39,26 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!searchOpen) return;
+    function handleKey(e) {
+      if (e.key === "Escape") setSearchOpen(false);
+    }
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [searchOpen]);
+
+  function closeMenu() {
+    setMenuOpen(false);
+    setOpenSubmenu(null);
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-ink/5 bg-white/80 backdrop-blur-md">
         <div className={`${HEADER_CONTAINER} py-1.5 md:py-1.5`}>
           <div className="flex items-center justify-between md:hidden">
-            <Link href="/" className="flex shrink-0 items-center" onClick={() => setMenuOpen(false)}>
+            <Link href="/" className="flex shrink-0 items-center" onClick={closeMenu}>
               <Image
                 src={site.logo}
                 alt={site.name}
@@ -39,26 +68,97 @@ export default function Header() {
                 className="h-16 w-auto object-contain"
               />
             </Link>
-            <button
-              type="button"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMenuOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-ink/5 text-ink transition-colors"
-            >
-              {menuOpen ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Search treks"
+                onClick={() => {
+                  setSearchOpen((v) => !v);
+                  setMenuOpen(false);
+                }}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-ink/5 text-ink transition-colors"
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
                 </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-                </svg>
-              )}
-            </button>
+              </button>
+              <button
+                type="button"
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                onClick={() => {
+                  setMenuOpen((v) => !v);
+                  setSearchOpen(false);
+                }}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-ink/5 text-ink transition-colors"
+              >
+                {menuOpen ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
 
-          <div className="hidden md:flex md:items-center md:justify-between">
-            <Link href="/" className="flex shrink-0 items-center" onClick={() => setMenuOpen(false)}>
+          {searchOpen && (
+            <div className="border-t border-ink/10 pb-3 pt-3 md:hidden">
+              <form action="/treks" className="flex items-center gap-2">
+                <input
+                  type="text"
+                  name="q"
+                  autoFocus
+                  placeholder="Search treks — e.g. Everest, Annapurna"
+                  className="min-w-0 flex-1 bg-cream px-3 py-2.5 text-sm text-ink placeholder:text-ink outline-none"
+                />
+                <button
+                  type="submit"
+                  aria-label="Search"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center bg-blue text-white transition-colors hover:bg-blue-dark"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          )}
+
+          <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
+            <div className="flex items-center gap-3">
+              <form
+                action="/treks"
+                className="group flex w-full max-w-[240px] items-center gap-2.5 border-b border-ink/15 py-2 transition-colors focus-within:border-blue lg:max-w-[280px]"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-ink/35 transition-colors group-focus-within:text-blue">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search treks"
+                  className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/40 outline-none"
+                />
+              </form>
+
+              <Link
+                href="/contact"
+                className="flex shrink-0 items-center gap-2 bg-blue px-5 py-[11px] text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+              >
+                Contact
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+
+            <Link href="/" className="flex shrink-0 items-center justify-center" onClick={closeMenu}>
               <Image
                 src={site.logo}
                 alt={site.name}
@@ -69,34 +169,52 @@ export default function Header() {
               />
             </Link>
 
-            <div className="flex items-center gap-4">
-              <nav className="flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className={navLinkClass(pathname === link.href)}>
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-              <span className="h-6 w-px bg-ink/15" />
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noreferrer"
-                className="flex flex-col items-start gap-1 rounded-full bg-ink px-5 py-2.5 transition-colors hover:bg-ink-light"
-              >
-                <span className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" className="shrink-0 text-whatsapp">
-                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.006-3.492c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.593-6.593 6.593zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.588-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.337-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                  </svg>
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-white/60">
-                    Contact us
-                  </span>
-                </span>
-                <span className="text-sm font-semibold leading-none text-white">
-                  {site.phoneDisplay}
-                </span>
-              </a>
-            </div>
+            <nav className="flex items-center justify-end gap-7">
+              {navLinks.map((link) => {
+                const dropdown = DROPDOWN_MENUS[link.href];
+                if (!dropdown) {
+                  return (
+                    <Link key={link.href} href={link.href} className={navLinkClass(pathname === link.href)}>
+                      {link.label}
+                    </Link>
+                  );
+                }
+                return (
+                  <div key={link.href} className="group relative">
+                    <Link
+                      href={link.href}
+                      className={`flex items-center gap-1 ${navLinkClass(pathname.startsWith(link.href))}`}
+                    >
+                      {link.label}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:rotate-180">
+                        <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                    <div className="invisible absolute right-0 top-full w-72 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                      <div className="overflow-hidden bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/10">
+                        <div className="max-h-80 overflow-y-auto py-2">
+                          {dropdown.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="block px-4 py-2.5 text-sm font-medium text-ink hover:bg-ink/5 hover:text-blue"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                        <Link
+                          href={link.href}
+                          className="block border-t border-ink/10 px-4 py-3 text-sm font-semibold text-blue hover:bg-blue/5"
+                        >
+                          {dropdown.viewAllLabel}
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </nav>
           </div>
         </div>
       </header>
@@ -106,40 +224,76 @@ export default function Header() {
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex h-full flex-col justify-center px-8">
+        <div className="flex h-full flex-col justify-center overflow-y-auto px-8 py-24">
           <nav className="flex flex-col gap-2">
-            {[...navLinks, { href: "/contact", label: "Contact" }].map((link, i) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transitionDelay: menuOpen ? `${i * 40}ms` : "0ms",
-                }}
-                className={`font-serif text-4xl font-semibold text-ink transition-all duration-300 hover:text-blue ${
-                  menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {[...navLinks, { href: "/contact", label: "Contact" }].map((link, i) => {
+              const dropdown = DROPDOWN_MENUS[link.href];
+              const subOpen = openSubmenu === link.href;
+
+              if (!dropdown) {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMenu}
+                    style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
+                    className={`font-serif text-3xl font-semibold text-ink transition-all duration-300 hover:text-blue ${
+                      menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={link.href}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenSubmenu(subOpen ? null : link.href)}
+                    style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
+                    className={`flex w-full items-center justify-between font-serif text-3xl font-semibold text-ink transition-all duration-300 hover:text-blue ${
+                      menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                    }`}
+                  >
+                    {link.label}
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className={`shrink-0 transition-transform ${subOpen ? "rotate-180" : ""}`}
+                    >
+                      <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {subOpen && (
+                    <div className="mt-1 mb-2 flex max-h-56 flex-col gap-1 overflow-y-auto">
+                      {dropdown.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="py-1.5 text-base font-medium text-ink hover:text-blue"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                      <Link
+                        href={link.href}
+                        onClick={closeMenu}
+                        className="py-1.5 text-base font-semibold text-blue"
+                      >
+                        {dropdown.viewAllLabel}
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
-          <div className="mt-10 flex flex-col gap-2">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 text-base font-semibold text-ink transition-colors hover:text-blue"
-            >
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" className="text-whatsapp">
-                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.006-3.492c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.593-6.593 6.593zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.588-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.337-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-              </svg>
-              {site.phoneDisplay}
-            </a>
-            <a href={telLink()} className="text-sm font-medium text-ink/60">
-              Or call us directly
-            </a>
-          </div>
         </div>
       </div>
     </>

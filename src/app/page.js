@@ -6,7 +6,6 @@ import TourCategories from "@/components/TourCategories";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
@@ -15,11 +14,10 @@ export default function Home() {
       <FeaturedTreks />
       <PromoBanner />
       <TourCategories />
+      <Gallery />
       <WhyChooseUs />
       <Testimonials />
-      <Gallery />
       <FAQSection />
-      <CTASection />
     </>
   );
 }

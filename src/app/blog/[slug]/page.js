@@ -37,13 +37,13 @@ export default async function BlogPostPage({ params }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/20" />
         <div className={`relative w-full pb-14 pt-14 ${CONTAINER}`}>
-          <Link href="/blog" className="text-sm text-white/70 hover:text-white">
+          <Link href="/blog" className="text-sm text-white hover:text-white">
             ← All Articles
           </Link>
           <h1 className="mt-4 font-serif text-2xl sm:text-3xl font-semibold text-white">
             {post.title}
           </h1>
-          <div className="mt-3 text-sm text-white/60">
+          <div className="mt-3 text-sm text-white">
             {new Date(post.date).toLocaleDateString("en-IN", {
               day: "numeric",
               month: "long",
@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }) {
         <div className={`${CONTAINER} py-14`}>
           <article className="mx-auto max-w-3xl space-y-6">
             {post.content.map((paragraph, i) => (
-              <p key={i} className="text-ink/75 leading-relaxed">
+              <p key={i} className="text-ink leading-relaxed">
                 {paragraph}
               </p>
             ))}

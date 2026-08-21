@@ -36,7 +36,7 @@ export default function ExperiencesPage() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ink/40 to-transparent" />
-                  <span className="absolute left-4 top-4 font-serif text-sm font-semibold text-white/80">
+                  <span className="absolute left-4 top-4 font-serif text-sm font-semibold text-white">
                     0{i + 1}
                   </span>
                 </div>
@@ -50,7 +50,7 @@ export default function ExperiencesPage() {
                   </h3>
                   <p className="mt-1 text-sm leading-snug text-ink">{exp.duration}</p>
 
-                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-ink/10 pt-3">
+                  <div className="mt-auto flex items-center justify-between gap-3 pt-3">
                     <span className="text-sm font-semibold text-ink">
                       From USD {exp.priceUSD.toLocaleString("en-US")}
                     </span>

@@ -4,29 +4,33 @@ import { CONTAINER } from "@/lib/layout";
 
 export default function PromoBanner() {
   return (
-    <section className="relative overflow-hidden bg-ink">
-      <Image
-        src="https://images.unsplash.com/photo-1571687949921-1306bfb24b72?auto=format&fit=crop&w=1600&q=70"
-        alt="Trekking camp under the Himalayan sky"
-        fill
-        className="object-cover opacity-45"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/30" />
+    <section className="relative overflow-hidden bg-white pb-20">
+      <div className="relative h-[420px] sm:h-[560px]">
+        <Image
+          src="/misty-peak-banner-2.png"
+          alt="A mountain peak veiled in mist"
+          fill
+          className="object-cover object-top grayscale"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white" />
+      </div>
 
-      <div className={`relative ${CONTAINER} flex flex-col items-center gap-8 py-20 text-center md:flex-row md:justify-between md:text-left`}>
-        <div>
-          <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-blue">
-            <span className="h-px w-8 bg-blue" />
-            Early Bird Offer
-          </span>
-          <h2 className="mt-4 font-serif text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-wide text-white">
-            Book 60 days ahead and save 10% on any 2026 departure.
-          </h2>
-        </div>
+      <div className={`relative -mt-16 flex flex-col items-center gap-5 text-center sm:-mt-24 ${CONTAINER}`}>
+        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue">
+          Early Bird Offer
+        </span>
+        <h2 className="font-serif text-3xl sm:text-4xl text-ink">
+          Book 60 Days Ahead and Save 10%
+        </h2>
+        <p className="max-w-xl text-base leading-relaxed text-ink">
+          Lock in your 2026 Himalayan departure two months early and save 10% on any fixed-date trek.
+        </p>
+        <span className="h-px w-12 bg-blue" />
         <Link
           href="/fixed-departures"
-          className="inline-flex shrink-0 items-center gap-2 rounded-full bg-blue px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+          className="mt-2 inline-flex items-center gap-2 bg-blue px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
         >
           View Fixed Departures
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

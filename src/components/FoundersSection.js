@@ -6,7 +6,7 @@ import { CONTAINER } from "@/lib/layout";
 function SectionHeading({ children }) {
   return (
     <div className="text-center">
-      <h2 className="font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
+      <h2 className="font-serif text-3xl sm:text-4xl text-ink">
         {children}
       </h2>
       <span className="mx-auto mt-3 block h-1 w-14 rounded-full bg-blue" />

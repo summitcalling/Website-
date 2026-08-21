@@ -78,7 +78,7 @@ export default function ContactPage() {
                     {item.icon}
                   </span>
                   <div>
-                    <div className="text-xs uppercase tracking-wide text-ink/45">
+                    <div className="text-xs uppercase tracking-wide text-ink">
                       {item.label}
                     </div>
                     <div className="mt-1 text-sm font-medium text-ink">

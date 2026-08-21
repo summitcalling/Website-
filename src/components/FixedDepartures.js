@@ -38,47 +38,57 @@ export default function FixedDepartures({ dates }) {
     return list;
   }, [dates]);
 
-  const [selected, setSelected] = useState(months[0]?.key);
-
-  const filtered = dates.filter((d) => parseMonth(d.departure).key === selected);
+  const [openMonth, setOpenMonth] = useState(months[0]?.key ?? null);
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-2">
-        {months.map((m) => (
-          <button
-            key={m.key}
-            type="button"
-            onClick={() => setSelected(m.key)}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-              selected === m.key
-                ? "bg-ink text-white"
-                : "bg-ink/5 text-ink hover:bg-ink/10"
-            }`}
-          >
-            {m.label}
-          </button>
-        ))}
-      </div>
+    <div className="space-y-3">
+      {months.map((m) => {
+        const open = openMonth === m.key;
+        const monthDates = dates.filter((d) => parseMonth(d.departure).key === m.key);
 
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {filtered.map((dep) => (
-          <div key={dep.departure} className="overflow-hidden rounded-xl ring-1 ring-black/5 shadow-sm">
-            <div className="grid grid-cols-2 bg-ink/[0.03]">
-              <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                Departure
+        return (
+          <div key={m.key} className="overflow-hidden rounded-xl ring-1 ring-black/5 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setOpenMonth(open ? null : m.key)}
+              className="flex w-full items-center gap-3 px-5 py-4 text-left"
+            >
+              <span
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${
+                  open ? "bg-blue text-white" : "bg-blue/10 text-blue"
+                }`}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14" strokeLinecap="round" />
+                  {!open && <path d="M12 5v14" strokeLinecap="round" />}
+                </svg>
+              </span>
+              <span className="font-serif text-base font-semibold text-ink">{m.label}</span>
+            </button>
+
+            {open && (
+              <div className="grid grid-cols-1 gap-3 px-5 pb-5 sm:grid-cols-2">
+                {monthDates.map((dep) => (
+                  <div key={dep.departure} className="overflow-hidden rounded-xl ring-1 ring-black/5">
+                    <div className="grid grid-cols-2 bg-ink/[0.03]">
+                      <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
+                        Departure
+                      </div>
+                      <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
+                        Return
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2">
+                      <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.departure}</div>
+                      <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.return}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                Return
-              </div>
-            </div>
-            <div className="grid grid-cols-2">
-              <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.departure}</div>
-              <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.return}</div>
-            </div>
+            )}
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 }

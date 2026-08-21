@@ -16,7 +16,7 @@ export default function Accordion({ items }) {
               onClick={() => setOpenIndex(open ? null : i)}
               className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6"
             >
-              <span className="text-[17px] leading-relaxed text-ink">{item.title}</span>
+              <span className="text-[17px] font-semibold leading-relaxed text-ink">{item.title}</span>
               <svg
                 width="18"
                 height="18"

@@ -1,84 +1,111 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
-import { CONTAINER } from "@/lib/layout";
 
 const features = [
   {
     title: "Local Trekking Experts",
     description:
       "Every guide is born and raised in the region you're trekking — real knowledge, not a script.",
+    image: "/treks/annapurna-2.jpg",
   },
   {
     title: "Fixed Small-Group Departures",
     description:
       "Guaranteed dates, capped group sizes, no waiting for a minimum headcount to form.",
+    image: "/treks/manaslu-2.jpg",
   },
   {
     title: "Safety-First Itineraries",
     description:
       "Acclimatization days built into every route, with trained guides carrying oximeters and first-aid kits.",
+    image: "/treks/ebc-gokyo-1.jpg",
   },
   {
     title: "24/7 WhatsApp Support",
     description:
       "Real humans on the other end, before, during, and after your trek — not a chatbot.",
+    image: "/treks/abc-2.jpg",
+  },
+  {
+    title: "Responsible Tourism",
+    description:
+      "We work closely with local communities and support local businesses along every route we run.",
+    image: "/treks/langtang-2.jpg",
   },
 ];
 
 export default function WhyChooseUs() {
-  return (
-    <section className="bg-cream border-y border-ink/5">
-      <div className={`${CONTAINER} py-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16`}>
-        <div>
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-            <span className="h-px w-6 bg-blue" />
-            Why Choose Us
-          </span>
-          <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
-            Your Trusted Trekking Partner in Nepal
-          </h2>
-          <p className="mt-4 text-ink">
-            Everything we do is built around your safety, comfort, and a
-            deeper connection to the Himalayas.
-          </p>
+  const scrollRef = useRef(null);
 
-          <div className="mt-10 space-y-0">
-            {features.map((feature, i) => (
-              <div key={feature.title} className="flex items-baseline gap-5 border-t border-ink/10 py-6 first:border-t-0 first:pt-0">
-                <span className="font-serif text-2xl font-semibold text-blue/30">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="font-serif text-lg font-semibold text-ink">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink">
-                    {feature.description}
-                  </p>
-                </div>
+  function scroll(direction) {
+    scrollRef.current?.scrollBy({ left: direction * 400, behavior: "smooth" });
+  }
+
+  return (
+    <section className="mt-16 overflow-hidden bg-white sm:mt-20">
+      <div className="py-24 pl-5 sm:pl-8 sm:py-28 lg:pl-24">
+        <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+          Why Choose Us
+        </span>
+        <h2 className="mt-3 font-serif text-3xl sm:text-4xl text-ink">
+          Your Trusted Trekking Partner
+        </h2>
+
+        <div
+          ref={scrollRef}
+          className="mt-10 flex snap-x gap-5 overflow-x-auto scroll-smooth pb-2 pr-5 sm:pr-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {features.map((feature, i) => (
+            <div
+              key={feature.title}
+              className="relative aspect-[3/4] w-[320px] shrink-0 snap-start overflow-hidden sm:w-[380px]"
+            >
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                fill
+                className="object-cover"
+                sizes="320px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
+              <span className="absolute right-5 top-5 font-serif text-sm font-semibold text-white">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <h3 className="font-serif text-lg font-semibold text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-white">
+                  {feature.description}
+                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        <div className="grid w-full grid-cols-2 gap-5">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-            <Image
-              src="/treks/annapurna-2.jpg"
-              alt="A trekker on the trail in the Annapurna region"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 360px, 45vw"
-            />
-          </div>
-          <div className="relative mt-10 aspect-[3/4] overflow-hidden rounded-2xl">
-            <Image
-              src="/treks/abc-2.jpg"
-              alt="Namaste sign at Annapurna Base Camp"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 360px, 45vw"
-            />
-          </div>
+        <div className="mt-6 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => scroll(-1)}
+            aria-label="Scroll left"
+            className="flex h-11 w-11 items-center justify-center rounded-full ring-1 ring-ink/15 text-ink transition-colors hover:bg-ink/5"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => scroll(1)}
+            aria-label="Scroll right"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-blue text-white transition-colors hover:bg-blue-dark"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

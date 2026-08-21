@@ -8,10 +8,7 @@ const stats = [
     value: "24/7",
     label: "WhatsApp Support",
     icon: (
-      <>
-        <path d="M4 5h16v10H9l-5 4V5z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 9h8M8 12h5" strokeLinecap="round" />
-      </>
+      <path d="M5 5.25h14a1.75 1.75 0 0 1 1.75 1.75v8.5A1.75 1.75 0 0 1 19 17.25h-8.94l-4.31 3.68v-3.68H5A1.75 1.75 0 0 1 3.25 15.5V7A1.75 1.75 0 0 1 5 5.25Z" strokeLinecap="round" strokeLinejoin="round" />
     ),
   },
   {
@@ -19,8 +16,8 @@ const stats = [
     label: "Local Guides",
     icon: (
       <>
-        <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 12.75 11.25 15 15 9.75" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" strokeLinecap="round" strokeLinejoin="round" />
       </>
     ),
   },
@@ -29,8 +26,8 @@ const stats = [
     label: "Guaranteed",
     icon: (
       <>
+        <path d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33" strokeLinecap="round" strokeLinejoin="round" />
         <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v10M9.5 9.5c0-1.4 1.1-2 2.5-2s2.5.7 2.5 2-1 1.7-2.5 2-2.5.7-2.5 2 1.1 2 2.5 2 2.5-.6 2.5-2" />
       </>
     ),
   },
@@ -39,8 +36,7 @@ const stats = [
     label: "Sustainability",
     icon: (
       <>
-        <path d="M5 20c8 0 13-5 13-13 0-1 0-2-.2-3-6 0-11 3-12.6 8C4.4 14 4 17 5 20z" />
-        <path d="M5 20c2-4 5-7 9-9" />
+        <path d="M12 21a9 9 0 0 0 8.716-6.747M12 21a9 9 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a9 9 0 0 1 7.843 4.582M12 3a9 9 0 0 0-7.843 4.582m15.686 0A11.95 11.95 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A9 9 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.92 17.92 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9 9 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" strokeLinecap="round" strokeLinejoin="round" />
       </>
     ),
   },
@@ -48,7 +44,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[93vh] min-h-[600px] flex-col overflow-hidden bg-ink">
+    <section className="relative flex h-[calc(100vh-77px)] min-h-[600px] flex-col overflow-hidden bg-ink md:h-[calc(100vh-69px)]">
       <Image
         src="/kala-patthar-hero.jpg"
         alt="Sunrise view of Mount Everest from Kala Patthar"
@@ -66,48 +62,39 @@ export default function Hero() {
 
       <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <p className="text-3xl sm:text-4xl font-medium text-white/90">
-            Your Journey Starts Here
+          <p className="text-base font-medium text-white sm:text-2xl">
+            Summit Calling Awaits
           </p>
 
           <h1 className="mt-6 font-serif text-6xl sm:text-7xl md:text-8xl font-semibold leading-[1.1] text-white">
             <RotatingWord />
           </h1>
-
-          <form action="/treks" className="mt-8 flex w-full max-w-2xl items-center gap-2 rounded-full bg-white p-1.5 shadow-lg">
-            <input
-              type="text"
-              name="q"
-              placeholder="Search treks — e.g. Everest, Annapurna"
-              className="min-w-0 flex-1 rounded-full bg-transparent px-5 py-2.5 text-base text-ink placeholder:text-ink/40 outline-none"
-            />
-            <button
-              type="submit"
-              aria-label="Search treks"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue text-white transition-colors hover:bg-blue-dark"
-            >
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
-              </svg>
-            </button>
-          </form>
         </div>
       </div>
 
-      <div className={`relative w-full pb-10 ${CONTAINER}`}>
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+      <div className={`relative w-full pb-6 sm:pb-10 ${CONTAINER}`}>
+        <div className="ml-4 grid max-w-4xl grid-cols-2 gap-x-3 gap-y-5 sm:mx-auto sm:gap-x-6 sm:gap-y-8 sm:grid-cols-4">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="flex items-center justify-center gap-3 sm:justify-start"
+              className={`flex items-start justify-start gap-2 sm:items-center sm:gap-3 ${i % 2 === 1 ? "ml-2 sm:ml-0" : ""}`}
             >
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-white">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5 h-5 w-5 shrink-0 text-white sm:mt-0 sm:h-[34px] sm:w-[34px]"
+              >
                 {stat.icon}
               </svg>
-              <div className="text-left whitespace-nowrap">
-                <div className="text-xl font-semibold leading-tight text-white">{stat.value}</div>
-                <div className="text-base text-white/60">{stat.label}</div>
+              <div className="text-left">
+                <div className="text-sm font-semibold leading-tight text-white sm:text-xl">{stat.value}</div>
+                <div className="text-xs leading-snug text-white sm:text-base">{stat.label}</div>
               </div>
             </div>
           ))}

@@ -4,6 +4,7 @@ import { getExperienceBySlug, experiences } from "@/data/experiences";
 import { site, whatsappLink, telLink } from "@/data/site";
 import { CONTAINER } from "@/lib/layout";
 import Accordion from "@/components/Accordion";
+import Itinerary from "@/components/Itinerary";
 import TrekSubNav from "@/components/TrekSubNav";
 
 const BODY_TEXT = "text-[17px] leading-relaxed text-ink";
@@ -38,7 +39,7 @@ function CheckItem({ children }) {
 function SectionHeading({ children }) {
   return (
     <div>
-      <h2 className="font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-ink">
+      <h2 className="font-serif text-3xl sm:text-4xl text-ink">
         {children}
       </h2>
       <span className="mt-3 block h-1 w-14 rounded-full bg-blue" />
@@ -75,22 +76,7 @@ export default async function ExperienceDetailPage({ params }) {
     <>
       <section className="bg-white pt-8">
         <div className={`${CONTAINER} pb-12`}>
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
-            {exp.type}
-          </span>
-          <h1 className="mt-2 text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-[42px]">
-            {exp.name}
-          </h1>
-          <div className="mt-4 flex flex-wrap gap-x-10 gap-y-2">
-            <div className="text-base text-ink/50">
-              Duration: <span className="text-ink">{exp.duration}</span>
-            </div>
-            <div className="text-base text-ink/50">
-              Region: <span className="text-ink">{exp.region}</span>
-            </div>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="relative aspect-[16/11] overflow-hidden rounded-2xl sm:aspect-auto">
               <Image
                 src={gallery[0]}
@@ -113,6 +99,21 @@ export default async function ExperienceDetailPage({ params }) {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+
+          <span className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
+            {exp.type}
+          </span>
+          <h1 className="mt-2 text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-[42px]">
+            {exp.name}
+          </h1>
+          <div className="mt-4 flex flex-wrap gap-x-10 gap-y-2">
+            <div className="text-base text-ink">
+              Duration: <span className="text-ink">{exp.duration}</span>
+            </div>
+            <div className="text-base text-ink">
+              Region: <span className="text-ink">{exp.region}</span>
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@ export default async function ExperienceDetailPage({ params }) {
             <div className="mt-6 divide-y divide-ink/10 rounded-2xl ring-1 ring-black/5 shadow-sm">
               {exp.facts.map((fact) => (
                 <div key={fact.label} className="flex items-center justify-between gap-4 px-5 py-3.5">
-                  <span className="text-sm text-ink/50">{fact.label}</span>
+                  <span className="text-sm font-medium text-ink">{fact.label}</span>
                   <span className="text-right text-sm font-semibold text-ink">{fact.value}</span>
                 </div>
               ))}
@@ -165,34 +166,7 @@ export default async function ExperienceDetailPage({ params }) {
               <SectionHeading>Detailed Itinerary</SectionHeading>
             </div>
             <div className="mt-8">
-              {exp.itinerary.map((step, i) => {
-                const isLast = i === exp.itinerary.length - 1;
-                return (
-                  <div key={i} className="relative flex gap-5">
-                    <div className="flex flex-col items-center">
-                      <span className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl bg-ink text-white">
-                        <span className="text-[9px] font-semibold uppercase tracking-wide text-white/60">Time</span>
-                        <span className="font-serif text-[11px] font-semibold leading-tight">
-                          {step.time}
-                        </span>
-                      </span>
-                      {!isLast && <span className="mt-2 w-px flex-1 bg-ink/10" />}
-                    </div>
-                    <div className={`flex-1 ${isLast ? "pb-0" : "pb-8"}`}>
-                      <div className="pt-2 text-[17px] font-semibold leading-snug text-ink">
-                        {step.title}
-                      </div>
-                      <div className="mt-3 space-y-3">
-                        {step.description.split("\n\n").map((paragraph, j) => (
-                          <p key={j} className={BODY_TEXT}>
-                            {paragraph}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              <Itinerary days={exp.itinerary} />
             </div>
 
             {d?.inclusions && (
@@ -226,7 +200,7 @@ export default async function ExperienceDetailPage({ params }) {
                 <ul className="mt-6 space-y-4">
                   {d.exclusions.map((item) => (
                     <li key={item.title} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink/10 text-ink">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-500">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                           <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
                         </svg>

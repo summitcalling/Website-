@@ -36,7 +36,7 @@ export default function BlogPage() {
                 />
               </div>
               <div className="p-5">
-                <div className="text-xs text-ink/45">
+                <div className="text-xs text-ink">
                   {new Date(post.date).toLocaleDateString("en-IN", {
                     day: "numeric",
                     month: "long",
@@ -46,7 +46,7 @@ export default function BlogPage() {
                 <h2 className="mt-2 font-serif text-lg font-semibold text-ink group-hover:text-blue transition-colors">
                   {post.title}
                 </h2>
-                <p className="mt-2 text-sm text-ink/60 leading-relaxed">
+                <p className="mt-2 text-sm text-ink leading-relaxed">
                   {post.excerpt}
                 </p>
               </div>

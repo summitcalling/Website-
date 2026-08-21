@@ -31,7 +31,7 @@ const perks = [
 function PillGroup({ step, label, options, value, onChange }) {
   return (
     <div>
-      <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-ink/50">
+      <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-ink">
         <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue/10 text-[11px] font-bold text-blue">
           {step}
         </span>
@@ -48,7 +48,7 @@ function PillGroup({ step, label, options, value, onChange }) {
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 active
                   ? "border-blue bg-blue text-white"
-                  : "border-ink/15 bg-cream text-ink/70 hover:border-blue/50"
+                  : "border-ink/15 bg-cream text-ink hover:border-blue/50"
               }`}
             >
               {opt}
@@ -112,10 +112,10 @@ export default function TrekFinder() {
               <span className="h-px w-6 bg-blue" />
               Trek Finder
             </span>
-            <h2 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-white">
+            <h2 className="mt-3 font-serif text-3xl sm:text-4xl text-white">
               Not Sure Which Trek Is Right for You?
             </h2>
-            <p className="mt-4 text-white/60 max-w-md mx-auto lg:mx-0">
+            <p className="mt-4 text-white max-w-md mx-auto lg:mx-0">
               Answer three quick questions and we&apos;ll recommend the
               perfect route — matched to your fitness, time, and budget.
             </p>
@@ -130,7 +130,7 @@ export default function TrekFinder() {
                   </span>
                   <div>
                     <h3 className="font-semibold text-white">{perk.title}</h3>
-                    <p className="mt-0.5 text-sm text-white/50">{perk.description}</p>
+                    <p className="mt-0.5 text-sm text-white">{perk.description}</p>
                   </div>
                 </div>
               ))}
@@ -175,7 +175,7 @@ export default function TrekFinder() {
                   <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
-              <p className="text-center text-xs text-ink/40">
+              <p className="text-center text-xs text-ink">
                 No spam. We&apos;ll email a personalised shortlist within 24 hours.
               </p>
             </form>
@@ -205,7 +205,7 @@ export default function TrekFinder() {
                           <span className="block truncate text-white text-sm font-medium">
                             {trek.name}
                           </span>
-                          <span className="block text-xs text-white/50">
+                          <span className="block text-xs text-white">
                             {trek.duration} days
                           </span>
                         </span>

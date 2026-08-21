@@ -6,9 +6,9 @@ export const site = {
   founded: "2026",
   country: "Nepal",
   logo: "/summit-calling-logo.png",
-  phone: "+91 74599-29391",
-  phoneDisplay: "+91 74599 29391",
-  whatsapp: "917459929391",
+  phone: "+91 95593-29391",
+  phoneDisplay: "+91 95593 29391",
+  whatsapp: "919559329391",
   email: "hello@summitcalling.com",
   address: "Thamel, Kathmandu, Nepal",
   social: {
@@ -22,7 +22,6 @@ export const navLinks = [
   { href: "/treks", label: "Treks" },
   { href: "/experiences", label: "Helicopter Tours" },
   { href: "/about", label: "About Us" },
-  { href: "/blog", label: "Blogs" },
 ];
 
 export const footerLinks = [

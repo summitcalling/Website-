@@ -32,7 +32,7 @@ export default async function TreksPage({ searchParams }) {
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>
           {query && (
-            <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-ink/60">
+            <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-ink">
               <span>
                 {results.length} result{results.length === 1 ? "" : "s"} for &ldquo;{q}&rdquo;
               </span>
@@ -50,7 +50,7 @@ export default async function TreksPage({ searchParams }) {
             </div>
           ) : (
             <div className="rounded-2xl bg-white p-10 text-center ring-1 ring-ink/5">
-              <p className="text-ink/70">
+              <p className="text-ink">
                 No treks matched &ldquo;{q}&rdquo;. Try a different region or trek name.
               </p>
               <Link href="/treks" className="mt-3 inline-block text-blue hover:text-blue-dark font-medium">

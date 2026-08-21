@@ -22,10 +22,10 @@ export default function CTASection() {
             Fixed Departures 2026
             <span className="h-px w-6 bg-blue" />
           </span>
-          <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-white">
+          <h2 className="mt-4 font-serif text-3xl sm:text-4xl text-white">
             Ready for your next adventure?
           </h2>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-white">
             Start planning your dream trek today. Our team replies within an
             hour, 7 days a week.
           </p>

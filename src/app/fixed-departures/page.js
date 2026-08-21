@@ -27,7 +27,7 @@ export default function FixedDeparturesPage() {
           <div className="overflow-x-auto rounded-2xl bg-white ring-1 ring-ink/5">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
-                <tr className="border-b border-ink/10 text-xs uppercase tracking-wide text-ink/45">
+                <tr className="border-b border-ink/10 text-xs uppercase tracking-wide text-ink">
                   <th className="px-5 py-4 font-medium">Trek</th>
                   <th className="px-5 py-4 font-medium">Departure Date</th>
                   <th className="px-5 py-4 font-medium">Status</th>
@@ -47,9 +47,9 @@ export default function FixedDeparturesPage() {
                         >
                           {trek.name}
                         </Link>
-                        <div className="text-xs text-ink/45">{trek.region}</div>
+                        <div className="text-xs text-ink">{trek.region}</div>
                       </td>
-                      <td className="px-5 py-4 text-ink/80">
+                      <td className="px-5 py-4 text-ink">
                         {new Date(d.date).toLocaleDateString("en-IN", {
                           day: "numeric",
                           month: "long",

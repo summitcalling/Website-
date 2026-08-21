@@ -23,7 +23,7 @@ export default function TrekCard({ trek, index }) {
         <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink/40 to-transparent" />
 
         {typeof index === "number" && (
-          <span className="pointer-events-none absolute right-4 top-4 font-serif text-3xl font-semibold text-white/80">
+          <span className="pointer-events-none absolute right-4 top-4 font-serif text-3xl font-semibold text-white">
             {String(index + 1).padStart(2, "0")}
           </span>
         )}
@@ -53,17 +53,26 @@ export default function TrekCard({ trek, index }) {
             {trek.duration} days
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span
-              className="h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: difficultyColor[trek.difficulty] ?? "#0EA5E9" }}
-            />
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke={difficultyColor[trek.difficulty] ?? "#0EA5E9"}
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 17l6-6 4 4 8-8" />
+              <path d="M17 7h4v4" />
+            </svg>
             {trek.difficulty}
           </span>
         </div>
 
-        <div className="mt-auto flex items-center justify-between gap-3 border-t border-ink/10 pt-3">
+        <div className="mt-auto flex items-center justify-between gap-3 pt-3">
           <div>
-            <div className="text-[10px] uppercase tracking-wide text-ink/50">
+            <div className="text-[10px] font-semibold uppercase tracking-wide text-ink">
               {trek.price ? "From" : "Price"}
             </div>
             <div className="font-serif text-base font-semibold text-ink">

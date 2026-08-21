@@ -11,11 +11,11 @@ export default function PageHeader({ eyebrow, title, description }) {
             <span className="h-px w-6 bg-blue" />
           </span>
         )}
-        <h1 className="mt-3 font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide text-white">
+        <h1 className="mt-3 font-serif text-3xl sm:text-4xl text-white">
           {title}
         </h1>
         {description && (
-          <p className="mt-4 max-w-xl text-white/60">{description}</p>
+          <p className="mt-4 max-w-xl text-white">{description}</p>
         )}
       </div>
     </section>

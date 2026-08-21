@@ -33,7 +33,7 @@ function SectionHeading({ children, dark }) {
   return (
     <div>
       <h2
-        className={`font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wide ${
+        className={`font-serif text-3xl sm:text-4xl ${
           dark ? "text-white" : "text-ink"
         }`}
       >
@@ -65,7 +65,7 @@ export default function AboutPage() {
             <h1 className="mt-2 font-serif text-4xl font-semibold leading-none text-white sm:text-6xl md:text-7xl">
               {site.name}
             </h1>
-            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-white/80">
+            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-white">
               An adventure-based travel company specialising in Himalayan trekking,
               mountaineering, helicopter tours, and mountain flights.
             </p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
 
           <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
             <div className="space-y-4 lg:col-span-2">
-              <p className="text-[17px] leading-relaxed text-white/80">
+              <p className="text-[17px] leading-relaxed text-white">
                 The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
               </p>
               <p className="font-serif text-xl italic text-white">
