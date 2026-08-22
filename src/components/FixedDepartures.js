@@ -67,23 +67,25 @@ export default function FixedDepartures({ dates }) {
             </button>
 
             {open && (
-              <div className="grid grid-cols-1 gap-3 px-5 pb-5 sm:grid-cols-2">
-                {monthDates.map((dep) => (
-                  <div key={dep.departure} className="overflow-hidden rounded-xl ring-1 ring-black/5">
-                    <div className="grid grid-cols-2 bg-ink/[0.03]">
-                      <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                        Departure
-                      </div>
-                      <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
-                        Return
-                      </div>
+              <div className="px-5 pb-5">
+                <div className="overflow-hidden rounded-xl ring-1 ring-black/5">
+                  <div className="grid grid-cols-2 bg-ink/[0.03]">
+                    <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
+                      Departure
                     </div>
-                    <div className="grid grid-cols-2">
-                      <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.departure}</div>
-                      <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.return}</div>
+                    <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink">
+                      Return
                     </div>
                   </div>
-                ))}
+                  <div className="divide-y divide-ink/10">
+                    {monthDates.map((dep) => (
+                      <div key={dep.departure} className="grid grid-cols-2">
+                        <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.departure}</div>
+                        <div className="px-4 py-3 text-sm font-semibold text-ink">{dep.return}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
           </div>

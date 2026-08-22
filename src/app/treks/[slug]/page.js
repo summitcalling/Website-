@@ -69,10 +69,43 @@ export default async function TrekDetailPage({ params }) {
     d?.faqs && { id: "faqs", label: "FAQs" },
   ].filter(Boolean);
 
+  const statItems = [
+    {
+      label: "Location",
+      value: trek.region,
+      icon: (
+        <>
+          <path d="M12 21s-7-6.1-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.9 12 21 12 21z" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="9.5" r="2.5" />
+        </>
+      ),
+    },
+    {
+      label: "Duration",
+      value: `${trek.duration} days`,
+      icon: (
+        <>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ),
+    },
+    {
+      label: "Max Altitude",
+      value: trek.maxAltitude,
+      icon: <path d="M3 19h18L14.5 8l-3 4.5-2-2.5L3 19z" strokeLinejoin="round" />,
+    },
+    {
+      label: "Grade",
+      value: trek.difficulty,
+      icon: <path d="M4 19h3V9H4v10zm6.5 0h3V5h-3v14zM17 19h3v-7h-3v7z" strokeLinejoin="round" />,
+    },
+  ];
+
   return (
     <>
       <section className="bg-white pt-8">
-        <div className={`${CONTAINER} pb-12`}>
+        <div className={`${CONTAINER} pb-6 sm:pb-12`}>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="relative aspect-[16/11] overflow-hidden rounded-2xl sm:aspect-auto">
               <Image
@@ -102,78 +135,65 @@ export default async function TrekDetailPage({ params }) {
           <h1 className="mt-8 text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-[42px]">
             {trek.name}
           </h1>
+
+          <div className="-mx-5 mt-10 grid grid-cols-4 gap-x-0 sm:hidden">
+            {statItems.map((s) => (
+              <Stat key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <TrekSubNav items={navItems} />
+      <div className="hidden sm:block">
+        <TrekSubNav items={navItems} />
+      </div>
 
       <section className="bg-white">
-        <div className={`${CONTAINER} pt-16 pb-28 lg:pb-16 grid grid-cols-1 lg:grid-cols-3 gap-12`}>
-          <div className="lg:col-span-2">
-            <div id="overview" className="scroll-mt-[170px]">
-              <SectionHeading>Overview</SectionHeading>
-            </div>
-            <div className="-mx-5 mt-6 grid grid-cols-4 gap-x-0 sm:mx-0 sm:divide-x sm:divide-ink/10 sm:rounded-2xl sm:ring-1 sm:ring-black/5 sm:shadow-sm">
-              <Stat
-                label="Duration"
-                value={`${trek.duration} days`}
-                icon={
-                  <>
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
-                  </>
-                }
-              />
-              <Stat
-                label="Difficulty"
-                value={trek.difficulty}
-                icon={<path d="M4 19h3V9H4v10zm6.5 0h3V5h-3v14zM17 19h3v-7h-3v7z" strokeLinejoin="round" />}
-              />
-              <Stat
-                label="Max Altitude"
-                value={trek.maxAltitude}
-                icon={<path d="M3 19h18L14.5 8l-3 4.5-2-2.5L3 19z" strokeLinejoin="round" />}
-              />
-              <Stat
-                label="Best Season"
-                value={trek.bestSeason}
-                icon={
-                  <>
-                    <rect x="4" y="5" width="16" height="15" rx="2" />
-                    <path d="M4 10h16M8 3v4M16 3v4" strokeLinecap="round" />
-                  </>
-                }
-              />
+        <div className={`${CONTAINER} pt-6 sm:pt-16 pb-28 lg:pb-16 grid grid-cols-1 lg:grid-cols-3 gap-12`}>
+          <div className="flex flex-col lg:col-span-2">
+            <div className="order-[3] mt-14 sm:order-none sm:mt-0">
+              <div id="overview" className="scroll-mt-[170px]">
+                <SectionHeading>Overview</SectionHeading>
+              </div>
+              <div className="hidden -mx-5 mt-6 grid-cols-4 gap-x-0 sm:mx-0 sm:grid sm:divide-x sm:divide-ink/10 sm:rounded-2xl sm:ring-1 sm:ring-black/5 sm:shadow-sm">
+                {statItems.map((s) => (
+                  <Stat key={s.label} {...s} />
+                ))}
+              </div>
+
+              <div className="mt-8 space-y-4">
+                {(trek.overview ?? [trek.summary]).map((paragraph, i) => (
+                  <p key={i} className={BODY_TEXT}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-8 space-y-4">
-              {(trek.overview ?? [trek.summary]).map((paragraph, i) => (
-                <p key={i} className={BODY_TEXT}>
-                  {paragraph}
-                </p>
-              ))}
+            <div className="order-[4] sm:order-none">
+              <div className="mt-14">
+                <SectionHeading>Trek Highlights</SectionHeading>
+              </div>
+              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                {trek.highlights.map((highlight) => (
+                  <CheckItem key={highlight}>{highlight}</CheckItem>
+                ))}
+              </ul>
             </div>
 
-            <div className="mt-14">
-              <SectionHeading>Trek Highlights</SectionHeading>
-            </div>
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              {trek.highlights.map((highlight) => (
-                <CheckItem key={highlight}>{highlight}</CheckItem>
-              ))}
-            </ul>
-
-            <div id="itinerary" className="mt-14 scroll-mt-[170px]">
-              <SectionHeading>Itinerary</SectionHeading>
-            </div>
-            <p className="mt-2 text-sm text-ink">Tap a day to see the full details.</p>
-            <div className="mt-8">
-              <Itinerary days={trek.itinerary} />
+            <div className="order-[5] sm:order-none">
+              <div id="itinerary" className="mt-14 scroll-mt-[170px]">
+                <SectionHeading>Itinerary</SectionHeading>
+              </div>
+              <p className="mt-2 text-sm text-ink">Tap a day to see the full details.</p>
+              <div className="mt-8">
+                <Itinerary days={trek.itinerary} />
+              </div>
             </div>
 
             {d?.packages && (
-              <>
-                <div id="packages" className="mt-14 scroll-mt-[170px]">
+              <div className="order-[1] sm:order-none">
+                <div id="packages" className="mt-0 sm:mt-14 scroll-mt-[170px]">
                   <SectionHeading>Package Options</SectionHeading>
                 </div>
                 <div className="mt-8 space-y-4 sm:hidden">
@@ -282,11 +302,11 @@ export default async function TrekDetailPage({ params }) {
                     </tbody>
                   </table>
                 </div>
-              </>
+              </div>
             )}
 
             {d?.difficulty && (
-              <>
+              <div className="order-[6] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Trek Difficulty</SectionHeading>
                 </div>
@@ -294,11 +314,11 @@ export default async function TrekDetailPage({ params }) {
                   {d.difficulty.level}
                 </span>
                 <p className={`mt-5 ${BODY_TEXT}`}>{d.difficulty.description}</p>
-              </>
+              </div>
             )}
 
             {d?.inclusions && (
-              <>
+              <div className="order-[7] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Inclusions</SectionHeading>
                 </div>
@@ -317,11 +337,11 @@ export default async function TrekDetailPage({ params }) {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             )}
 
             {d?.exclusions && (
-              <>
+              <div className="order-[8] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Exclusions</SectionHeading>
                 </div>
@@ -340,11 +360,11 @@ export default async function TrekDetailPage({ params }) {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             )}
 
             {d?.addOns && (
-              <>
+              <div className="order-[9] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Optional Add-ons</SectionHeading>
                 </div>
@@ -365,11 +385,11 @@ export default async function TrekDetailPage({ params }) {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             )}
 
             {d?.altitude && (
-              <>
+              <div className="order-[10] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Altitude &amp; Acclimatization</SectionHeading>
                 </div>
@@ -387,11 +407,11 @@ export default async function TrekDetailPage({ params }) {
                     ))}
                   </ul>
                 )}
-              </>
+              </div>
             )}
 
             {d?.bestTime && (
-              <>
+              <div className="order-[11] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Best Time to Trek</SectionHeading>
                 </div>
@@ -407,11 +427,11 @@ export default async function TrekDetailPage({ params }) {
                     </div>
                   ))}
                 </div>
-              </>
+              </div>
             )}
 
             {d?.whyChooseUs && (
-              <>
+              <div className="order-[12] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Why Choose {site.name}?</SectionHeading>
                 </div>
@@ -430,40 +450,40 @@ export default async function TrekDetailPage({ params }) {
                     </li>
                   ))}
                 </ul>
-              </>
+              </div>
             )}
 
             {d?.fixedDepartures && (
-              <>
+              <div className="order-[2] sm:order-none">
                 <div id="dates" className="mt-14 scroll-mt-[170px]">
                   <SectionHeading>Fixed Departure Dates</SectionHeading>
                 </div>
                 <div className="mt-8">
                   <FixedDepartures dates={d.fixedDepartures} />
                 </div>
-              </>
+              </div>
             )}
 
             {d?.faqs && (
-              <>
+              <div className="order-[13] sm:order-none">
                 <div id="faqs" className="mt-14 scroll-mt-[170px]">
                   <SectionHeading>Frequently Asked Questions</SectionHeading>
                 </div>
                 <div className="mt-8">
                   <Accordion items={d.faqs.map((f) => ({ title: f.q, content: f.a }))} />
                 </div>
-              </>
+              </div>
             )}
 
             {d?.policies && (
-              <>
+              <div className="order-[14] sm:order-none">
                 <div className="mt-14">
                   <SectionHeading>Booking &amp; Cancellation Policy</SectionHeading>
                 </div>
                 <div className="mt-8">
                   <Accordion items={d.policies} />
                 </div>
-              </>
+              </div>
             )}
           </div>
 
@@ -483,10 +503,10 @@ export default async function TrekDetailPage({ params }) {
 
 function Stat({ icon, label, value }) {
   return (
-    <div className="flex flex-col items-center gap-1.5 text-center sm:flex-row sm:items-start sm:gap-3 sm:px-5 sm:py-4 sm:text-left">
+    <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:px-5 sm:py-4 sm:text-left">
       <svg
-        width="34"
-        height="34"
+        width="40"
+        height="40"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

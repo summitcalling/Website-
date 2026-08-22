@@ -46,7 +46,7 @@ export default function Hero() {
   return (
     <section className="relative flex h-[calc(100vh-77px)] min-h-[600px] flex-col overflow-hidden bg-ink md:h-[calc(100vh-69px)]">
       <Image
-        src="/kala-patthar-hero.jpg"
+        src="/kala-patthar-hero-3.jpg"
         alt="Sunrise view of Mount Everest from Kala Patthar"
         fill
         priority
@@ -58,11 +58,11 @@ export default function Hero() {
         src="https://assets.mixkit.co/videos/45414/45414-720.mp4"
         className="absolute inset-0 hidden h-full w-full object-cover sm:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/5" />
 
       <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <p className="text-base font-medium text-white sm:text-2xl">
+          <p className="text-2xl font-bold text-white sm:text-4xl">
             Summit Calling Awaits
           </p>
 

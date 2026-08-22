@@ -7,6 +7,7 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
   const [top, setTop] = useState(0);
   const [dateIndex, setDateIndex] = useState(0);
   const [pkgIndex, setPkgIndex] = useState(0);
+  const [nationality, setNationality] = useState("indian");
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -30,7 +31,10 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
   const pkgs = packages ?? [];
   const selectedPkg = pkgs[pkgIndex];
   const selectedDate = dates[dateIndex];
-  const price = selectedPkg ? selectedPkg.priceINR : trek.price;
+  const isForeign = nationality === "foreign" && pkgs.length > 0;
+  const price = selectedPkg
+    ? (isForeign ? selectedPkg.priceUSD : selectedPkg.priceINR)
+    : trek.price;
 
   const message = [
     `Hi, I'd like to book the ${trek.name}`,
@@ -46,14 +50,42 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
       className="sticky overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-xl shadow-ink/10"
     >
       <div className="p-6">
-        <div className="text-lg font-semibold text-ink">Book This Trek</div>
+        <div className="flex items-center justify-between gap-3">
+          <div className="text-lg font-semibold text-ink">Book This Trek</div>
+          {pkgs.length > 0 && (
+            <div className="flex shrink-0 rounded-full bg-ink/5 p-0.5 text-xs font-semibold">
+              <button
+                type="button"
+                onClick={() => setNationality("indian")}
+                className={`rounded-full px-3 py-1.5 transition-colors ${
+                  !isForeign ? "bg-white text-ink shadow-sm" : "text-ink/50"
+                }`}
+              >
+                Indian
+              </button>
+              <button
+                type="button"
+                onClick={() => setNationality("foreign")}
+                className={`rounded-full px-3 py-1.5 transition-colors ${
+                  isForeign ? "bg-white text-ink shadow-sm" : "text-ink/50"
+                }`}
+              >
+                Foreign
+              </button>
+            </div>
+          )}
+        </div>
         <div className="mt-2 flex items-baseline gap-1">
           <span className="font-serif text-3xl font-semibold text-ink">
-            {price ? `₹${price.toLocaleString("en-IN")}` : "Price on Request"}
+            {price
+              ? isForeign
+                ? `USD ${price.toLocaleString("en-US")}`
+                : `₹${price.toLocaleString("en-IN")}`
+              : "Price on Request"}
           </span>
         </div>
         <div className="mt-1 text-sm text-ink">
-          {selectedPkg?.note ?? (price ? "+ tax as applicable" : "Contact us for a custom quote")}
+          {price ? (isForeign ? "+ applicable taxes" : "+5% GST") : "Contact us for a custom quote"}
         </div>
       </div>
 
@@ -106,7 +138,9 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
               >
                 <span className="font-medium text-ink">{pkg.name}</span>
                 <span className="font-semibold text-ink">
-                  ₹{pkg.priceINR.toLocaleString("en-IN")}
+                  {isForeign
+                    ? `USD ${pkg.priceUSD.toLocaleString("en-US")}`
+                    : `₹${pkg.priceINR.toLocaleString("en-IN")}`}
                 </span>
               </button>
             ))}
@@ -115,32 +149,20 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
       )}
 
       <div className="p-6">
-        <a
-          href={whatsappLink(message)}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink py-3.5 text-sm font-semibold text-white hover:bg-ink-light transition-colors"
-        >
-          Book Now
-        </a>
-
-        <div className="mt-3 flex gap-3">
-          <a
-            href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-ink/15 py-3 text-sm font-semibold text-ink hover:border-blue/40 hover:text-blue transition-colors"
-          >
-            Call Us
-          </a>
+        <div className="flex gap-3">
           <a
             href={whatsappLink(message)}
             target="_blank"
             rel="noreferrer"
-            aria-label="Chat on WhatsApp"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-whatsapp text-white hover:brightness-95 transition-all"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ink py-3.5 text-sm font-semibold text-white hover:bg-ink-light transition-colors"
           >
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.006-3.492c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.593-6.593 6.593zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.588-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.337-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-            </svg>
+            Book Now
+          </a>
+          <a
+            href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-ink/15 py-3.5 text-sm font-semibold text-ink hover:border-blue/40 hover:text-blue transition-colors"
+          >
+            Call Us
           </a>
         </div>
       </div>

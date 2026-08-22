@@ -163,7 +163,7 @@ export const treks = [
           name: "With Meals",
           priceINR: 78000,
           priceUSD: 1160,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Breakfast, lunch & dinner during the trek",
@@ -174,7 +174,7 @@ export const treks = [
           name: "Without Meals",
           priceINR: 56000,
           priceUSD: 770,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Meals can be purchased directly at the tea houses",
@@ -1455,7 +1455,7 @@ export const treks = [
           name: "Standard Package",
           priceINR: 75000,
           priceUSD: 1260,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Meals can be purchased directly at the tea houses",
@@ -1466,7 +1466,7 @@ export const treks = [
           name: "Full Board Package",
           priceINR: 105000,
           priceUSD: 1510,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "All meals included during the trek",
@@ -1831,7 +1831,7 @@ export const treks = [
           name: "Standard Package",
           priceINR: 66000,
           priceUSD: 1120,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Meals can be purchased directly at the tea houses",
@@ -1842,7 +1842,7 @@ export const treks = [
           name: "Full Board Package",
           priceINR: 85000,
           priceUSD: 1420,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "All meals included during the trek",
@@ -2157,7 +2157,7 @@ export const treks = [
           name: "ABC Trek with Meals",
           priceINR: 40000,
           priceUSD: 590,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Breakfast, lunch & dinner during the trek",
@@ -2168,7 +2168,7 @@ export const treks = [
           name: "ABC Trek without Meals",
           priceINR: 20000,
           priceUSD: 420,
-          note: "for Indians +5% GST · for foreigners + applicable taxes",
+          note: "for Indians +5% GST",
           features: [
             "Accommodation as per itinerary",
             "Meals can be purchased directly at the tea houses",
