@@ -56,7 +56,7 @@ export default function ContactPage() {
       />
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
             {officeLocations.map((office) => (
               <div key={office.name} className="rounded-2xl bg-white p-6 ring-1 ring-ink/5">
                 <div className="font-serif text-lg font-semibold text-ink">

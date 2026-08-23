@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { site } from "@/data/site";
+import { footerLinks, site } from "@/data/site";
 import { treks } from "@/data/treks";
 import { CONTAINER } from "@/lib/layout";
 
@@ -37,7 +37,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-white">
-      <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5`}>
+      <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-6`}>
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 text-white">
             <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
@@ -57,7 +57,20 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-white text-lg mb-4">Popular Treks</h3>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Navigation</h3>
+          <ul className="space-y-3 text-base">
+            {footerLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-blue transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
           <ul className="space-y-3 text-base">
             {treks.map((trek) => (
               <li key={trek.slug}>
@@ -70,7 +83,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="font-serif text-white text-lg mb-4">
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">
             Office Addresses &amp; Contact Details
           </h3>
 
@@ -122,7 +135,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-white text-lg mb-4">Newsletter</h3>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Newsletter</h3>
           <p className="text-base text-white mb-4">
             Trek tips, fresh departures, occasional inspiration.
           </p>
