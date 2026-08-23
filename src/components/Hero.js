@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { CONTAINER } from "@/lib/layout";
-import HeroVideo from "@/components/HeroVideo";
 import RotatingWord from "@/components/RotatingWord";
 
 const stats = [
@@ -50,13 +49,8 @@ export default function Hero() {
         alt="Sunrise view of Mount Everest from Kala Patthar"
         fill
         priority
-        className="absolute inset-0 object-cover sm:hidden"
+        className="absolute inset-0 object-cover"
         sizes="100vw"
-      />
-      <HeroVideo
-        poster="https://assets.mixkit.co/videos/45414/45414-thumb-720-1.jpg"
-        src="https://assets.mixkit.co/videos/45414/45414-720.mp4"
-        className="absolute inset-0 hidden h-full w-full object-cover sm:block"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/5" />
 

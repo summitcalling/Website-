@@ -37,9 +37,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-white">
-      <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-6`}>
+      <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5`}>
         <div className="md:col-span-1">
-          <div className="flex items-center gap-3 text-white">
+          <div className="flex items-center text-white">
             <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
               <Image
                 src={site.logo}
@@ -49,7 +49,6 @@ export default function Footer() {
                 className="h-full w-auto object-contain"
               />
             </span>
-            <span className="font-serif font-semibold text-xl">{site.name}</span>
           </div>
           <p className="mt-4 text-base leading-relaxed text-white">
             {site.description}
@@ -57,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Navigation</h3>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
           <ul className="space-y-3 text-base">
             {footerLinks.map((link) => (
               <li key={link.href}>
@@ -82,13 +81,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lg:col-span-2">
+        <div>
           <h3 className="font-serif font-semibold text-white text-lg mb-4">
             Office Addresses &amp; Contact Details
           </h3>
 
           <div>
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+            <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
               Bangalore Office
             </div>
@@ -112,7 +111,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 border-t border-white/10 pt-8">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+            <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
               Kanpur Office
             </div>
