@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="relative aspect-[3/4] w-[320px] shrink-0 snap-start overflow-hidden sm:w-[380px]"
+              className="relative aspect-[3/4] w-[320px] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-[380px]"
             >
               <Image
                 src={feature.image}

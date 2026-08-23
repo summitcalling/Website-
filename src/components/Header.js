@@ -154,7 +154,7 @@ export default function Header() {
             <div className="flex items-center gap-7">
               <form
                 action="/treks"
-                className="group flex w-full max-w-[200px] items-center gap-2 rounded-full bg-ink/5 py-2 pl-4 pr-1.5 transition-colors focus-within:bg-ink/[0.07] lg:max-w-[220px]"
+                className="group flex w-full max-w-[200px] items-center gap-2 rounded-full bg-ink/5 py-2 pl-4 pr-1.5 shadow-sm ring-1 ring-black/5 transition-colors focus-within:bg-ink/[0.07] focus-within:ring-blue/30 lg:max-w-[220px]"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-ink/40 transition-colors group-focus-within:text-blue">
                   <circle cx="11" cy="11" r="7" />

@@ -9,7 +9,7 @@ function TrekCard({ trek, i, className, sizes }) {
   return (
     <Link
       href={`/treks/${trek.slug}`}
-      className={`group relative overflow-hidden ${className}`}
+      className={`group relative overflow-hidden rounded-2xl ${className}`}
     >
       <Image
         src={trek.image}

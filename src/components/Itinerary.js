@@ -71,12 +71,12 @@ export default function Itinerary({ days }) {
               onClick={() => setOpenIndex(open ? null : i)}
               className="group flex w-full items-center gap-4 text-left"
             >
-              <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-blue/10 px-3 py-1.5 transition-colors group-hover:bg-blue/15">
+              <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-blue/[0.06] px-3 py-1.5 transition-colors group-hover:bg-blue/10">
                 <span className="text-sm font-semibold uppercase tracking-wide text-blue">
                   {hasDay ? "Day" : "Time"}
                 </span>
                 <span className="font-serif text-sm font-semibold leading-none text-blue">
-                  {hasDay ? String(day.day).padStart(2, "0") : day.time}
+                  {hasDay ? day.day : day.time}
                 </span>
               </span>
               <span className="flex-1 text-[17px] font-semibold leading-snug text-ink transition-colors group-hover:text-blue">
