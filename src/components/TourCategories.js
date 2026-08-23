@@ -13,7 +13,7 @@ export default function TourCategories() {
               Beyond Trekking
             </span>
             <h2 className="mt-3 font-serif text-3xl sm:text-4xl text-ink">
-              More Ways to Explore Nepal
+              More Ways to Explore the Himalayas
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-ink">
               From aerial views of Everest to sunrise flights over the Annapurnas — experience the Himalayas beyond the trail.

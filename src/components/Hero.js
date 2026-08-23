@@ -62,7 +62,7 @@ export default function Hero() {
 
       <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <p className="text-2xl font-bold text-white sm:text-4xl">
+          <p className="text-2xl font-semibold text-white sm:text-4xl">
             Adventure Starts Here
           </p>
 
