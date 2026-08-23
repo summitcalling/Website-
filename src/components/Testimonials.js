@@ -16,7 +16,7 @@ function QuoteIcon() {
 
 function TestimonialCard({ t }) {
   return (
-    <div className="flex h-[420px] w-[320px] shrink-0 flex-col rounded-xl bg-[#F5F5F5] p-8 sm:h-[460px] sm:w-[380px] sm:p-10">
+    <div className="flex h-[420px] w-[320px] shrink-0 flex-col rounded-2xl bg-[#F5F5F5] p-8 sm:h-[460px] sm:w-[380px] sm:p-10">
       <QuoteIcon />
       <p className="mt-6 text-[15px] leading-relaxed text-[#5A5A5A] sm:text-base">
         {t.quote}

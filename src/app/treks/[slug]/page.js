@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTrekBySlug, treks } from "@/data/treks";
 import { site, whatsappLink } from "@/data/site";
@@ -8,6 +7,7 @@ import BookingCard from "@/components/BookingCard";
 import FixedDepartures from "@/components/FixedDepartures";
 import Itinerary from "@/components/Itinerary";
 import MobileBookingBar from "@/components/MobileBookingBar";
+import TrekGallery from "@/components/TrekGallery";
 import TrekSubNav from "@/components/TrekSubNav";
 
 const BODY_TEXT = "text-[17px] leading-relaxed text-ink";
@@ -106,31 +106,7 @@ export default async function TrekDetailPage({ params }) {
     <>
       <section className="bg-white pt-8">
         <div className={`${CONTAINER} pb-6 sm:pb-12`}>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div className="relative aspect-[16/11] overflow-hidden rounded-2xl sm:aspect-auto">
-              <Image
-                src={gallery[0]}
-                alt={trek.name}
-                fill
-                priority
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {gallery.slice(1, 5).map((src, i) => (
-                <div key={src} className="relative aspect-[6/5] overflow-hidden rounded-2xl">
-                  <Image
-                    src={src}
-                    alt={`${trek.name} photo ${i + 2}`}
-                    fill
-                    className="object-cover"
-                    sizes="25vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <TrekGallery gallery={gallery} name={trek.name} />
 
           <h1 className="mt-8 text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-[42px]">
             {trek.name}

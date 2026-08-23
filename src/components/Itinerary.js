@@ -72,9 +72,11 @@ export default function Itinerary({ days }) {
               className="group flex w-full items-center gap-4 text-left"
             >
               <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-blue/[0.06] px-3 py-1.5 transition-colors group-hover:bg-blue/10">
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue">
-                  {hasDay ? "Day" : "Time"}
-                </span>
+                {hasDay && (
+                  <span className="text-sm font-semibold uppercase tracking-wide text-blue">
+                    Day
+                  </span>
+                )}
                 <span className="font-serif text-sm font-semibold leading-none text-blue">
                   {hasDay ? day.day : day.time}
                 </span>

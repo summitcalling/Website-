@@ -6,7 +6,7 @@ export const experiences = [
     region: "Everest",
     duration: "4–5 Hours",
     priceUSD: 1320,
-    priceNote: "per person + applicable taxes",
+    priceNote: "per person",
     image: "/helicopter/ebc-heli-1.jpg",
     gallery: [
       "/helicopter/ebc-heli-1.jpg",
@@ -353,7 +353,7 @@ export const experiences = [
     duration: "1 Hour",
     priceUSD: 350,
     priceINR: 20000,
-    priceNote: "per person (foreign nationals USD 350 + applicable taxes · Indian nationals from INR 20,000 + 5% GST)",
+    priceNote: "per person (foreign nationals USD 350 · Indian nationals from INR 20,000 + 5% GST)",
     image: "/helicopter/mountain-flight-1.jpg",
     gallery: [
       "/helicopter/mountain-flight-1.jpg",

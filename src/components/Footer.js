@@ -36,7 +36,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-ink text-white">
       <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5`}>
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 text-white">

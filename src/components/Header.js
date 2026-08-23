@@ -232,12 +232,12 @@ export default function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-40 bg-white transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 bg-ink transition-opacity duration-300 md:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex h-full flex-col justify-center overflow-y-auto px-8 py-24">
-          <nav className="flex flex-col gap-2">
+        <div className="flex h-full flex-col overflow-y-auto px-6 pb-24 pt-24">
+          <nav className="flex flex-col">
             {[...navLinks, { href: "/contact", label: "Contact" }].map((link, i) => {
               const dropdown = DROPDOWN_MENUS[link.href];
               const subOpen = openSubmenu === link.href;
@@ -249,7 +249,7 @@ export default function Header() {
                     href={link.href}
                     onClick={closeMenu}
                     style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
-                    className={`font-serif text-3xl font-semibold text-ink transition-all duration-300 hover:text-blue ${
+                    className={`border-b border-white/10 py-4 text-xl font-medium text-white transition-all duration-300 hover:text-blue ${
                       menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                     }`}
                   >
@@ -259,19 +259,19 @@ export default function Header() {
               }
 
               return (
-                <div key={link.href}>
+                <div key={link.href} className="border-b border-white/10">
                   <button
                     type="button"
                     onClick={() => setOpenSubmenu(subOpen ? null : link.href)}
                     style={{ transitionDelay: menuOpen ? `${i * 40}ms` : "0ms" }}
-                    className={`flex w-full items-center justify-between font-serif text-3xl font-semibold text-ink transition-all duration-300 hover:text-blue ${
+                    className={`flex w-full items-center justify-between py-4 text-xl font-medium text-white transition-all duration-300 hover:text-blue ${
                       menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                     }`}
                   >
                     {link.label}
                     <svg
-                      width="22"
-                      height="22"
+                      width="18"
+                      height="18"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -282,13 +282,13 @@ export default function Header() {
                     </svg>
                   </button>
                   {subOpen && (
-                    <div className="mt-1 mb-2 flex max-h-56 flex-col gap-1 overflow-y-auto">
+                    <div className="mb-4 flex max-h-56 flex-col gap-1 overflow-y-auto">
                       {dropdown.items.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
                           onClick={closeMenu}
-                          className="py-1.5 text-base font-medium text-ink hover:text-blue"
+                          className="py-1.5 text-base font-medium text-white/70 hover:text-blue"
                         >
                           {item.label}
                         </Link>

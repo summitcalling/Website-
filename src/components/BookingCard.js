@@ -84,9 +84,11 @@ export default function BookingCard({ trek, fixedDepartures, packages }) {
               : "Price on Request"}
           </span>
         </div>
-        <div className="mt-1 text-sm text-ink">
-          {price ? (isForeign ? "+ applicable taxes" : "+5% GST") : "Contact us for a custom quote"}
-        </div>
+        {(!price || !isForeign) && (
+          <div className="mt-1 text-sm text-ink">
+            {price ? "+5% GST" : "Contact us for a custom quote"}
+          </div>
+        )}
       </div>
 
       <div className="border-t border-ink/10" />

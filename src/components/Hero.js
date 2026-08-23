@@ -46,7 +46,7 @@ export default function Hero() {
   return (
     <section className="relative flex h-[calc(100vh-77px)] min-h-[600px] flex-col overflow-hidden bg-ink md:h-[calc(100vh-69px)]">
       <Image
-        src="/kala-patthar-hero-3.jpg"
+        src="/kala-patthar-hero-4.png"
         alt="Sunrise view of Mount Everest from Kala Patthar"
         fill
         priority
