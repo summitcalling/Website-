@@ -56,32 +56,6 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
-          <ul className="space-y-3 text-base">
-            {footerLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="hover:text-blue transition-colors">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
-          <ul className="space-y-3 text-base">
-            {treks.map((trek) => (
-              <li key={trek.slug}>
-                <Link href={`/treks/${trek.slug}`} className="hover:text-blue transition-colors">
-                  {trek.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
           <h3 className="font-serif font-semibold text-white text-lg mb-4">
             Office Addresses &amp; Contact Details
           </h3>
@@ -131,6 +105,32 @@ export default function Footer() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-base">
+            {footerLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-blue transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
+          <ul className="space-y-3 text-base">
+            {treks.map((trek) => (
+              <li key={trek.slug}>
+                <Link href={`/treks/${trek.slug}`} className="hover:text-blue transition-colors">
+                  {trek.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
