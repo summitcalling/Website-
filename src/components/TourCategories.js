@@ -25,7 +25,7 @@ export default function TourCategories() {
               <Link
                 key={exp.slug}
                 href={`/experiences/${exp.slug}`}
-                className="group relative aspect-[3/4] overflow-hidden rounded-2xl"
+                className="group relative aspect-[3/4] overflow-hidden rounded-3xl"
               >
                 <Image
                   src={exp.image}
