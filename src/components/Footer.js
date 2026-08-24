@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { footerLinks, site, telLink, whatsappLink } from "@/data/site";
+import { footerLinks, site } from "@/data/site";
 import { treks } from "@/data/treks";
 import { experiences } from "@/data/experiences";
 import { CONTAINER } from "@/lib/layout";
@@ -34,10 +34,6 @@ function LocationIcon() {
   );
 }
 
-const socialLinks = [
-  { label: "Instagram", href: site.social.instagram },
-];
-
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -51,54 +47,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-white">
-      <div className={`${CONTAINER} pt-16 pb-12 sm:pt-20`}>
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-            Adventures Are Waiting,
-            <br />
-            <span className="text-white/40">let&apos;s do it together!</span>
-          </h2>
-          <Link
-            href="/treks"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-white/90"
-          >
-            View Treks
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-              <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          {socialLinks.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
-            >
-              {s.label}
-            </a>
-          ))}
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
-          >
-            WhatsApp
-          </a>
-          <a
-            href={telLink()}
-            className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
-          >
-            Phone
-          </a>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
+      <div>
         <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:items-start`}>
           <div>
             <div className="flex items-center text-white">
@@ -202,8 +151,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`${CONTAINER} pb-16 grid gap-12 sm:grid-cols-2`}>
-          <div>
+        <div className={`${CONTAINER} pb-16`}>
+        <div className="mx-auto grid max-w-3xl gap-12 sm:grid-cols-2">
+          <div className="flex flex-col">
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
               Bangalore Office
@@ -231,7 +181,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col">
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
               Kanpur Office
@@ -256,6 +206,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+        </div>
         </div>
       </div>
 
