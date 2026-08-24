@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { footerLinks, site } from "@/data/site";
+import { footerLinks, site, telLink, whatsappLink } from "@/data/site";
 import { treks } from "@/data/treks";
 import { experiences } from "@/data/experiences";
 import { CONTAINER } from "@/lib/layout";
@@ -34,6 +34,12 @@ function LocationIcon() {
   );
 }
 
+const socialLinks = [
+  { label: "YouTube", href: site.social.youtube },
+  { label: "Instagram", href: site.social.instagram },
+  { label: "Facebook", href: site.social.facebook },
+];
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -47,29 +53,158 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-white">
-      <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-6 lg:items-start`}>
-        <div className="md:col-span-1">
-          <div className="flex items-center text-white">
-            <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
-              <Image
-                src={site.logo}
-                alt={site.name}
-                width={496}
-                height={276}
-                className="h-full w-auto object-contain"
-              />
-            </span>
-          </div>
-          <p className="mt-4 text-base leading-relaxed text-white">
-            {site.description}
-          </p>
+      <div className={`${CONTAINER} pt-16 pb-12 sm:pt-20`}>
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+            Adventures Are Waiting,
+            <br />
+            <span className="text-white/40">let&apos;s do it together!</span>
+          </h2>
+          <Link
+            href="/treks"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-white/90"
+          >
+            View Treks
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
 
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">
-            Contact Details
-          </h3>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {socialLinks.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
+            >
+              {s.label}
+            </a>
+          ))}
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
+          >
+            WhatsApp
+          </a>
+          <a
+            href={telLink()}
+            className="rounded-full border border-white/20 px-5 py-2 text-sm text-white transition-colors hover:border-white/50 hover:text-blue"
+          >
+            Phone
+          </a>
+        </div>
+      </div>
 
+      <div className="border-t border-white/10">
+        <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:items-start`}>
+          <div>
+            <div className="flex items-center text-white">
+              <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
+                <Image
+                  src={site.logo}
+                  alt={site.name}
+                  width={496}
+                  height={276}
+                  className="h-full w-auto object-contain"
+                />
+              </span>
+            </div>
+            <p className="mt-4 text-base leading-relaxed text-white">
+              {site.description}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-3 text-base">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-blue transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/terms" className="hover:text-blue transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/cancellation-policy" className="hover:text-blue transition-colors">
+                  Cancellation &amp; Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-blue transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
+            <ul className="space-y-3 text-base">
+              {treks.map((trek) => (
+                <li key={trek.slug}>
+                  <Link href={`/treks/${trek.slug}`} className="hover:text-blue transition-colors">
+                    {trek.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-serif font-semibold text-white text-lg mb-4">Adventure Tours</h3>
+            <ul className="space-y-3 text-base">
+              {experiences.map((exp) => (
+                <li key={exp.slug}>
+                  <Link href={`/experiences/${exp.slug}`} className="hover:text-blue transition-colors">
+                    {exp.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-serif font-semibold text-white text-lg mb-4">Newsletter</h3>
+            <p className="text-base text-white mb-4">
+              Trek tips, fresh departures, occasional inspiration.
+            </p>
+            {subscribed ? (
+              <p className="text-base text-blue">Thanks — you&apos;re on the list!</p>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@email.com"
+                  className="min-w-0 flex-1 rounded-full bg-white/10 px-4 py-2.5 text-base text-white placeholder:text-white outline-none focus:ring-2 focus:ring-blue"
+                />
+                <button
+                  type="submit"
+                  aria-label="Subscribe"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue text-white hover:bg-blue-dark transition-colors"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 12h16M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+
+        <div className={`${CONTAINER} pb-16 grid gap-12 sm:grid-cols-2`}>
           <div>
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
@@ -98,7 +233,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-white/10 pt-8">
+          <div>
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
               Kanpur Office
@@ -123,90 +258,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
-          <ul className="space-y-3 text-base">
-            {footerLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="hover:text-blue transition-colors">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/terms" className="hover:text-blue transition-colors">
-                Terms &amp; Conditions
-              </Link>
-            </li>
-            <li>
-              <Link href="/cancellation-policy" className="hover:text-blue transition-colors">
-                Cancellation &amp; Refund Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacy-policy" className="hover:text-blue transition-colors">
-                Privacy Policy
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
-          <ul className="space-y-3 text-base">
-            {treks.map((trek) => (
-              <li key={trek.slug}>
-                <Link href={`/treks/${trek.slug}`} className="hover:text-blue transition-colors">
-                  {trek.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Adventure Tours</h3>
-          <ul className="space-y-3 text-base">
-            {experiences.map((exp) => (
-              <li key={exp.slug}>
-                <Link href={`/experiences/${exp.slug}`} className="hover:text-blue transition-colors">
-                  {exp.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-serif font-semibold text-white text-lg mb-4">Newsletter</h3>
-          <p className="text-base text-white mb-4">
-            Trek tips, fresh departures, occasional inspiration.
-          </p>
-          {subscribed ? (
-            <p className="text-base text-blue">Thanks — you&apos;re on the list!</p>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@email.com"
-                className="min-w-0 flex-1 rounded-full bg-white/10 px-4 py-2.5 text-base text-white placeholder:text-white outline-none focus:ring-2 focus:ring-blue"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue text-white hover:bg-blue-dark transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 12h16M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </form>
-          )}
         </div>
       </div>
 
