@@ -39,7 +39,7 @@ export default function TrekCard({ trek, index }) {
 
       <div className="flex flex-1 flex-col p-4">
         <Link href={`/treks/${trek.slug}`} className="block">
-          <h3 className="font-serif text-base font-semibold leading-snug text-ink transition-colors group-hover:text-blue">
+          <h3 className="truncate font-serif text-base font-semibold text-ink transition-colors group-hover:text-blue">
             {trek.name}
           </h3>
         </Link>

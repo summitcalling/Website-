@@ -26,8 +26,7 @@ export default async function TreksPage({ searchParams }) {
     <>
       <PageHeader
         eyebrow="All Treks"
-        title="Guided Himalayan Treks"
-        description="From short ridge walks to the legendary trail to Everest — every route is led by licensed local guides."
+        title="Iconic Himalayan Treks"
       />
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>

@@ -98,7 +98,13 @@ export default async function TrekDetailPage({ params }) {
     {
       label: "Grade",
       value: trek.difficulty,
-      icon: <path d="M4 19h3V9H4v10zm6.5 0h3V5h-3v14zM17 19h3v-7h-3v7z" strokeLinejoin="round" />,
+      icon: (
+        <>
+          <rect x="3" y="15" width="3.5" height="6" rx="1" />
+          <rect x="9.25" y="11" width="3.5" height="10" rx="1" />
+          <rect x="15.5" y="7" width="3.5" height="14" rx="1" />
+        </>
+      ),
     },
   ];
 

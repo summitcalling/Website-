@@ -45,7 +45,7 @@ export default function ExperiencesPage() {
                   <span className="text-[11px] font-semibold uppercase tracking-wide text-blue">
                     {exp.type}
                   </span>
-                  <h3 className="mt-1 font-serif text-base font-semibold text-ink">
+                  <h3 className="mt-1 truncate font-serif text-base font-semibold text-ink">
                     {exp.name}
                   </h3>
                   <p className="mt-1 text-sm leading-snug text-ink">{exp.duration}</p>

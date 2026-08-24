@@ -81,7 +81,7 @@ export default function Itinerary({ days }) {
                   {hasDay ? day.day : day.time}
                 </span>
               </span>
-              <span className="flex-1 text-[17px] font-semibold leading-snug text-ink transition-colors group-hover:text-blue">
+              <span className="flex-1 text-[17px] font-medium leading-snug text-ink transition-colors group-hover:text-blue">
                 {day.title}
               </span>
               <svg

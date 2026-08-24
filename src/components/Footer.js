@@ -57,7 +57,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-serif font-semibold text-white text-lg mb-4">
-            Office Addresses &amp; Contact Details
+            Contact Details
           </h3>
 
           <div>
@@ -117,6 +117,21 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/terms" className="hover:text-blue transition-colors">
+                Terms &amp; Conditions
+              </Link>
+            </li>
+            <li>
+              <Link href="/cancellation-policy" className="hover:text-blue transition-colors">
+                Cancellation &amp; Refund Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy-policy" className="hover:text-blue transition-colors">
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -2,7 +2,13 @@
 
 import { whatsappLink } from "@/data/site";
 
-export default function MobileBookingBar({ price, message }) {
+export default function MobileBookingBar({ price, message, currency = "INR" }) {
+  const formattedPrice = price
+    ? currency === "USD"
+      ? `USD ${price.toLocaleString("en-US")}`
+      : `₹${price.toLocaleString("en-IN")}`
+    : "On Request";
+
   return (
     <>
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 h-36 bg-gradient-to-t from-black/25 to-transparent lg:hidden" />
@@ -17,9 +23,9 @@ export default function MobileBookingBar({ price, message }) {
             </div>
             <div className="mt-1 flex items-center gap-1.5">
               <span className="font-serif text-2xl font-semibold leading-none text-ink">
-                {price ? `₹${price.toLocaleString("en-IN")}` : "On Request"}
+                {formattedPrice}
               </span>
-              {price && <span className="text-xs text-ink">+5% GST</span>}
+              {price && currency === "INR" && <span className="text-xs text-ink">+5% GST</span>}
             </div>
             {price && <div className="mt-1 text-xs text-ink">per person</div>}
           </div>
