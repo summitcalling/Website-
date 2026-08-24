@@ -114,7 +114,7 @@ export default async function TrekDetailPage({ params }) {
         <div className={`${CONTAINER} pb-6 sm:pb-12`}>
           <TrekGallery gallery={gallery} name={trek.name} />
 
-          <h1 className="mt-8 whitespace-nowrap text-base font-semibold leading-tight text-ink sm:whitespace-normal sm:text-4xl md:text-[42px]">
+          <h1 className="mt-8 whitespace-nowrap text-[17px] font-semibold leading-tight tracking-tighter text-ink sm:whitespace-normal sm:text-4xl sm:tracking-normal md:text-[42px]">
             {trek.name}
           </h1>
 
