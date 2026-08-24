@@ -14,19 +14,19 @@ const features = [
     title: "Fixed Small-Group Departures",
     description:
       "Guaranteed dates, capped group sizes, no waiting for a minimum headcount to form.",
-    image: "/treks/manaslu-2.jpg",
+    image: "https://images.unsplash.com/photo-1550486686-a496af34a2d5?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Safety-First Itineraries",
     description:
       "Acclimatization days built into every route, with trained guides carrying oximeters and first-aid kits.",
-    image: "/treks/ebc-gokyo-1.jpg",
+    image: "https://images.unsplash.com/photo-1564144573017-8dc932e0039e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "24/7 WhatsApp Support",
     description:
       "Real humans on the other end, before, during, and after your trek — not a chatbot.",
-    image: "/treks/abc-2.jpg",
+    image: "https://images.unsplash.com/photo-1613934898711-c27b605a0fb7?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Responsible Tourism",
