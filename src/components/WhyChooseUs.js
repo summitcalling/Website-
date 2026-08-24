@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
   }
 
   return (
-    <section className="mt-16 overflow-hidden bg-white sm:mt-20">
+    <section className="mt-2 overflow-hidden bg-white sm:mt-4">
       <div className="py-24 pl-5 sm:pl-8 sm:py-28 lg:pl-24">
         <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
           Why Choose Us

@@ -5,7 +5,7 @@ import RotatingWord from "@/components/RotatingWord";
 const stats = [
   {
     value: "24/7",
-    label: "WhatsApp Support",
+    label: "Customer Support",
     icon: (
       <path d="M5 5.25h14a1.75 1.75 0 0 1 1.75 1.75v8.5A1.75 1.75 0 0 1 19 17.25h-8.94l-4.31 3.68v-3.68H5A1.75 1.75 0 0 1 3.25 15.5V7A1.75 1.75 0 0 1 5 5.25Z" strokeLinecap="round" strokeLinejoin="round" />
     ),

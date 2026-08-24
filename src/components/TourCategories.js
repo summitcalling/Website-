@@ -5,7 +5,7 @@ import { experiences } from "@/data/experiences";
 
 export default function TourCategories() {
   return (
-    <section className="mt-16 bg-cream sm:mt-20">
+    <section className="mt-6 bg-cream sm:mt-8">
       <div className={`${CONTAINER} py-20 sm:py-24`}>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
           <div className="lg:sticky lg:top-28 lg:w-72 lg:shrink-0">

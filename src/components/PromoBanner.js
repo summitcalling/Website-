@@ -4,27 +4,25 @@ import { CONTAINER } from "@/lib/layout";
 
 export default function PromoBanner() {
   return (
-    <section className="relative overflow-hidden bg-white pb-20">
-      <div className="relative h-[420px] sm:h-[560px]">
-        <Image
-          src="/misty-peak-banner-2.png"
-          alt="A mountain peak veiled in mist"
-          fill
-          className="object-cover object-top grayscale"
-          sizes="100vw"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white" />
-      </div>
+    <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-ink sm:h-[85vh]">
+      <Image
+        src="https://images.unsplash.com/photo-1477468572316-36979010099d?auto=format&fit=crop&w=2200&q=80"
+        alt="A mountain peak veiled in mist"
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/40" />
 
-      <div className={`relative -mt-16 flex flex-col items-center gap-5 text-center sm:-mt-24 ${CONTAINER}`}>
+      <div className={`relative flex h-full flex-col items-center justify-center gap-5 text-center ${CONTAINER}`}>
         <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue">
           Early Bird Offer
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl text-ink">
+        <h2 className="font-serif text-3xl sm:text-4xl text-white">
           Book 60 Days Ahead and Save 10%
         </h2>
-        <p className="max-w-xl text-base leading-relaxed text-ink">
+        <p className="max-w-xl text-base leading-relaxed text-white">
           Lock in your 2026 Himalayan departure two months early and save 10% on any fixed-date trek.
         </p>
         <span className="h-px w-12 bg-blue" />

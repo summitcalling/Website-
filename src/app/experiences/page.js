@@ -16,7 +16,6 @@ export default function ExperiencesPage() {
       <PageHeader
         eyebrow="Beyond Trekking"
         title="Helicopter Tours & Mountain Flights"
-        description="Experience the Himalayas from above — scenic helicopter tours and mountain flights, no trekking required."
       />
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>
