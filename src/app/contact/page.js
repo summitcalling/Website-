@@ -52,7 +52,6 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact Us"
         title="Get in Touch"
-        description="Have a question about a route, fitness level, or fixed departure? Reach out — a real trekking expert replies within an hour."
       />
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>

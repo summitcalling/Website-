@@ -56,11 +56,7 @@ export default function Hero() {
 
       <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <p className="text-2xl font-semibold text-white sm:text-4xl">
-            Adventure Starts Here
-          </p>
-
-          <h1 className="mt-6 font-serif text-6xl sm:text-7xl md:text-8xl font-semibold leading-[1.1] text-white">
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl font-semibold leading-[1.1] text-white">
             <RotatingWord />
           </h1>
         </div>
