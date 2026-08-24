@@ -16,7 +16,7 @@ export default function TrekGallery({ gallery, name }) {
 
   return (
     <>
-      <div className="relative -mx-5 aspect-[16/11] overflow-hidden sm:hidden">
+      <div className="relative -mx-5 h-[65vh] overflow-hidden sm:hidden">
         <Image
           src={gallery[index]}
           alt={`${name} photo ${index + 1}`}
