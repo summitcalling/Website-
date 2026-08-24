@@ -2,7 +2,7 @@ import { site, telLink, whatsappLink } from "@/data/site";
 
 export default function FloatingButtons() {
   return (
-    <div className="fixed bottom-20 right-5 z-40 flex flex-col gap-3 sm:bottom-5">
+    <div className="fixed bottom-16 right-5 z-40 flex flex-col gap-3 sm:bottom-5">
       <div className="relative" style={{ height: 52, width: 52 }}>
         <span className="absolute inset-0 rounded-full bg-sky opacity-75 animate-ping" />
         <a
