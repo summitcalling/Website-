@@ -54,7 +54,7 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/5" />
 
-      <div className={`relative flex flex-1 items-start pt-20 sm:items-center sm:pt-0 w-full ${CONTAINER}`}>
+      <div className={`relative flex flex-1 items-center w-full ${CONTAINER}`}>
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
           <p className="text-2xl font-semibold text-white sm:text-4xl">
             Adventure Starts Here

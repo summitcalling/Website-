@@ -152,7 +152,7 @@ export default function Footer() {
         </div>
 
         <div className={`${CONTAINER} pb-16`}>
-        <div className="mx-auto grid max-w-3xl gap-12 sm:grid-cols-2">
+        <div className="grid gap-12 sm:grid-cols-2 lg:max-w-2xl">
           <div className="flex flex-col">
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />
