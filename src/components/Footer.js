@@ -180,19 +180,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className={`${CONTAINER} py-6 flex flex-wrap items-center justify-between gap-3 text-sm text-white`}>
+        <div className={`${CONTAINER} py-6 text-center text-sm text-white`}>
           <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link href="/terms" className="hover:text-blue transition-colors">
-              Terms &amp; Conditions
-            </Link>
-            <Link href="/cancellation-policy" className="hover:text-blue transition-colors">
-              Cancellation &amp; Refund Policy
-            </Link>
-            <Link href="/privacy-policy" className="hover:text-blue transition-colors">
-              Privacy Policy
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
