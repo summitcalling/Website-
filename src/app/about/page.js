@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CTASection from "@/components/CTASection";
 import { site } from "@/data/site";
 import { founders } from "@/data/founders";
 import { CONTAINER } from "@/lib/layout";
@@ -10,24 +9,6 @@ export const metadata = {
 };
 
 const BODY_TEXT = "text-[17px] leading-relaxed text-ink";
-
-const pillars = [
-  {
-    title: "Thoughtfully Planned",
-    description:
-      "Every itinerary is built around real acclimatization, not the fastest route to the summit — welcoming, well-planned, and safe from day one.",
-  },
-  {
-    title: "Never Compromised",
-    description:
-      "Reasonable pricing that never trades away safety, quality, or genuine hospitality along the trail.",
-  },
-  {
-    title: "Genuinely Memorable",
-    description:
-      "First-time trekker or returning mountaineer — every journey with us is built to be truly memorable, not just completed.",
-  },
-];
 
 function SectionHeading({ children, dark }) {
   return (
@@ -77,24 +58,13 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading>About Us</SectionHeading>
 
-          <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <p className={BODY_TEXT}>
-                Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From remote Himalayan trails to high-altitude treks and expeditions, we create journeys that bring people closer to the mountains.
-              </p>
-              <p className={`mt-4 ${BODY_TEXT}`}>
-                Whether it&apos;s your first Himalayan trek or your next high-altitude challenge, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
-              </p>
-            </div>
-
-            <div className="space-y-6 lg:border-l lg:border-ink/10 lg:pl-8">
-              {pillars.map((pillar) => (
-                <div key={pillar.title}>
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">{pillar.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink">{pillar.description}</p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-8 max-w-3xl">
+            <p className={BODY_TEXT}>
+              Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From remote Himalayan trails to high-altitude treks and expeditions, we create journeys that bring people closer to the mountains.
+            </p>
+            <p className={`mt-4 ${BODY_TEXT}`}>
+              Whether it&apos;s your first Himalayan trek or your next high-altitude challenge, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
+            </p>
           </div>
         </div>
       </section>
@@ -228,8 +198,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </>
   );
 }

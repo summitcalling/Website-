@@ -48,8 +48,8 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <div>
-        <div className={`${CONTAINER} py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:items-start`}>
-          <div>
+        <div className={`${CONTAINER} py-16 flex flex-col gap-12 sm:grid sm:grid-cols-2 lg:grid-cols-5 lg:items-start`}>
+          <div className="order-1">
             <div className="flex items-center text-white">
               <span className="flex h-14 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 py-1.5">
                 <Image
@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="order-2">
             <h3 className="font-serif font-semibold text-white text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3 text-base">
               {footerLinks.map((link) => (
@@ -94,7 +94,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="order-3">
             <h3 className="font-serif font-semibold text-white text-lg mb-4">Popular Treks</h3>
             <ul className="space-y-3 text-base">
               {treks.map((trek) => (
@@ -107,7 +107,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="order-4">
             <h3 className="font-serif font-semibold text-white text-lg mb-4">Adventure Tours</h3>
             <ul className="space-y-3 text-base">
               {experiences.map((exp) => (
@@ -120,7 +120,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="order-6 sm:order-5">
             <h3 className="font-serif font-semibold text-white text-lg mb-4">Newsletter</h3>
             <p className="text-base text-white mb-4">
               Trek tips, fresh departures, occasional inspiration.
@@ -149,10 +149,7 @@ export default function Footer() {
               </form>
             )}
           </div>
-        </div>
-
-        <div className={`${CONTAINER} pb-16`}>
-        <div className="grid gap-12 sm:grid-cols-2 lg:max-w-2xl">
+          <div className="order-5 grid gap-12 sm:order-6 sm:col-span-2 sm:grid-cols-2 sm:pt-4 lg:col-span-5 lg:max-w-2xl">
           <div className="flex flex-col">
             <div className="flex items-center gap-2 text-base font-semibold text-white">
               <LocationIcon />

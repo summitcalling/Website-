@@ -58,8 +58,8 @@ export default function ContactPage() {
         <div className={`${CONTAINER} py-14`}>
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
             {officeLocations.map((office) => (
-              <div key={office.name} className="rounded-2xl bg-white p-6 ring-1 ring-ink/5">
-                <div className="font-serif text-lg font-semibold text-ink">
+              <div key={office.name} className="rounded-2xl border border-ink/15 bg-white p-6">
+                <div className="text-center font-serif text-lg font-semibold text-ink">
                   {office.name}
                 </div>
                 <div className="mt-4 flex items-start gap-2.5 text-sm text-ink">
