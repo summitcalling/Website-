@@ -35,9 +35,7 @@ function LocationIcon() {
 }
 
 const socialLinks = [
-  { label: "YouTube", href: site.social.youtube },
   { label: "Instagram", href: site.social.instagram },
-  { label: "Facebook", href: site.social.facebook },
 ];
 
 export default function Footer() {
