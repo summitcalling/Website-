@@ -15,6 +15,11 @@ export const treks = [
       "/treks/annapurna-3.jpg",
       "/treks/annapurna-4.jpg",
       "/treks/annapurna-5.jpg",
+      "/treks/annapurna-6.jpg",
+      "/treks/annapurna-7.jpg",
+      "/treks/annapurna-8.jpg",
+      "/treks/annapurna-9.jpg",
+      "/treks/annapurna-10.jpg",
     ],
     summary:
       "Combine the breathtaking beauty of Tilicho Lake with the legendary crossing of Thorong La Pass (5,416m) — an unforgettable journey through diverse landscapes, traditional mountain villages, and some of the finest scenery in the Himalayas.",
