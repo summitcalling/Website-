@@ -76,7 +76,7 @@ export default async function ExperienceDetailPage({ params }) {
   return (
     <>
       <section className="bg-white pt-8">
-        <div className={`${CONTAINER} pb-12`}>
+        <div className={`${CONTAINER} pb-4 sm:pb-12`}>
           <TrekGallery gallery={gallery} name={exp.name} />
 
           <span className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
@@ -93,7 +93,7 @@ export default async function ExperienceDetailPage({ params }) {
       </div>
 
       <section className="bg-white">
-        <div className={`${CONTAINER} py-16 grid grid-cols-1 lg:grid-cols-3 gap-12`}>
+        <div className={`${CONTAINER} pt-4 pb-16 sm:py-16 grid grid-cols-1 lg:grid-cols-3 gap-12`}>
           <div className="order-2 lg:order-none lg:col-span-2">
             <div id="overview" className="scroll-mt-[170px]">
               <SectionHeading>Overview</SectionHeading>
