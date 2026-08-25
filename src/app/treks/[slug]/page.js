@@ -61,6 +61,9 @@ export default async function TrekDetailPage({ params }) {
     pkg.name.toLowerCase().includes("without")
   );
 
+  const LONGEST_TREK_NAME_LENGTH = Math.max(...treks.map((t) => t.name.length));
+  const titleVw = Math.min(7.5, 4.5 * (LONGEST_TREK_NAME_LENGTH / trek.name.length)).toFixed(2);
+
   const navItems = [
     { id: "overview", label: "Overview" },
     { id: "itinerary", label: "Itinerary" },
@@ -114,7 +117,10 @@ export default async function TrekDetailPage({ params }) {
         <div className={`${CONTAINER} pb-6 sm:pb-12`}>
           <TrekGallery gallery={gallery} name={trek.name} />
 
-          <h1 className="mt-8 whitespace-nowrap text-[4.5vw] font-semibold leading-tight tracking-tighter text-ink sm:whitespace-normal sm:text-4xl sm:tracking-normal md:text-[42px]">
+          <h1
+            style={{ fontSize: `${titleVw}vw` }}
+            className="mt-8 whitespace-nowrap font-semibold leading-tight tracking-tighter text-ink sm:whitespace-normal sm:!text-4xl sm:tracking-normal md:!text-[42px]"
+          >
             {trek.name}
           </h1>
 
