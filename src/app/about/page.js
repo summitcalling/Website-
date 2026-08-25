@@ -147,12 +147,12 @@ export default function AboutPage() {
                 &ldquo;We don&apos;t just want people to experience the mountains. We want them to respect them.&rdquo;
               </p>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-3xl">
               <Image
                 src="/treks/ebc-3.jpg"
                 alt="Prayer flags and a stupa on the trail to Tengboche"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(min-width: 1024px) 360px, 90vw"
               />
             </div>

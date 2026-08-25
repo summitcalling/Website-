@@ -26,7 +26,7 @@ function TrekCard({ trek, i, className, sizes }) {
         {trek.duration} Days · {trek.difficulty}
       </span>
       <div className="absolute inset-x-0 bottom-0 p-6">
-        <h3 className="truncate font-serif text-base font-semibold text-white">
+        <h3 className="truncate font-serif text-lg font-semibold text-white sm:text-xl">
           {trek.name}
         </h3>
         <div className="mt-2 flex flex-col">
