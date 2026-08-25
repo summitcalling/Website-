@@ -373,6 +373,11 @@ export const treks = [
       "/treks/mardi-3.jpg",
       "/treks/mardi-4.jpg",
       "/treks/mardi-5.jpg",
+      "/treks/mardi-6.jpg",
+      "/treks/mardi-7.jpg",
+      "/treks/mardi-8.jpg",
+      "/treks/mardi-9.jpg",
+      "/treks/mardi-10.jpg",
     ],
     summary:
       "A hidden gem in the Annapurna region — trek through rhododendron forests, alpine meadows, and scenic ridgelines to Mardi Himal Base Camp (4,500m) for spectacular close-up views of Machhapuchhre, without the crowds found on Nepal's more popular routes.",
