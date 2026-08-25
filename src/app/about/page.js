@@ -40,7 +40,7 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
           <div className={`absolute inset-0 flex flex-col justify-end ${CONTAINER} pb-10 sm:pb-16`}>
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue">
+            <span className="text-sm font-semibold uppercase tracking-widest text-blue sm:text-base">
               About
             </span>
             <h1 className="mt-2 font-serif text-4xl font-semibold leading-none text-white sm:text-6xl md:text-7xl">
@@ -54,12 +54,21 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-3 lg:gap-12`}>
           <SectionHeading>About Us</SectionHeading>
 
-          <div className="lg:col-span-2">
-            <p className={BODY_TEXT}>
-              Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From remote Himalayan trails to high-altitude treks and expeditions, we create journeys that bring people closer to the mountains.
+          <div className="space-y-4 lg:col-span-2">
+            <p className={`${BODY_TEXT} font-semibold`}>
+              Summit Calling is an adventure-based travel company specialising in Himalayan trekking, mountaineering, helicopter tours, mountain flights, and unforgettable mountain experiences.
             </p>
-            <p className={`mt-4 ${BODY_TEXT}`}>
-              Whether it&apos;s your first Himalayan trek or your next high-altitude challenge, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
+            <p className={BODY_TEXT}>
+              Launched in <strong>2026</strong>, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From walking through remote Himalayan trails and taking on <strong>high-altitude treks and expeditions</strong> to discovering some of the world&apos;s most breathtaking landscapes, we aim to create journeys that bring people closer to the mountains.
+            </p>
+            <p className={`${BODY_TEXT} font-semibold`}>
+              We are dedicated to making these experiences welcoming, well-planned, safe, and memorable for everyone — whether you are taking your first steps into the Himalayas or returning for your next adventure.
+            </p>
+            <p className={BODY_TEXT}>
+              We aim to offer <strong>the best and most reasonable packages for our customers, while ensuring an experience that never compromises on safety, quality, or genuine hospitality.</strong>
+            </p>
+            <p className={BODY_TEXT}>
+              Whether it is your first Himalayan trek, a high-altitude challenge, or simply your desire to explore the mountains, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
             </p>
           </div>
         </div>
@@ -101,16 +110,16 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading>Meet the Founders</SectionHeading>
 
-          <div className="mt-10 flex flex-col gap-16">
+          <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
             {founders.map((person) => (
               <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
-                <div className="relative aspect-[4/5] w-full max-w-[380px] shrink-0 overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
                   <Image
                     src={person.photo}
                     alt={person.name}
                     fill
                     className="object-cover"
-                    sizes="380px"
+                    sizes="220px"
                   />
                 </div>
                 <div>
