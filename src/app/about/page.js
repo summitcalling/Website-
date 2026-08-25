@@ -101,16 +101,16 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading>Meet the Founders</SectionHeading>
 
-          <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
+          <div className="mt-10 flex flex-col gap-16">
             {founders.map((person) => (
               <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
-                <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/5] w-full max-w-[380px] shrink-0 overflow-hidden rounded-2xl">
                   <Image
                     src={person.photo}
                     alt={person.name}
                     fill
                     className="object-cover"
-                    sizes="220px"
+                    sizes="380px"
                   />
                 </div>
                 <div>
