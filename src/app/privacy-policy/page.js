@@ -228,7 +228,6 @@ export default function PrivacyPolicyPage() {
       <PageHeader
         eyebrow="Legal"
         title="Privacy Policy"
-        description="How we collect, use, store, protect, and share your personal information."
       />
 
       <section className="bg-white">

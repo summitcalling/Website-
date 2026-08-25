@@ -44,14 +44,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Kathmandu. Hotel transfer and trek briefing.",
+        title: "Arrival in Kathmandu (1,360 m).",
         accommodation: "3 Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival in Kathmandu, our team will receive you and transfer you to your hotel. Hotel check-in begins at 12:00 PM, so if you arrive earlier, you can leave your luggage at the reception and begin exploring the city while your room is being prepared.\n\nKathmandu is Nepal's vibrant capital and the gateway to the Himalayas. You will have free time to relax after your journey or explore nearby markets, cafes, and cultural attractions. If you need any last-minute trekking gear, Thamel is one of the best places in Nepal to find quality equipment and outdoor clothing.\n\nIn the evening, we will gather at the hotel for a detailed trek briefing where you will meet our team and your fellow trekkers. We will walk you through the itinerary, conduct a gear check, discuss altitude safety, and answer any questions to ensure everyone is fully prepared for the adventure ahead.",
       },
       {
         day: 2,
-        title: "Drive from Kathmandu to Chame.",
+        title: "Drive from Kathmandu (1,360 m) to Chame (2,670 m).",
         duration: "Approximately 8–10 Hours Drive",
         accommodation: "Tea House",
         description:
@@ -59,7 +59,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Drive from Chame to Manang.",
+        title: "Drive from Chame (2,670 m) to Manang (3,540 m).",
         duration: "Approximately 3–4 Hours Drive",
         accommodation: "Tea House",
         description:
@@ -67,14 +67,14 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Acclimatization day in Manang. Optional hike to Ice Lake or Gangapurna Base Camp.",
+        title: "Acclimatization day in Manang (3,540 m).",
         accommodation: "Tea House",
         description:
           "Today is an important acclimatization day to help your body adjust to the higher altitude before we continue towards Tilicho Lake and Thorong La Pass. Rather than remaining inactive, we will spend the day exploring the area on a short hike while allowing our bodies to adapt naturally.\n\nYou may choose to hike to the beautiful Ice Lake or towards Gangapurna Base Camp, both of which offer outstanding panoramic views of Annapurna II, Annapurna III, Annapurna IV, Gangapurna, Chulu East, Chulu West, Pisang Peak, Thorong Peak, and even Mt. Manaslu on a clear day.\n\nAfter returning to Manang, you will have the rest of the afternoon to relax, enjoy the peaceful mountain surroundings, and prepare for the higher-altitude trekking that begins tomorrow.",
       },
       {
         day: 5,
-        title: "Trek from Manang to Khangsar.",
+        title: "Trek from Manang (3,540 m) to Khangsar (3,760 m).",
         distance: "9–10 km",
         duration: "Approximately 4–5 Hours",
         accommodation: "Tea House",
@@ -83,7 +83,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Trek from Khangsar to Tilicho Base Camp.",
+        title: "Trek from Khangsar (3,760 m) to Tilicho Base Camp (4,200 m).",
         distance: "8–9 km",
         duration: "Approximately 5 Hours",
         accommodation: "Tea House",
@@ -101,7 +101,7 @@ export const treks = [
       },
       {
         day: 8,
-        title: "Trek from Tilicho Base Camp to Yak Kharka.",
+        title: "Trek from Tilicho Base Camp (4,200 m) to Yak Kharka (4,000 m).",
         distance: "11–12 km",
         duration: "Approximately 5–6 Hours",
         accommodation: "Tea House",
@@ -110,7 +110,7 @@ export const treks = [
       },
       {
         day: 9,
-        title: "Trek to Thorong Phedi or High Camp.",
+        title: "Trek from Yak Kharka (4,000 m) to Thorong Phedi (4,640 m) or High Camp (4,800 m).",
         distance: "6–7 km",
         duration: "Approximately 4–5 Hours",
         accommodation: "Tea House",
@@ -119,7 +119,7 @@ export const treks = [
       },
       {
         day: 10,
-        title: "Cross Thorong La Pass (5,416 m) and descend to Muktinath.",
+        title: "Cross Thorong La Pass (5,416 m) and trek to Muktinath (3,802 m).",
         distance: "15–16 km",
         duration: "Approximately 7–9 Hours",
         accommodation: "Tea House",
@@ -128,7 +128,7 @@ export const treks = [
       },
       {
         day: 11,
-        title: "Drive from Muktinath via Kagbeni and Jomsom to Pokhara.",
+        title: "Drive from Muktinath (3,802 m) via Kagbeni and Jomsom to Pokhara (822 m).",
         duration: "Approximately 7–8 Hours Drive",
         accommodation: "3 Star Hotel",
         description:
@@ -136,7 +136,7 @@ export const treks = [
       },
       {
         day: 12,
-        title: "Drive from Pokhara to Kathmandu.",
+        title: "Drive from Pokhara (822 m) to Kathmandu (1,360 m).",
         duration: "Approximately 6–7 Hours Drive",
         accommodation: "3 Star Hotel",
         description:
@@ -690,14 +690,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Kathmandu. Hotel check-in after 12:00 PM and trek briefing in the evening.",
+        title: "Arrival in Kathmandu (1,400 m).",
         accommodation: "3-Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival at Tribhuvan International Airport, our team will receive you and transfer you to your hotel in Kathmandu. Hotel check-in begins at 12:00 PM. If you arrive earlier, you may leave your luggage at the hotel and spend some time exploring the nearby streets while your room is being prepared. Kathmandu, the vibrant capital of Nepal, is a fascinating blend of ancient temples, bustling markets, and rich cultural heritage. You can relax after your journey or explore the nearby Thamel area, which is well known for its cafés, restaurants, trekking shops, and lively atmosphere.\n\nIn the evening, we will gather at the hotel for a detailed trek briefing. You will meet your trekking guide and fellow trekkers while we walk you through the itinerary, conduct a gear check, discuss altitude safety, and answer any questions before beginning the adventure.",
       },
       {
         day: 2,
-        title: "Scenic drive from Kathmandu to Syabrubesi.",
+        title: "Drive from Kathmandu (1,400 m) to Syabrubesi (1,460 m).",
         distance: "Approximately 120 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -706,7 +706,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Trek from Syabrubesi to Lama Hotel through forests and riverside trails.",
+        title: "Trek from Syabrubesi (1,460 m) to Lama Hotel (2,470 m).",
         distance: "11–12 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -715,7 +715,7 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Trek from Lama Hotel to Langtang Village.",
+        title: "Trek from Lama Hotel (2,470 m) to Langtang Village (3,430 m).",
         distance: "14–15 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -724,7 +724,7 @@ export const treks = [
       },
       {
         day: 5,
-        title: "Trek from Langtang Village to Kyanjin Gompa.",
+        title: "Trek from Langtang Village (3,430 m) to Kyanjin Gompa (3,870 m).",
         distance: "6–7 km",
         duration: "3–4 Hours",
         accommodation: "Tea House",
@@ -733,7 +733,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Early morning hike to Tsergo Ri (4,984 m) and return to Kyanjin Gompa.",
+        title: "Hike to Tsergo Ri (4,984 m) and return to Kyanjin Gompa (3,870 m).",
         distance: "10–12 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -742,7 +742,7 @@ export const treks = [
       },
       {
         day: 7,
-        title: "Trek from Kyanjin Gompa to Rimche.",
+        title: "Trek from Kyanjin Gompa (3,870 m) to Rimche (2,450 m).",
         distance: "18–19 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -751,7 +751,7 @@ export const treks = [
       },
       {
         day: 8,
-        title: "Trek from Rimche to Syabrubesi.",
+        title: "Trek from Rimche (2,450 m) to Syabrubesi (1,460 m).",
         distance: "10–11 km",
         duration: "5–6 Hours",
         accommodation: "Tea House",
@@ -760,7 +760,7 @@ export const treks = [
       },
       {
         day: 9,
-        title: "Drive back to Kathmandu. Farewell dinner in the evening.",
+        title: "Drive from Syabrubesi (1,460 m) to Kathmandu (1,400 m).",
         duration: "7–8 Hours",
         accommodation: "3-Star Hotel",
         description:
@@ -991,14 +991,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Kathmandu. Hotel check-in and trek briefing in the evening.",
+        title: "Arrival in Kathmandu (1,400 m).",
         accommodation: "3-Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival at Tribhuvan International Airport, our team will receive you and transfer you to your hotel in Kathmandu. Hotel check-in begins at 12:00 PM. If you arrive earlier, you may leave your luggage at the hotel and spend some time exploring the nearby streets while your room is being prepared.\n\nKathmandu, the vibrant capital of Nepal, is a fascinating blend of ancient temples, bustling markets, and rich cultural heritage. You can relax after your journey or explore the nearby Thamel area, which is well known for its cafés, restaurants, trekking shops, and lively atmosphere.\n\nIn the evening, we will gather at the hotel for a detailed trek briefing. You will meet your trekking guide and fellow trekkers while we walk you through the itinerary, conduct a gear check, discuss altitude safety, and answer any questions before beginning the adventure.",
       },
       {
         day: 2,
-        title: "Scenic drive from Kathmandu to Machha Khola.",
+        title: "Drive from Kathmandu (1,400 m) to Machha Khola (930 m).",
         distance: "Approximately 160 km",
         duration: "8–9 Hours",
         accommodation: "Tea House",
@@ -1007,7 +1007,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Trek from Machha Khola to Jagat.",
+        title: "Trek from Machha Khola (930 m) to Jagat (1,340 m).",
         distance: "21–22 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1016,7 +1016,7 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Trek from Jagat to Deng.",
+        title: "Trek from Jagat (1,340 m) to Deng (1,860 m).",
         distance: "19–20 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1025,7 +1025,7 @@ export const treks = [
       },
       {
         day: 5,
-        title: "Trek from Deng to Namrung.",
+        title: "Trek from Deng (1,860 m) to Namrung (2,630 m).",
         distance: "18–19 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1034,7 +1034,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Trek from Namrung to Sama Gaon.",
+        title: "Trek from Namrung (2,630 m) to Sama Gaon (3,530 m).",
         distance: "17–18 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1043,14 +1043,14 @@ export const treks = [
       },
       {
         day: 7,
-        title: "Acclimatization day at Sama Gaon. Optional hike to Birendra Lake and Pungyen Gompa.",
+        title: "Acclimatization day at Sama Gaon (3,530 m).",
         accommodation: "Tea House",
         description:
           "Today is an important acclimatization day to help your body adjust to the increasing altitude before crossing Larkya La Pass. Rather than remaining inactive, we will take a short hike to higher elevation before returning to Sama Gaon for the night.\n\nOne of the most popular options is a hike to the beautiful Birendra Lake, a stunning glacial lake located beneath the dramatic slopes of Mount Manaslu. Those looking for a longer excursion may continue towards Pungyen Gompa, an ancient monastery offering incredible views of Manaslu Glacier and the surrounding Himalayan peaks.\n\nThroughout the day, our experienced guide will monitor everyone's health and encourage a slow, steady pace. After returning to Sama Gaon, the remainder of the day is free to relax, explore the village, visit the local monastery, or simply enjoy the peaceful mountain surroundings while preparing for the higher sections of the trek ahead.",
       },
       {
         day: 8,
-        title: "Trek from Sama Gaon to Samdo.",
+        title: "Trek from Sama Gaon (3,530 m) to Samdo (3,875 m).",
         distance: "8–9 km",
         duration: "3–4 Hours",
         accommodation: "Tea House",
@@ -1059,7 +1059,7 @@ export const treks = [
       },
       {
         day: 9,
-        title: "Trek from Samdo to Dharamshala (Larkya Phedi).",
+        title: "Trek from Samdo (3,875 m) to Dharamshala (Larkya Phedi) (4,460 m).",
         distance: "7–8 km",
         duration: "4–5 Hours",
         accommodation: "Tea House",
@@ -1068,7 +1068,7 @@ export const treks = [
       },
       {
         day: 10,
-        title: "Cross Larkya La Pass (5,160 m) and trek to Bimthang.",
+        title: "Cross Larkya La Pass (5,160 m) and trek to Bimthang (3,720 m).",
         distance: "23–24 km",
         duration: "8–9 Hours",
         accommodation: "Tea House",
@@ -1077,7 +1077,7 @@ export const treks = [
       },
       {
         day: 11,
-        title: "Trek from Bimthang to Tilije.",
+        title: "Trek from Bimthang (3,720 m) to Tilije (2,300 m).",
         distance: "19–20 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1316,14 +1316,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Kathmandu.",
+        title: "Arrival in Kathmandu (1,400 m).",
         accommodation: "3-Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival at Tribhuvan International Airport, our team will warmly receive you and transfer you to your hotel in Kathmandu. After checking in, you will have time to relax or explore the lively streets of Thamel, a popular hub for trekkers filled with cafés, restaurants, and outdoor gear stores.\n\nIf you need any last-minute trekking essentials, Thamel offers plenty of reliable shops for purchasing or renting equipment. It is also a great opportunity to meet your fellow trekkers and experience the vibrant atmosphere before the adventure begins.\n\nIn the evening, we will gather at the hotel for a detailed trek briefing. Our team will explain the itinerary, conduct a gear check, discuss altitude safety, and answer any last-minute questions to ensure everyone is fully prepared for tomorrow's flight to Lukla.",
       },
       {
         day: 2,
-        title: "Fly to Lukla and trek to Phakding.",
+        title: "Fly to Lukla (2,860 m) and trek to Phakding (2,652 m).",
         distance: "7–8 km",
         duration: "3–4 Hours",
         accommodation: "Tea House",
@@ -1332,7 +1332,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Trek from Phakding to Namche Bazaar.",
+        title: "Trek from Phakding (2,652 m) to Namche Bazaar (3,440 m).",
         distance: "10–11 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1341,7 +1341,7 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Acclimatization day at Namche Bazaar.",
+        title: "Acclimatization day at Namche Bazaar (3,440 m).",
         distance: "5–6 km (Hike)",
         duration: "3–4 Hours",
         accommodation: "Tea House",
@@ -1350,7 +1350,7 @@ export const treks = [
       },
       {
         day: 5,
-        title: "Trek from Namche Bazaar to Dole.",
+        title: "Trek from Namche Bazaar (3,440 m) to Dole (4,040 m).",
         distance: "11–12 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1359,7 +1359,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Trek from Dole to Machhermo.",
+        title: "Trek from Dole (4,040 m) to Machhermo (4,470 m).",
         distance: "5–6 km",
         duration: "4–5 Hours",
         accommodation: "Tea House",
@@ -1368,7 +1368,7 @@ export const treks = [
       },
       {
         day: 7,
-        title: "Trek from Machhermo to Gokyo.",
+        title: "Trek from Machhermo (4,470 m) to Gokyo (4,790 m).",
         distance: "7–8 km",
         duration: "4–5 Hours",
         accommodation: "Tea House",
@@ -1377,7 +1377,7 @@ export const treks = [
       },
       {
         day: 8,
-        title: "Hike to Fourth & Fifth Gokyo Lakes and return to Gokyo.",
+        title: "Hike to Fourth and Fifth Gokyo Lakes and return to Gokyo (4,790 m).",
         distance: "10–12 km",
         duration: "5–6 Hours",
         accommodation: "Tea House",
@@ -1386,7 +1386,7 @@ export const treks = [
       },
       {
         day: 9,
-        title: "Hike to Gokyo Ri and trek to Thagnak.",
+        title: "Hike to Gokyo Ri (5,357 m) and trek to Thagnak (4,700 m).",
         distance: "9–10 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -1395,7 +1395,7 @@ export const treks = [
       },
       {
         day: 10,
-        title: "Cross Cho La Pass and trek to Dzongla.",
+        title: "Cross Cho La Pass (5,420 m) and trek to Dzongla (4,830 m).",
         distance: "8–9 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -1404,7 +1404,7 @@ export const treks = [
       },
       {
         day: 11,
-        title: "Trek from Dzongla to Lobuche.",
+        title: "Trek from Dzongla (4,830 m) to Lobuche (4,940 m).",
         distance: "6–7 km",
         duration: "3–4 Hours",
         accommodation: "Tea House",
@@ -1413,7 +1413,7 @@ export const treks = [
       },
       {
         day: 12,
-        title: "Trek from Lobuche to Everest Base Camp and return to Gorakshep.",
+        title: "Trek from Lobuche (4,940 m) to Everest Base Camp (5,364 m) and return to Gorakshep (5,164 m).",
         distance: "14–15 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -1422,7 +1422,7 @@ export const treks = [
       },
       {
         day: 13,
-        title: "Hike to Kala Patthar and trek to Pheriche.",
+        title: "Hike to Kala Patthar (5,545 m) and trek to Pheriche (4,240 m).",
         distance: "13–14 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -1431,7 +1431,7 @@ export const treks = [
       },
       {
         day: 14,
-        title: "Trek from Pheriche to Namche Bazaar.",
+        title: "Trek from Pheriche (4,240 m) to Namche Bazaar (3,440 m).",
         distance: "19–20 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -1440,7 +1440,7 @@ export const treks = [
       },
       {
         day: 15,
-        title: "Trek from Namche Bazaar to Lukla.",
+        title: "Trek from Namche Bazaar (3,440 m) to Lukla (2,860 m).",
         distance: "17–18 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
