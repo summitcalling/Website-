@@ -31,7 +31,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-ink">
         <div className="relative aspect-[16/9] sm:aspect-[21/9]">
           <Image
-            src="/treks/ebc-1.jpg"
+            src="/treks/ebc-7.jpg"
             alt="Sunrise over the Everest range"
             fill
             priority
