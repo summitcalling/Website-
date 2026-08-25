@@ -131,7 +131,7 @@ export default function FeaturedTreks() {
 
           <Link
             href="/treks"
-            className="flex w-full items-center justify-center gap-2 border border-blue bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark sm:hidden"
+            className="mx-auto flex w-fit items-center justify-center gap-2 border border-blue bg-blue px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark sm:hidden"
           >
             View All Treks
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

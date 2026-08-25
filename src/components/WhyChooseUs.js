@@ -8,7 +8,7 @@ const features = [
     title: "Local Trekking Experts",
     description:
       "Every guide is born and raised in the region you're trekking — real knowledge, not a script.",
-    image: "/treks/annapurna-2.jpg",
+    image: "https://images.unsplash.com/photo-1542800951-9613782be1fa?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Fixed Small-Group Departures",
@@ -20,13 +20,13 @@ const features = [
     title: "Safety-First Itineraries",
     description:
       "Acclimatization days built into every route, with trained guides carrying oximeters and first-aid kits.",
-    image: "https://images.unsplash.com/photo-1564144573017-8dc932e0039e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1646912751521-0c5c61c6b3ee?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "24/7 WhatsApp Support",
     description:
       "Real humans on the other end, before, during, and after your trek — not a chatbot.",
-    image: "https://images.unsplash.com/photo-1626188638214-ce190e394833?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1513382848136-770cf055a751?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Responsible Tourism",

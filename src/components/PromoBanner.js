@@ -6,8 +6,8 @@ export default function PromoBanner() {
   return (
     <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-ink sm:h-[85vh]">
       <Image
-        src="https://images.unsplash.com/photo-1477468572316-36979010099d?auto=format&fit=crop&w=2200&q=80"
-        alt="A mountain peak veiled in mist"
+        src="/treks/abc-10.jpg"
+        alt="Sunrise glow over the Annapurna range with prayer flags"
         fill
         className="object-cover"
         sizes="100vw"
@@ -27,7 +27,7 @@ export default function PromoBanner() {
         </p>
         <span className="h-px w-12 bg-blue" />
         <Link
-          href="/fixed-departures"
+          href="/treks"
           className="mt-2 inline-flex items-center gap-2 bg-blue px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-blue-dark"
         >
           View Fixed Departures

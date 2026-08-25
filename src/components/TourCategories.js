@@ -10,13 +10,13 @@ export default function TourCategories() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
           <div className="lg:sticky lg:top-28 lg:w-72 lg:shrink-0">
             <span className="text-xs font-semibold uppercase tracking-widest text-blue">
-              Beyond Trekking
+              Himalayan Aerial Experiences
             </span>
             <h2 className="mt-3 font-serif text-3xl sm:text-4xl text-ink">
               More Ways to Explore the Himalayas
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-ink">
-              From aerial views of Everest to sunrise flights over the Annapurnas — experience the Himalayas beyond the trail.
+              Explore the Himalayas through breathtaking aerial views of Mount Everest, Annapurna, and some of the world&apos;s most iconic mountain landscapes.
             </p>
           </div>
 

@@ -110,7 +110,7 @@ export default async function TrekDetailPage({ params }) {
 
   return (
     <>
-      <section className="bg-white pt-8">
+      <section className="bg-white pt-0 sm:pt-8">
         <div className={`${CONTAINER} pb-6 sm:pb-12`}>
           <TrekGallery gallery={gallery} name={trek.name} />
 
