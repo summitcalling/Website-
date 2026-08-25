@@ -651,6 +651,11 @@ export const treks = [
       "/treks/langtang-3.jpg",
       "/treks/langtang-4.jpg",
       "/treks/langtang-5.jpg",
+      "/treks/langtang-6.jpg",
+      "/treks/langtang-7.jpg",
+      "/treks/langtang-8.jpg",
+      "/treks/langtang-9.jpg",
+      "/treks/langtang-10.jpg",
     ],
     summary:
       "One of Nepal's most rewarding short treks — journey deep into Langtang National Park through rhododendron forests and Tamang villages to Tsergo Ri (4,984m) for breathtaking panoramic views of Langtang Lirung and the surrounding Himalayan peaks.",
