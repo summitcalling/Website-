@@ -51,10 +51,8 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white">
-        <div className={`${CONTAINER} py-16 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12`}>
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <SectionHeading>About Us</SectionHeading>
-          </div>
+        <div className={`${CONTAINER} py-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-3 lg:gap-12`}>
+          <SectionHeading>About Us</SectionHeading>
 
           <div className="lg:col-span-2">
             <p className={BODY_TEXT}>
@@ -71,7 +69,7 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading>Our Story</SectionHeading>
 
-          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
             <div className="space-y-4 lg:col-span-2">
               <p className={BODY_TEXT}>
                 Shekhar and Gauri first met during the Everest Base Camp trek in 2021. What started as two people sharing the same trail gradually grew into a close friendship built around a shared passion for mountaineering, adventure, exploration, travel, and the outdoors.
@@ -140,7 +138,7 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
 
-          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
             <div className="space-y-4 lg:col-span-2">
               <p className="text-[17px] leading-relaxed text-white">
                 The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
@@ -151,8 +149,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
-                src="/treks/manaslu-3.jpg"
-                alt="A quiet forest trail in the Himalayas"
+                src="/treks/ebc-3.jpg"
+                alt="Prayer flags and a stupa on the trail to Tengboche"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 360px, 90vw"
@@ -166,7 +164,7 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading>Our Vision</SectionHeading>
 
-          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
             <div className="lg:col-span-2">
               <div className="space-y-4">
                 <p className={BODY_TEXT}>
@@ -186,8 +184,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
-                src="/treks/ebc-gokyo-1.jpg"
-                alt="Prayer flags on a Himalayan summit at sunrise"
+                src="/treks/annapurna-7.jpg"
+                alt="Tilicho Lake surrounded by snow-capped peaks"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 360px, 90vw"

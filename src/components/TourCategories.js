@@ -15,9 +15,6 @@ export default function TourCategories() {
             <h2 className="mt-3 font-serif text-3xl sm:text-4xl text-ink">
               More Ways to Explore the Himalayas
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink">
-              Explore the Himalayas through breathtaking aerial views of Mount Everest, Annapurna, and some of the world&apos;s most iconic mountain landscapes.
-            </p>
           </div>
 
           <div className="grid flex-1 gap-5 sm:grid-cols-3">

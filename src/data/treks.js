@@ -2,7 +2,7 @@ export const treks = [
   {
     slug: "annapurna-circuit-tilicho-lake",
     name: "Annapurna Circuit Trek with Tilicho Lake",
-    region: "Annapurna",
+    region: "Kathmandu",
     duration: 13,
     difficulty: "Difficult",
     price: 78000,
@@ -365,13 +365,13 @@ export const treks = [
   {
     slug: "mardi-himal-trek",
     name: "Mardi Himal Trek",
-    region: "Annapurna",
+    region: "Pokhara",
     duration: 8,
     difficulty: "Moderate",
     price: null,
     maxAltitude: "4,500 m",
     bestSeason: "Mar–May, Sep–Nov",
-    image: "/treks/mardi-1.jpg",
+    image: "/treks/mardi-8.jpg",
     gallery: [
       "/treks/mardi-1.jpg",
       "/treks/mardi-2.jpg",
@@ -648,7 +648,7 @@ export const treks = [
   {
     slug: "langtang-valley-trek",
     name: "Langtang Valley Trek",
-    region: "Langtang",
+    region: "Kathmandu",
     duration: 10,
     difficulty: "Moderate",
     price: null,
@@ -948,7 +948,7 @@ export const treks = [
   {
     slug: "manaslu-circuit-trek",
     name: "Manaslu Circuit Trek",
-    region: "Manaslu",
+    region: "Kathmandu",
     duration: 13,
     difficulty: "Difficult",
     price: null,
@@ -1274,7 +1274,7 @@ export const treks = [
   {
     slug: "everest-base-camp-via-gokyo-ri",
     name: "Everest Base Camp via Gokyo Ri Trek",
-    region: "Everest",
+    region: "Kathmandu",
     duration: 17,
     difficulty: "Difficult",
     price: 75000,
@@ -1680,13 +1680,13 @@ export const treks = [
   {
     slug: "everest-base-camp-trek",
     name: "Everest Base Camp Trek",
-    region: "Everest",
+    region: "Kathmandu",
     duration: 14,
     difficulty: "Difficult",
     price: 66000,
     maxAltitude: "5,545 m",
     bestSeason: "Mar–May, Sep–Nov",
-    image: "/treks/ebc-1.jpg",
+    image: "/treks/ebc-7.jpg",
     gallery: [
       "/treks/ebc-1.jpg",
       "/treks/ebc-2.jpg",
@@ -2062,7 +2062,7 @@ export const treks = [
   {
     slug: "annapurna-base-camp-trek",
     name: "Annapurna Base Camp Trek",
-    region: "Annapurna",
+    region: "Pokhara",
     duration: 8,
     difficulty: "Moderate",
     price: 40000,

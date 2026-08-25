@@ -20,7 +20,7 @@ const features = [
     title: "Safety-First Itineraries",
     description:
       "Acclimatization days built into every route, with trained guides carrying oximeters and first-aid kits.",
-    image: "https://images.unsplash.com/photo-1646912751521-0c5c61c6b3ee?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1542158167-331ff1dabc6f?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "24/7 WhatsApp Support",
