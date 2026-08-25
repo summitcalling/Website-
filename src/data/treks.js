@@ -951,6 +951,11 @@ export const treks = [
       "/treks/manaslu-3.jpg",
       "/treks/manaslu-4.jpg",
       "/treks/manaslu-5.jpg",
+      "/treks/manaslu-6.jpg",
+      "/treks/manaslu-7.jpg",
+      "/treks/manaslu-8.jpg",
+      "/treks/manaslu-9.jpg",
+      "/treks/manaslu-10.jpg",
     ],
     summary:
       "Circle the world's eighth-highest mountain, Mount Manaslu (8,163m), through remote Himalayan landscapes, ancient villages, and rich Tibetan Buddhist culture — crossing the spectacular Larkya La Pass (5,160m) on one of Nepal's most authentic and less-crowded trekking routes.",
