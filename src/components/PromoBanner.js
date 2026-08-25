@@ -6,8 +6,8 @@ export default function PromoBanner() {
   return (
     <section className="relative h-[70vh] min-h-[480px] w-full overflow-hidden bg-ink sm:h-[85vh]">
       <Image
-        src="/treks/abc-10.jpg"
-        alt="Sunrise glow over the Annapurna range with prayer flags"
+        src="/misty-peak-banner-3.jpg"
+        alt="Sunrise glow over snow-capped Himalayan peaks"
         fill
         className="object-cover"
         sizes="100vw"

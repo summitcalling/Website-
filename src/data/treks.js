@@ -407,14 +407,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Pokhara. Hotel check-in after 12:00 PM. Enjoy free time to explore the Lakeside area.",
+        title: "Arrival in Pokhara (827 m).",
         accommodation: "3-Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival in Pokhara, our team will receive you and transfer you to your hotel. Hotel check-in begins at 12:00 PM, so if you arrive earlier, you can leave your bags at the reception and start exploring while your room is being prepared.\n\nPokhara is a beautiful lakeside city and the gateway to many of Nepal's most popular trekking adventures. Once you have settled in, you will have free time to explore the Lakeside area, known locally as Baidam. This lively part of the city is filled with cafés, restaurants, souvenir shops, and outdoor gear stores. It is the perfect place to relax beside Phewa Lake, enjoy the peaceful atmosphere, or purchase any last-minute trekking essentials. In the evening, we will gather at the hotel for a detailed trek briefing, where you will meet our team and fellow trekkers. We will walk you through the itinerary, conduct a gear check, discuss altitude safety, and answer any last-minute questions to ensure everyone is well prepared for the journey ahead.",
       },
       {
         day: 2,
-        title: "Scenic drive from Pokhara to Phedi, followed by a trek to Pothana.",
+        title: "Drive to Phedi (1,130 m) and trek to Pothana (1,950 m).",
         distance: "4–5 km",
         duration: "2–3 Hours trek plus approx. 30–45 Minutes drive",
         accommodation: "Tea House",
@@ -423,7 +423,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Trek from Pothana to Forest Camp through beautiful rhododendron forests.",
+        title: "Trek from Pothana (1,950 m) to Forest Camp (2,550 m).",
         distance: "10–11 km",
         duration: "5–6 Hours",
         accommodation: "Tea House",
@@ -432,7 +432,7 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Trek from Forest Camp to High Camp via Low Camp and Badal Danda.",
+        title: "Trek from Forest Camp (2,550 m) to High Camp (3,580 m).",
         distance: "11–12 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -441,7 +441,7 @@ export const treks = [
       },
       {
         day: 5,
-        title: "Early morning hike to Mardi Himal Base Camp (4,500 m) and return to High Camp before descending to Low Camp.",
+        title: "Hike to Mardi Himal Base Camp (4,500 m) and descend to Low Camp (2,970 m).",
         distance: "15–16 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -450,7 +450,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Descend to the traditional village of Siding.",
+        title: "Trek from Low Camp (2,970 m) to Siding Village (1,750 m).",
         distance: "9–10 km",
         duration: "5–6 Hours",
         accommodation: "Tea House",
@@ -1470,14 +1470,14 @@ export const treks = [
         { label: "Starting Point", value: "Kathmandu" },
         { label: "Ending Point", value: "Kathmandu" },
         { label: "Accommodation", value: "Hotel in Kathmandu & Tea Houses during the trek" },
-        { label: "Meal Options", value: "Standard Package (without meals) / Full Board Package (with meals)" },
+        { label: "Meal Options", value: "Without Meals / With Meals" },
         { label: "Transportation", value: "Domestic Flight — Kathmandu/Ramechhap ⇌ Lukla" },
         { label: "Walking Duration", value: "5–8 Hours per Day" },
         { label: "Guide", value: "Licensed English- and Hindi-speaking Trekking Guide" },
       ],
       packages: [
         {
-          name: "Standard Package",
+          name: "Without Meals",
           priceINR: 75000,
           priceUSD: 1260,
           note: "for Indians +5% GST",
@@ -1488,7 +1488,7 @@ export const treks = [
           ],
         },
         {
-          name: "Full Board Package",
+          name: "With Meals",
           priceINR: 105000,
           priceUSD: 1510,
           note: "for Indians +5% GST",
@@ -1851,14 +1851,14 @@ export const treks = [
         { label: "Starting Point", value: "Kathmandu" },
         { label: "Ending Point", value: "Kathmandu" },
         { label: "Accommodation", value: "Hotel in Kathmandu & Tea Houses during the trek" },
-        { label: "Meal Options", value: "Standard Package (without meals) / Full Board Package (with meals)" },
+        { label: "Meal Options", value: "Without Meals / With Meals" },
         { label: "Transportation", value: "Domestic Flight — Kathmandu/Ramechhap ⇌ Lukla" },
         { label: "Walking Duration", value: "5–8 Hours per Day" },
         { label: "Guide", value: "Licensed English- and Hindi-speaking Trekking Guide" },
       ],
       packages: [
         {
-          name: "Standard Package",
+          name: "Without Meals",
           priceINR: 66000,
           priceUSD: 1120,
           note: "for Indians +5% GST",
@@ -1869,7 +1869,7 @@ export const treks = [
           ],
         },
         {
-          name: "Full Board Package",
+          name: "With Meals",
           priceINR: 85000,
           priceUSD: 1420,
           note: "for Indians +5% GST",
@@ -2190,7 +2190,7 @@ export const treks = [
       ],
       packages: [
         {
-          name: "ABC Trek with Meals",
+          name: "With Meals",
           priceINR: 40000,
           priceUSD: 590,
           note: "for Indians +5% GST",
@@ -2201,8 +2201,8 @@ export const treks = [
           ],
         },
         {
-          name: "ABC Trek without Meals",
-          priceINR: 20000,
+          name: "Without Meals",
+          priceINR: 28000,
           priceUSD: 420,
           note: "for Indians +5% GST",
           features: [

@@ -10,7 +10,7 @@ export default function MobileBookingBar({ price, message, currency = "INR" }) {
     : "On Request";
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-4 rounded-t-3xl border-t border-ink/10 bg-gradient-to-r from-white via-white/95 to-white px-4 py-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] shadow-xl backdrop-blur-md md:px-6 lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-4 rounded-t-3xl border-t border-ink/10 bg-gradient-to-r from-slate-50 via-white to-slate-50 px-4 py-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] shadow-xl backdrop-blur-md md:px-6 lg:hidden">
       <div className="flex flex-col">
         <div className="flex items-center gap-2">
           <span className="font-serif text-2xl font-bold text-ink">{formattedPrice}</span>
