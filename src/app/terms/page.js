@@ -345,7 +345,6 @@ export default function TermsPage() {
       <PageHeader
         eyebrow="Legal"
         title="Terms & Conditions"
-        description="The terms governing every trek, expedition, and adventure activity booked with Summit Calling."
       />
 
       <section className="bg-white">

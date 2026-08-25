@@ -127,7 +127,6 @@ export default function CancellationPolicyPage() {
       <PageHeader
         eyebrow="Legal"
         title="Cancellation & Refund Policy"
-        description="How cancellations, rescheduling, and refunds work across treks, expeditions, helicopter tours, and mountain flights."
       />
 
       <section className="bg-white">
