@@ -238,7 +238,7 @@ export default function Header() {
       >
         <div className="flex h-full flex-col overflow-y-auto px-6 pb-24 pt-24">
           <nav className="flex flex-col">
-            {[{ href: "/", label: "Home" }, ...navLinks, { href: "/contact", label: "Contact" }].map((link, i) => {
+            {[{ href: "/", label: "Home" }, ...navLinks, { href: "/blog", label: "Blog" }, { href: "/contact", label: "Contact" }].map((link, i) => {
               const dropdown = DROPDOWN_MENUS[link.href];
               const subOpen = openSubmenu === link.href;
 
