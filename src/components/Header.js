@@ -26,12 +26,29 @@ const DROPDOWN_MENUS = {
   },
 };
 
+const SEARCH_INDEX = [
+  ...treks.map((t) => ({ href: `/treks/${t.slug}`, label: t.name, type: "Trek" })),
+  ...experiences.map((e) => ({ href: `/experiences/${e.slug}`, label: e.name, type: "Tour" })),
+];
+
+function getSuggestions(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return SEARCH_INDEX.filter((item) => item.label.toLowerCase().includes(q)).slice(0, 6);
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileQuery, setMobileQuery] = useState("");
+  const [desktopQuery, setDesktopQuery] = useState("");
+  const [desktopFocused, setDesktopFocused] = useState(false);
   const pathname = usePathname();
+
+  const mobileSuggestions = getSuggestions(mobileQuery);
+  const desktopSuggestions = getSuggestions(desktopQuery);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -116,13 +133,16 @@ export default function Header() {
           </div>
 
           {searchOpen && (
-            <div className="border-t border-ink/10 pb-3 pt-3 md:hidden">
+            <div className="relative border-t border-ink/10 pb-3 pt-3 md:hidden">
               <form action="/treks" className="flex items-center gap-2">
                 <input
                   type="text"
                   name="q"
                   autoFocus
+                  value={mobileQuery}
+                  onChange={(e) => setMobileQuery(e.target.value)}
                   placeholder="Search treks — e.g. Everest, Annapurna"
+                  autoComplete="off"
                   className="min-w-0 flex-1 bg-cream px-3 py-2.5 text-sm text-ink placeholder:text-ink outline-none"
                 />
                 <button
@@ -136,6 +156,25 @@ export default function Header() {
                   </svg>
                 </button>
               </form>
+
+              {mobileSuggestions.length > 0 && (
+                <div className="absolute inset-x-0 top-full z-10 bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/10">
+                  {mobileSuggestions.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => {
+                        setMobileQuery("");
+                        setSearchOpen(false);
+                      }}
+                      className="flex items-center justify-between gap-3 px-4 py-2.5 text-sm font-medium text-ink hover:bg-ink/5 hover:text-blue"
+                    >
+                      {item.label}
+                      <span className="shrink-0 text-xs font-normal uppercase tracking-wide text-ink/40">{item.type}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -151,7 +190,7 @@ export default function Header() {
               />
             </Link>
 
-            <div className="flex items-center gap-7">
+            <div className="relative flex items-center gap-7">
               <form
                 action="/treks"
                 className="group flex w-full max-w-[200px] items-center gap-2 rounded-full bg-ink/5 py-2 pl-4 pr-1.5 shadow-sm ring-1 ring-black/5 transition-colors focus-within:bg-ink/[0.07] focus-within:ring-blue/30 lg:max-w-[220px]"
@@ -163,7 +202,12 @@ export default function Header() {
                 <input
                   type="text"
                   name="q"
+                  value={desktopQuery}
+                  onChange={(e) => setDesktopQuery(e.target.value)}
+                  onFocus={() => setDesktopFocused(true)}
+                  onBlur={() => setTimeout(() => setDesktopFocused(false), 150)}
                   placeholder="Search treks"
+                  autoComplete="off"
                   className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink/50 outline-none"
                 />
                 <button
@@ -176,6 +220,22 @@ export default function Header() {
                   </svg>
                 </button>
               </form>
+
+              {desktopFocused && desktopSuggestions.length > 0 && (
+                <div className="absolute left-0 top-full z-10 mt-2 w-[280px] bg-white shadow-lg shadow-ink/5 ring-1 ring-ink/10">
+                  {desktopSuggestions.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setDesktopQuery("")}
+                      className="flex items-center justify-between gap-3 px-4 py-2.5 text-sm font-medium text-ink hover:bg-ink/5 hover:text-blue"
+                    >
+                      {item.label}
+                      <span className="shrink-0 text-xs font-normal uppercase tracking-wide text-ink/40">{item.type}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
 
               <nav className="flex items-center gap-7">
                 {navLinks.map((link) => {
