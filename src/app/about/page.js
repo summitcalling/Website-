@@ -46,19 +46,17 @@ export default function AboutPage() {
             <h1 className="mt-2 font-serif text-4xl font-semibold leading-none text-white sm:text-6xl md:text-7xl">
               {site.name}
             </h1>
-            <p className="mt-4 max-w-md text-[17px] leading-relaxed text-white">
-              An adventure-based travel company specialising in Himalayan trekking,
-              mountaineering, helicopter tours, and mountain flights.
-            </p>
           </div>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className={`${CONTAINER} py-16`}>
-          <SectionHeading>About Us</SectionHeading>
+        <div className={`${CONTAINER} py-16 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12`}>
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <SectionHeading>About Us</SectionHeading>
+          </div>
 
-          <div className="mt-8 max-w-3xl">
+          <div className="lg:col-span-2">
             <p className={BODY_TEXT}>
               Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From remote Himalayan trails to high-altitude treks and expeditions, we create journeys that bring people closer to the mountains.
             </p>
@@ -90,8 +88,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
-                src="/team/gauri-candid.jpg"
-                alt="Summit Calling co-founder on the trail"
+                src="/treks/ebc-gokyo-1.jpg"
+                alt="Aerial view of Gokyo Lake and the Himalayan peaks"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 360px, 90vw"

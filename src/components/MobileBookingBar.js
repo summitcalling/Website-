@@ -13,8 +13,8 @@ export default function MobileBookingBar({ price, message, currency = "INR" }) {
     <>
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 h-36 bg-gradient-to-t from-black/25 to-transparent lg:hidden" />
 
-      <div className="fixed inset-x-0 bottom-0 z-40 rounded-t-2xl border border-b-0 border-ink/10 bg-white shadow-[0_-16px_40px_rgba(16,24,40,0.14)] lg:hidden">
-        <div className="flex items-center gap-4 px-5 pb-[calc(env(safe-area-inset-bottom)+0.875rem)] pt-4">
+      <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)] lg:hidden">
+        <div className="flex items-center gap-4 rounded-3xl border border-white/50 bg-white/70 px-5 py-4 shadow-[0_8px_32px_rgba(16,24,40,0.18)] backdrop-blur-xl">
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1.5">
               <span className="font-serif text-2xl font-semibold leading-none text-ink">
