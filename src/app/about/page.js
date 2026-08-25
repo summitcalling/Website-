@@ -153,7 +153,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               <Image
-                src="/treks/abc-5.jpg"
+                src="/treks/manaslu-3.jpg"
                 alt="A quiet forest trail in the Himalayas"
                 fill
                 className="object-cover"

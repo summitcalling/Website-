@@ -2070,6 +2070,13 @@ export const treks = [
       "/treks/abc-3.jpg",
       "/treks/abc-4.jpg",
       "/treks/abc-5.jpg",
+      "/treks/abc-6.jpg",
+      "/treks/abc-7.jpg",
+      "/treks/abc-8.jpg",
+      "/treks/abc-9.jpg",
+      "/treks/abc-10.jpg",
+      "/treks/abc-11.jpg",
+      "/treks/abc-12.jpg",
     ],
     summary:
       "One of Nepal's most popular and rewarding trekking adventures — journey into the heart of the Annapurna Sanctuary (4,130m), surrounded by some of the most spectacular mountains in the world, through lush forests, charming Gurung villages, and natural hot springs.",
