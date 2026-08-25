@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { getExperienceBySlug, experiences } from "@/data/experiences";
-import { site, whatsappLink, telLink } from "@/data/site";
+import { site } from "@/data/site";
 import { CONTAINER } from "@/lib/layout";
 import Accordion from "@/components/Accordion";
+import ExperienceBookingCard from "@/components/ExperienceBookingCard";
 import Itinerary from "@/components/Itinerary";
 import MobileBookingBar from "@/components/MobileBookingBar";
 import TrekGallery from "@/components/TrekGallery";
@@ -278,43 +279,7 @@ export default async function ExperienceDetailPage({ params }) {
           </div>
 
           <div className="order-1 lg:order-none lg:col-span-1">
-            <div className="lg:sticky lg:top-[170px] overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-xl shadow-ink/10">
-              <div className="p-6">
-                <div className="text-lg font-semibold text-ink">Book This Tour</div>
-                <div className="mt-2 flex items-baseline gap-1">
-                  <span className="font-serif text-3xl font-semibold text-ink">
-                    USD {exp.priceUSD.toLocaleString("en-US")}
-                  </span>
-                </div>
-                {exp.priceINR && (
-                  <div className="mt-1 text-sm font-semibold text-ink">
-                    or ₹{exp.priceINR.toLocaleString("en-IN")} for Indian nationals
-                  </div>
-                )}
-                <div className="mt-1 text-sm text-ink">{exp.priceNote}</div>
-              </div>
-
-              <div className="border-t border-ink/10" />
-
-              <div className="p-6">
-                <div className="flex gap-3">
-                  <a
-                    href={whatsappLink(message)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ink py-3.5 text-sm font-semibold text-white hover:bg-ink-light transition-colors"
-                  >
-                    Book Now
-                  </a>
-                  <a
-                    href={telLink()}
-                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-ink/15 py-3.5 text-sm font-semibold text-ink hover:border-blue/40 hover:text-blue transition-colors"
-                  >
-                    Call Us
-                  </a>
-                </div>
-              </div>
-            </div>
+            <ExperienceBookingCard exp={exp} message={message} />
           </div>
         </div>
       </section>

@@ -58,10 +58,10 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
             {officeLocations.map((office) => (
               <div key={office.name} className="rounded-2xl border border-ink/15 bg-white p-6">
-                <div className="text-center font-serif text-lg font-semibold text-ink">
+                <div className="text-center font-serif text-xl font-semibold text-ink">
                   {office.name}
                 </div>
-                <div className="mt-4 flex items-start gap-2.5 text-sm text-ink">
+                <div className="mt-4 flex items-start gap-2.5 text-base text-ink">
                   <LocationIcon />
                   <span>{office.address}</span>
                 </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                     <a
                       key={phone}
                       href={`tel:${phone.replace(/[^+\d]/g, "")}`}
-                      className="flex items-center gap-2.5 text-sm font-medium text-ink transition-colors hover:text-blue"
+                      className="flex items-center gap-2.5 text-base font-medium text-ink transition-colors hover:text-blue"
                     >
                       <PhoneIcon />
                       {phone}
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 </div>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-3 flex items-center gap-2.5 text-sm font-medium text-ink transition-colors hover:text-blue"
+                  className="mt-3 flex items-center gap-2.5 text-base font-medium text-ink transition-colors hover:text-blue"
                 >
                   <MailIcon />
                   {site.email}

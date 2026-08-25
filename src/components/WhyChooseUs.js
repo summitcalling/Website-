@@ -26,7 +26,7 @@ const features = [
     title: "24/7 WhatsApp Support",
     description:
       "Real humans on the other end, before, during, and after your trek — not a chatbot.",
-    image: "https://images.unsplash.com/photo-1513382848136-770cf055a751?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1568444438385-ece31a33ce78?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Responsible Tourism",

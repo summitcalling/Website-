@@ -2107,14 +2107,14 @@ export const treks = [
     itinerary: [
       {
         day: 1,
-        title: "Arrival in Pokhara.",
+        title: "Arrival in Pokhara (827 m).",
         accommodation: "3-Star Hotel",
         description:
           "Welcome to Nepal! Upon your arrival in Pokhara, our team will receive you and transfer you to your hotel. Hotel check-in begins at 12:00 PM, so if you arrive earlier, you can leave your bags at the reception and start exploring while your room is being prepared.\n\nPokhara is a beautiful lakeside city and the starting point of the Annapurna Base Camp trek. Once you have settled in, you will have free time to explore the Lakeside area, known locally as Baidam. This lively part of the city is filled with cafes, restaurants, souvenir shops, and outdoor gear stores. It is a great place to relax by Phewa Lake, enjoy a coffee with a view of the surrounding hills, or pick up any last-minute trekking essentials.\n\nIn the evening, we will gather at the hotel for a detailed trek briefing where you will meet our team and your fellow trekkers. We will walk you through the itinerary, conduct a gear check, discuss altitude safety, and answer any last-minute questions to make sure everyone is well prepared for the journey ahead.",
       },
       {
         day: 2,
-        title: "Drive to Jhinu Danda and trek to Chhomrong.",
+        title: "Drive to Jhinu Danda (1,780 m) and trek to Chhomrong (2,170 m).",
         distance: "3–4 km (trek)",
         duration: "2–3 Hours trek, plus approximately 2–3 Hours drive",
         accommodation: "Tea House",
@@ -2123,7 +2123,7 @@ export const treks = [
       },
       {
         day: 3,
-        title: "Trek from Chhomrong to Dovan.",
+        title: "Trek from Chhomrong (2,170 m) to Dovan (2,600 m).",
         distance: "13–14 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -2132,7 +2132,7 @@ export const treks = [
       },
       {
         day: 4,
-        title: "Trek from Dovan to Deurali.",
+        title: "Trek from Dovan (2,600 m) to Deurali (3,230 m).",
         distance: "7–8 km",
         duration: "4–5 Hours",
         accommodation: "Tea House",
@@ -2141,7 +2141,7 @@ export const treks = [
       },
       {
         day: 5,
-        title: "Trek via Machhapuchhre Base Camp to Annapurna Base Camp.",
+        title: "Trek via Machhapuchhre Base Camp to Annapurna Base Camp (4,130 m).",
         distance: "9–10 km",
         duration: "6–7 Hours",
         accommodation: "Tea House",
@@ -2150,7 +2150,7 @@ export const treks = [
       },
       {
         day: 6,
-        title: "Descend from Annapurna Base Camp to Bamboo.",
+        title: "Descend from Annapurna Base Camp to Bamboo (2,310 m).",
         distance: "15–16 km",
         duration: "7–8 Hours",
         accommodation: "Tea House",
@@ -2159,7 +2159,7 @@ export const treks = [
       },
       {
         day: 7,
-        title: "Trek to Jhinu Danda and drive back to Pokhara.",
+        title: "Trek to Jhinu Danda (1,780 m) and drive back to Pokhara.",
         distance: "10–11 km (trek)",
         duration: "5–6 Hours trek, plus approximately 2–3 Hours drive",
         accommodation: "Hotel",

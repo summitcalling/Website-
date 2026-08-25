@@ -56,22 +56,30 @@ export default function AboutPage() {
 
           <div className="mt-8 grid grid-cols-1 items-start gap-8 lg:grid-cols-3 lg:gap-12">
             <div className="space-y-4 lg:col-span-2">
-              <p className={`${BODY_TEXT} font-semibold`}>
+              <p className={BODY_TEXT}>
                 Summit Calling is an adventure-based travel company specialising in Himalayan trekking, mountaineering, helicopter tours, mountain flights, and unforgettable mountain experiences.
               </p>
               <p className={BODY_TEXT}>
-                Launched in <strong>2026</strong>, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From walking through remote Himalayan trails and taking on <strong>high-altitude treks and expeditions</strong>{" "}
-                to discovering some of the world&apos;s most breathtaking landscapes, we aim to create journeys that bring people closer to the mountains.
+                Launched in 2026, Summit Calling was founded with a deep passion for the Himalayas and a desire to help more people experience the mountains up close. From walking through remote Himalayan trails and taking on high-altitude treks and expeditions to discovering some of the world&apos;s most breathtaking landscapes, we aim to create journeys that bring people closer to the mountains.
               </p>
-              <p className={`${BODY_TEXT} font-semibold`}>
+              <p className={BODY_TEXT}>
                 We are dedicated to making these experiences welcoming, well-planned, safe, and memorable for everyone — whether you are taking your first steps into the Himalayas or returning for your next adventure.
               </p>
               <p className={BODY_TEXT}>
-                We aim to offer <strong>the best and most reasonable packages for our customers, while ensuring an experience that never compromises on safety, quality, or genuine hospitality.</strong>
+                We aim to offer the best and most reasonable packages for our customers, while ensuring an experience that never compromises on safety, quality, or genuine hospitality.
               </p>
               <p className={BODY_TEXT}>
                 Whether it is your first Himalayan trek, a high-altitude challenge, or simply your desire to explore the mountains, we want every journey with Summit Calling to be thoughtfully planned and truly memorable.
               </p>
+            </div>
+
+            <div className="relative mx-auto hidden h-[400px] w-full max-w-[340px] lg:block">
+              <Image
+                src="/lost-trekker.png"
+                alt="An illustrated trekker exploring the mountains"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
