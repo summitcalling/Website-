@@ -42,9 +42,20 @@ function TrekCard({ trek, i, className, sizes }) {
   );
 }
 
+const FEATURED_ORDER = [
+  "everest-base-camp-trek",
+  "everest-base-camp-via-gokyo-ri",
+  "annapurna-base-camp-trek",
+  "annapurna-circuit-tilicho-lake",
+  "manaslu-circuit-trek",
+  "mardi-himal-trek",
+  "langtang-valley-trek",
+];
+
 export default function FeaturedTreks() {
-  const featured = treks.slice(0, 7);
-  const mobileFeatured = treks.slice(0, 4);
+  const orderedTreks = FEATURED_ORDER.map((slug) => treks.find((t) => t.slug === slug)).filter(Boolean);
+  const featured = orderedTreks.slice(0, 7);
+  const mobileFeatured = orderedTreks.slice(0, 4);
   const scrollRef = useRef(null);
 
   function scroll(direction) {
