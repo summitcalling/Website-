@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getExperienceBySlug, experiences } from "@/data/experiences";
 import { site, whatsappLink, telLink } from "@/data/site";
@@ -6,6 +5,7 @@ import { CONTAINER } from "@/lib/layout";
 import Accordion from "@/components/Accordion";
 import Itinerary from "@/components/Itinerary";
 import MobileBookingBar from "@/components/MobileBookingBar";
+import TrekGallery from "@/components/TrekGallery";
 import TrekSubNav from "@/components/TrekSubNav";
 
 const BODY_TEXT = "text-[17px] leading-relaxed text-ink";
@@ -77,31 +77,7 @@ export default async function ExperienceDetailPage({ params }) {
     <>
       <section className="bg-white pt-8">
         <div className={`${CONTAINER} pb-12`}>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div className="relative aspect-[16/11] overflow-hidden rounded-2xl sm:aspect-auto">
-              <Image
-                src={gallery[0]}
-                alt={exp.name}
-                fill
-                priority
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {gallery.slice(1, 5).map((src, i) => (
-                <div key={src} className="relative aspect-[6/5] overflow-hidden rounded-2xl">
-                  <Image
-                    src={src}
-                    alt={`${exp.name} photo ${i + 2}`}
-                    fill
-                    className="object-cover"
-                    sizes="25vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <TrekGallery gallery={gallery} name={exp.name} />
 
           <span className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue">
             {exp.type}
@@ -112,11 +88,13 @@ export default async function ExperienceDetailPage({ params }) {
         </div>
       </section>
 
-      <TrekSubNav items={navItems} />
+      <div className="hidden sm:block">
+        <TrekSubNav items={navItems} />
+      </div>
 
       <section className="bg-white">
         <div className={`${CONTAINER} py-16 grid grid-cols-1 lg:grid-cols-3 gap-12`}>
-          <div className="lg:col-span-2">
+          <div className="order-2 lg:order-none lg:col-span-2">
             <div id="overview" className="scroll-mt-[170px]">
               <SectionHeading>Overview</SectionHeading>
             </div>
@@ -299,8 +277,8 @@ export default async function ExperienceDetailPage({ params }) {
             )}
           </div>
 
-          <div className="lg:col-span-1">
-            <div className="sticky top-[170px] overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-xl shadow-ink/10">
+          <div className="order-1 lg:order-none lg:col-span-1">
+            <div className="lg:sticky lg:top-[170px] overflow-hidden rounded-2xl border border-ink/15 bg-white shadow-xl shadow-ink/10">
               <div className="p-6">
                 <div className="text-lg font-semibold text-ink">Book This Tour</div>
                 <div className="mt-2 flex items-baseline gap-1">
