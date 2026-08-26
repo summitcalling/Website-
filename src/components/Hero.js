@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CONTAINER } from "@/lib/layout";
 import RotatingWord from "@/components/RotatingWord";
+import HeroVideo from "@/components/HeroVideo";
 
 const stats = [
   {
@@ -49,8 +50,13 @@ export default function Hero() {
         alt="Sunrise view of Mount Everest from Kala Patthar"
         fill
         priority
-        className="absolute inset-0 object-cover"
+        className="absolute inset-0 object-cover sm:hidden"
         sizes="100vw"
+      />
+      <HeroVideo
+        poster="/kala-patthar-hero-video-poster.jpg"
+        src="/kala-patthar-hero-video.mp4"
+        className="absolute inset-0 hidden h-full w-full object-cover sm:block"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/25 to-ink/5" />
 
