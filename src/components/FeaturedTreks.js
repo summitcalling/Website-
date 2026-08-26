@@ -55,7 +55,6 @@ const FEATURED_ORDER = [
 export default function FeaturedTreks() {
   const orderedTreks = FEATURED_ORDER.map((slug) => treks.find((t) => t.slug === slug)).filter(Boolean);
   const featured = orderedTreks.slice(0, 7);
-  const mobileFeatured = orderedTreks.slice(0, 4);
   const scrollRef = useRef(null);
 
   function scroll(direction) {
@@ -72,15 +71,9 @@ export default function FeaturedTreks() {
           Popular Himalayan Adventures
         </h2>
 
-        <div className="mt-10 flex flex-col gap-5 sm:hidden">
-          {mobileFeatured.map((trek, i) => (
-            <TrekCard key={trek.slug} trek={trek} i={i} className="aspect-[3/4] w-full" sizes="100vw" />
-          ))}
-        </div>
-
         <div
           ref={scrollRef}
-          className="mt-10 hidden snap-x gap-5 overflow-x-auto scroll-smooth pb-2 pr-5 sm:flex sm:pr-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-10 flex snap-x gap-5 overflow-x-auto scroll-smooth pb-2 pr-5 sm:pr-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {featured.map((trek, i) => (
             <TrekCard
@@ -93,45 +86,33 @@ export default function FeaturedTreks() {
           ))}
         </div>
 
-        <div className="mt-6">
-          <div className="hidden items-center justify-between sm:flex sm:pr-8">
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => scroll(-1)}
-                aria-label="Scroll left"
-                className="flex h-11 w-11 items-center justify-center rounded-full ring-1 ring-ink/15 text-ink transition-colors hover:bg-ink/5"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={() => scroll(1)}
-                aria-label="Scroll right"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-blue text-white transition-colors hover:bg-blue-dark"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <Link
-              href="/treks"
-              className="inline-flex items-center gap-2 border border-blue bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
+        <div className="mt-6 flex items-center justify-between sm:pr-8">
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => scroll(-1)}
+              aria-label="Scroll left"
+              className="flex h-11 w-11 items-center justify-center rounded-full ring-1 ring-ink/15 text-ink transition-colors hover:bg-ink/5"
             >
-              View All Treks
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </Link>
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll(1)}
+              aria-label="Scroll right"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-blue text-white transition-colors hover:bg-blue-dark"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
           </div>
 
           <Link
             href="/treks"
-            className="mx-auto flex w-fit items-center justify-center gap-2 border border-blue bg-blue px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark sm:hidden"
+            className="inline-flex items-center gap-2 border border-blue bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark"
           >
             View All Treks
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
