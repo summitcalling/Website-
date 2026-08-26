@@ -13,7 +13,7 @@ const faqs = [
   {
     title: "How do I know which trek is right for me?",
     content:
-      "Use the trek finder above, or just WhatsApp us your fitness level, available days, and what you want to see — we'll recommend a route within minutes.",
+      "Just WhatsApp us your fitness level, available days, and what you want to see — we'll recommend a route within minutes.",
   },
   {
     title: "What's included in the price?",
