@@ -27,10 +27,20 @@ function MailIcon() {
 
 function InstagramIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    <svg width="20" height="20" viewBox="0 0 24 24" className="shrink-0">
+      <defs>
+        <radialGradient id="ig-gradient" cx="30%" cy="107%" r="150%">
+          <stop offset="0" stopColor="#fdf497" />
+          <stop offset="0.05" stopColor="#fdf497" />
+          <stop offset="0.45" stopColor="#fd5949" />
+          <stop offset="0.6" stopColor="#d6249f" />
+          <stop offset="0.9" stopColor="#285AEB" />
+        </radialGradient>
+      </defs>
+      <rect x="1" y="1" width="22" height="22" rx="6" fill="url(#ig-gradient)" />
+      <rect x="6" y="6" width="12" height="12" rx="4" fill="none" stroke="#fff" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" strokeWidth="1.6" />
+      <circle cx="17" cy="7" r="1" fill="#fff" />
     </svg>
   );
 }

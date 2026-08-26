@@ -6,6 +6,7 @@ import TourCategories from "@/components/TourCategories";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
 import FAQSection from "@/components/FAQSection";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Gallery />
       <WhyChooseUs />
       <Testimonials />
+      <InstagramFeed />
       <FAQSection />
     </>
   );
