@@ -8,7 +8,7 @@ const features = [
     title: "Local Trekking Experts",
     description:
       "Every guide is born and raised in the region you're trekking — real knowledge, not a script.",
-    image: "https://images.unsplash.com/photo-1542800951-9613782be1fa?auto=format&fit=crop&w=1200&q=80",
+    image: "/why-choose-us-guide.jpg",
   },
   {
     title: "Fixed Small-Group Departures",
@@ -20,7 +20,7 @@ const features = [
     title: "Safety-First Itineraries",
     description:
       "Acclimatization days built into every route, with trained guides carrying oximeters and first-aid kits.",
-    image: "https://images.unsplash.com/photo-1542158167-331ff1dabc6f?auto=format&fit=crop&w=1200&q=80",
+    image: "/why-choose-us-safety.jpg",
   },
   {
     title: "24/7 WhatsApp Support",
