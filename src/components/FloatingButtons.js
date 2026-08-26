@@ -1,6 +1,13 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { site, telLink, whatsappLink } from "@/data/site";
 
 export default function FloatingButtons() {
+  const pathname = usePathname();
+  const hidden = /^\/(treks|experiences)\/[^/]+/.test(pathname);
+  if (hidden) return null;
+
   return (
     <div className="fixed bottom-24 right-5 z-40 flex flex-col gap-3 sm:bottom-5">
       <div className="relative" style={{ height: 52, width: 52 }}>

@@ -58,8 +58,18 @@ export default function Header() {
   }, [menuOpen]);
 
   useEffect(() => {
+    let ticking = false;
     function handleScroll() {
-      setScrolled(window.scrollY > 20);
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setScrolled((prev) => {
+          const y = window.scrollY;
+          if (prev) return y > 20;
+          return y > 60;
+        });
+        ticking = false;
+      });
     }
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -92,7 +102,7 @@ export default function Header() {
                 width={496}
                 height={276}
                 priority
-                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}
+                className={`w-auto object-contain transition-all duration-500 ease-out ${scrolled ? "h-16" : "h-20"}`}
               />
             </Link>
             <div className="flex items-center gap-2">
@@ -186,7 +196,7 @@ export default function Header() {
                 width={496}
                 height={276}
                 priority
-                className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-14" : "h-20"}`}
+                className={`w-auto object-contain transition-all duration-500 ease-out ${scrolled ? "h-14" : "h-20"}`}
               />
             </Link>
 

@@ -12,7 +12,7 @@ export const site = {
   email: "hello@summitcalling.com",
   address: "Thamel, Kathmandu, Nepal",
   social: {
-    instagram: "https://instagram.com",
+    instagram: "https://www.instagram.com/thesummitcalling/",
     facebook: "https://facebook.com",
     youtube: "https://youtube.com",
   },
