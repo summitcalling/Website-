@@ -32,7 +32,7 @@ const features = [
     title: "Responsible Tourism",
     description:
       "We work closely with local communities and support local businesses along every route we run.",
-    image: "/treks/langtang-9.jpg",
+    image: "/why-choose-us-responsible.jpg",
   },
 ];
 
