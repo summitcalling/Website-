@@ -7,7 +7,7 @@ const features = [
   {
     title: "Local Trekking Experts",
     description:
-      "Every guide is born and raised in the region you're trekking — real knowledge, not a script.",
+      "Every guide brings trekking experience and local insight to every journey, making each trek smooth and memorable.",
     image: "/why-choose-us-guide.jpg",
   },
   {
@@ -23,7 +23,7 @@ const features = [
     image: "/why-choose-us-safety.jpg",
   },
   {
-    title: "24/7 WhatsApp Support",
+    title: "24/7 Customer Support",
     description:
       "Real humans on the other end, before, during, and after your trek — not a chatbot.",
     image: "https://images.unsplash.com/photo-1568444438385-ece31a33ce78?auto=format&fit=crop&w=1200&q=80",

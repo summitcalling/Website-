@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import PageHeader from "@/components/PageHeader";
 import { departures } from "@/data/departures";
 import { getTrekBySlug } from "@/data/treks";
 import { site, whatsappLink } from "@/data/site";
@@ -17,11 +17,27 @@ export default function FixedDeparturesPage() {
 
   return (
     <>
-      <PageHeader
-        eyebrow="2026 Calendar"
-        title="Fixed Departures"
-        description="Guaranteed group dates across every trek — no minimum headcount, no waiting."
-      />
+      <section className="relative overflow-hidden bg-ink">
+        <div className="relative aspect-[16/9] sm:aspect-[21/9]">
+          <Image
+            src="/fixed-departures-hero.jpg"
+            alt="Trekkers crossing a suspension bridge with Ama Dablam in the background"
+            fill
+            priority
+            className="object-cover opacity-60"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+          <div className={`absolute inset-0 flex flex-col justify-end ${CONTAINER} pb-10 sm:pb-16`}>
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue sm:text-base">
+              2026 Calendar
+            </span>
+            <h1 className="mt-2 font-serif text-4xl font-semibold leading-none text-white sm:text-6xl md:text-7xl">
+              Fixed Departures
+            </h1>
+          </div>
+        </div>
+      </section>
       <section className="bg-cream">
         <div className={`${CONTAINER} py-14`}>
           <div className="overflow-x-auto rounded-2xl bg-white ring-1 ring-ink/5">
