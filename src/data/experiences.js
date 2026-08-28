@@ -197,6 +197,7 @@ export const experiences = [
     gallery: [
       "/helicopter/abc-heli-1.jpg",
       "/helicopter/abc-heli-2.jpg",
+      "/helicopter/abc-heli-3.jpg",
     ],
     summary:
       "A scenic helicopter journey from Pokhara to Annapurna Base Camp (4,130m), with a landing for spectacular close-up views of Annapurna I, Machhapuchhre (Fishtail), and the surrounding Himalayan peaks.",
