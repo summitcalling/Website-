@@ -73,13 +73,38 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="relative mx-auto hidden h-[400px] w-full max-w-[340px] lg:block">
+            <div className="relative mx-auto h-[280px] w-full max-w-[260px] sm:h-[340px] sm:max-w-[300px] lg:h-[400px] lg:max-w-[340px]">
               <Image
                 src="/trekker-duo-illustration.png"
                 alt="Illustrated pair of trekkers with backpacks"
                 fill
                 className="object-contain"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ink">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative order-2 min-h-[360px] lg:order-1 lg:min-h-[560px]">
+            <Image
+              src="/treks/ebc-3.jpg"
+              alt="Prayer flags and a stupa on the trail to Tengboche"
+              fill
+              className="object-cover object-top"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+          <div className="order-1 flex flex-col justify-center px-5 py-16 sm:px-8 lg:order-2 lg:py-24 lg:pl-16 lg:pr-24">
+            <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
+            <div className="mt-8 space-y-4">
+              <p className="text-[17px] leading-relaxed text-white">
+                The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
+              </p>
+              <p className="font-serif text-xl italic text-white">
+                &ldquo;We don&apos;t just want people to experience the mountains. We want them to respect them.&rdquo;
+              </p>
             </div>
           </div>
         </div>
@@ -160,32 +185,6 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-ink">
-        <div className={`${CONTAINER} py-16`}>
-          <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
-
-          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
-            <div className="space-y-4 lg:col-span-2">
-              <p className="text-[17px] leading-relaxed text-white">
-                The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
-              </p>
-              <p className="font-serif text-xl italic text-white">
-                &ldquo;We don&apos;t just want people to experience the mountains. We want them to respect them.&rdquo;
-              </p>
-            </div>
-            <div className="relative aspect-[3/2] overflow-hidden rounded-3xl">
-              <Image
-                src="/treks/ebc-3.jpg"
-                alt="Prayer flags and a stupa on the trail to Tengboche"
-                fill
-                className="object-cover object-top"
-                sizes="(min-width: 1024px) 360px, 90vw"
-              />
-            </div>
           </div>
         </div>
       </section>
