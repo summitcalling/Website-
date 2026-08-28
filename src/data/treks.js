@@ -1489,7 +1489,7 @@ export const treks = [
     price: null,
     maxAltitude: "5,160 m",
     bestSeason: "Mar–May, Sep–Nov",
-    image: "/treks/manaslu-7.jpg",
+    image: "/treks/manaslu-6.jpg",
     gallery: [
       "/treks/manaslu-7.jpg",
       "/treks/manaslu-6.jpg",

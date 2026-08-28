@@ -14,7 +14,7 @@ export default function ExperiencesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Beyond Trekking"
+        eyebrow="Himalayan Aerial Experiences"
         title="Helicopter Tours & Mountain Flights"
       />
       <section className="bg-cream">

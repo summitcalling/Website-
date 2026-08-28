@@ -21,7 +21,7 @@ const DROPDOWN_MENUS = {
     items: treks.map((t) => ({ href: `/treks/${t.slug}`, label: t.name })),
   },
   "/experiences": {
-    viewAllLabel: "View All Helicopter Tours",
+    viewAllLabel: "View All Himalayan Tours",
     items: experiences.map((e) => ({ href: `/experiences/${e.slug}`, label: e.name })),
   },
 };

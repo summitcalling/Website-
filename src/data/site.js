@@ -27,6 +27,7 @@ export const navLinks = [
 export const footerLinks = [
   { href: "/", label: "Home" },
   { href: "/treks", label: "Treks" },
+  { href: "/experiences", label: "Himalayan Tours" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

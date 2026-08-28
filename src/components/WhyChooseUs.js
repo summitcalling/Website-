@@ -14,7 +14,7 @@ const features = [
     title: "Fixed Small-Group Departures",
     description:
       "Guaranteed dates, capped group sizes, no waiting for a minimum headcount to form.",
-    image: "https://images.unsplash.com/photo-1550486686-a496af34a2d5?auto=format&fit=crop&w=1200&q=80",
+    image: "/why-choose-us-group.jpg",
   },
   {
     title: "Safety-First Itineraries",
