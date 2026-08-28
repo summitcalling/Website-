@@ -75,8 +75,8 @@ export default function AboutPage() {
 
             <div className="relative mx-auto hidden h-[400px] w-full max-w-[340px] lg:block">
               <Image
-                src="/lost-trekker.png"
-                alt="An illustrated trekker exploring the mountains"
+                src="/trekker-duo-illustration.png"
+                alt="Illustrated pair of trekkers with backpacks"
                 fill
                 className="object-contain"
               />
