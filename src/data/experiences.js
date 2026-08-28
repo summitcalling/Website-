@@ -354,11 +354,13 @@ export const experiences = [
     priceUSD: 350,
     priceINR: 20000,
     priceNote: "per person (foreign nationals USD 350 · Indian nationals from INR 20,000 + 5% GST)",
-    image: "/helicopter/mountain-flight-1.jpg",
+    image: "/helicopter/mountain-flight-card.jpg",
     gallery: [
       "/helicopter/mountain-flight-1.jpg",
       "/helicopter/mountain-flight-2.jpg",
       "/helicopter/mountain-flight-3.jpg",
+      "/helicopter/mountain-flight-4.jpg",
+      "/helicopter/mountain-flight-5.jpg",
     ],
     summary:
       "A spectacular one-hour scenic mountain flight from Kathmandu, with a guaranteed window seat and breathtaking views of Mount Everest and the world's highest mountain range — no trekking required.",
