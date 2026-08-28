@@ -18,7 +18,7 @@ export default function TourCategories() {
           </div>
 
           <div className="grid flex-1 gap-5 sm:grid-cols-3">
-            {experiences.map((exp, i) => (
+            {experiences.map((exp) => (
               <Link
                 key={exp.slug}
                 href={`/experiences/${exp.slug}`}
@@ -32,14 +32,8 @@ export default function TourCategories() {
                   sizes="(min-width: 1024px) 22vw, (min-width: 640px) 33vw, 90vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent" />
-                <span className="absolute right-4 top-4 font-serif text-sm font-semibold text-white">
-                  0{i + 1}
-                </span>
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <span className="text-[11px] font-semibold uppercase tracking-wide text-white/80">
-                    {exp.type}
-                  </span>
-                  <h3 className="mt-1 font-serif text-base font-semibold text-white">
+                  <h3 className="font-serif text-base font-semibold text-white">
                     {exp.name}
                   </h3>
                   <p className="mt-1 text-xs text-white/80">
