@@ -73,7 +73,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="relative mx-auto h-[280px] w-full max-w-[260px] sm:h-[340px] sm:max-w-[300px] lg:h-[400px] lg:max-w-[340px]">
+            <div className="relative mx-auto hidden h-[400px] w-full max-w-[340px] lg:block">
               <Image
                 src="/trekker-duo-illustration.png"
                 alt="Illustrated pair of trekkers with backpacks"
@@ -85,9 +85,46 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section id="founders" className="bg-white scroll-mt-20">
+        <div className={`${CONTAINER} py-16`}>
+          <SectionHeading>Meet the Founders</SectionHeading>
+
+          <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
+            {founders.map((person) => (
+              <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
+                <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl font-semibold text-ink">
+                    {person.name}
+                  </h3>
+                  <div className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-blue">
+                    {person.role}
+                  </div>
+                  <div className="mt-3 space-y-3">
+                    {person.bio.map((paragraph, j) => (
+                      <p key={j} className="text-sm leading-relaxed text-ink">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-ink">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative order-2 min-h-[360px] lg:order-1 lg:min-h-[560px]">
+          <div className="relative order-2 min-h-[300px] lg:order-1 lg:min-h-[420px]">
             <Image
               src="/treks/ebc-3.jpg"
               alt="Prayer flags and a stupa on the trail to Tengboche"
@@ -96,7 +133,7 @@ export default function AboutPage() {
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
-          <div className="order-1 flex flex-col justify-center px-5 py-16 sm:px-8 lg:order-2 lg:py-24 lg:pl-16 lg:pr-24">
+          <div className="order-1 flex flex-col justify-center px-5 py-12 sm:px-8 lg:order-2 lg:py-16 lg:pl-16 lg:pr-24">
             <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
             <div className="mt-8 space-y-4">
               <p className="text-[17px] leading-relaxed text-white">
@@ -148,43 +185,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="founders" className="bg-white scroll-mt-20">
-        <div className={`${CONTAINER} py-16`}>
-          <SectionHeading>Meet the Founders</SectionHeading>
-
-          <div className="mt-10 grid grid-cols-1 gap-12 sm:grid-cols-2">
-            {founders.map((person) => (
-              <div key={person.name} className="flex flex-col gap-5 sm:flex-row">
-                <div className="relative aspect-[4/5] w-full max-w-[220px] shrink-0 overflow-hidden rounded-2xl">
-                  <Image
-                    src={person.photo}
-                    alt={person.name}
-                    fill
-                    className="object-cover"
-                    sizes="220px"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-serif text-xl font-semibold text-ink">
-                    {person.name}
-                  </h3>
-                  <div className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-blue">
-                    {person.role}
-                  </div>
-                  <div className="mt-3 space-y-3">
-                    {person.bio.map((paragraph, j) => (
-                      <p key={j} className="text-sm leading-relaxed text-ink">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
