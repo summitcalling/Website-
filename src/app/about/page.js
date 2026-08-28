@@ -87,31 +87,41 @@ export default function AboutPage() {
 
       <section className="bg-cream border-y border-ink/5">
         <div className={`${CONTAINER} py-16`}>
-          <SectionHeading>Our Story</SectionHeading>
-
-          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
-            <div className="space-y-4 lg:col-span-2">
-              <p className={BODY_TEXT}>
-                Shekhar and Gauri first met during the Everest Base Camp trek in 2021. What started as two people sharing the same trail gradually grew into a close friendship built around a shared passion for mountaineering, adventure, exploration, travel, and the outdoors.
-              </p>
-              <p className={BODY_TEXT}>
-                Over the years, our friendship grew alongside our shared passion for mountaineering, exploration, and adventure. We continued exploring, taking on different treks and adventures, each bringing new experiences, challenges, and memories along the way.
-              </p>
-              <p className={BODY_TEXT}>
-                At one point, we began discussing the idea of starting a trekking and adventure company of our own — something that could help more people experience the mountains and create memories of their own.
-              </p>
-              <p className={`${BODY_TEXT} font-semibold`}>
-                And in 2026, we officially launched Summit Calling.
-              </p>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <div>
+              <SectionHeading>Our Story</SectionHeading>
+              <div className="mt-8 space-y-4">
+                <p className={BODY_TEXT}>
+                  Shekhar and Gauri first met during the Everest Base Camp trek in 2021. What started as two people sharing the same trail gradually grew into a close friendship built around a shared passion for mountaineering, adventure, exploration, travel, and the outdoors.
+                </p>
+                <p className={BODY_TEXT}>
+                  Over the years, our friendship grew alongside our shared passion for mountaineering, exploration, and adventure. We continued exploring, taking on different treks and adventures, each bringing new experiences, challenges, and memories along the way.
+                </p>
+                <p className={BODY_TEXT}>
+                  At one point, we began discussing the idea of starting a trekking and adventure company of our own — something that could help more people experience the mountains and create memories of their own.
+                </p>
+                <p className={`${BODY_TEXT} font-semibold`}>
+                  And in 2026, we officially launched Summit Calling.
+                </p>
+              </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-              <Image
-                src="/treks/ebc-gokyo-1.jpg"
-                alt="Aerial view of Gokyo Lake and the Himalayan peaks"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 360px, 90vw"
-              />
+
+            <div>
+              <SectionHeading>Our Vision</SectionHeading>
+              <div className="mt-8 space-y-4">
+                <p className={BODY_TEXT}>
+                  At Summit Calling, our vision is to create experiences that go beyond simply checking a destination off a list. We want our travellers to experience the sunrise from the mountains, the silence of a Himalayan trail, the excitement of stepping into the unknown, the challenge of pushing their limits, and the friendships formed along the way.
+                </p>
+                <p className={BODY_TEXT}>
+                  We want every journey to be safe, thoughtfully planned, fairly priced, and genuinely memorable — because we believe the best adventures aren&apos;t measured only by the distance travelled or the altitude reached. They are measured by the memories you create along the way.
+                </p>
+              </div>
+              <div className="mt-10 border-t border-ink/10 pt-8">
+                <div className="font-serif text-xl font-semibold text-ink">{site.name}</div>
+                <div className="mt-2 text-sm text-ink">
+                  Launched in 2026. Built by mountaineers. Driven by adventure.
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +168,7 @@ export default function AboutPage() {
         <div className={`${CONTAINER} py-16`}>
           <SectionHeading dark>Our Respect for the Mountains</SectionHeading>
 
-          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 items-center gap-12 lg:grid-cols-3">
             <div className="space-y-4 lg:col-span-2">
               <p className="text-[17px] leading-relaxed text-white">
                 The mountains are not simply destinations to us. They are environments that deserve to be experienced with respect, responsibility, and care. We encourage responsible travel, respect for local communities and cultures, and mindful behaviour towards the environment — leaving no unnecessary trace behind and preserving the beauty of the mountains for the people who will experience them after us.
@@ -173,41 +183,6 @@ export default function AboutPage() {
                 alt="Prayer flags and a stupa on the trail to Tengboche"
                 fill
                 className="object-cover object-top"
-                sizes="(min-width: 1024px) 360px, 90vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className={`${CONTAINER} py-16`}>
-          <SectionHeading>Our Vision</SectionHeading>
-
-          <div className="mt-8 grid grid-cols-1 items-start gap-12 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <div className="space-y-4">
-                <p className={BODY_TEXT}>
-                  At Summit Calling, our vision is to create experiences that go beyond simply checking a destination off a list. We want our travellers to experience the sunrise from the mountains, the silence of a Himalayan trail, the excitement of stepping into the unknown, the challenge of pushing their limits, and the friendships formed along the way.
-                </p>
-                <p className={BODY_TEXT}>
-                  We want every journey to be safe, thoughtfully planned, fairly priced, and genuinely memorable — because we believe the best adventures aren&apos;t measured only by the distance travelled or the altitude reached. They are measured by the memories you create along the way.
-                </p>
-              </div>
-
-              <div className="mt-10 border-t border-ink/10 pt-8">
-                <div className="font-serif text-xl font-semibold text-ink">{site.name}</div>
-                <div className="mt-2 text-sm text-ink">
-                  Launched in 2026. Built by mountaineers. Driven by adventure.
-                </div>
-              </div>
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-              <Image
-                src="/treks/annapurna-7.jpg"
-                alt="Tilicho Lake surrounded by snow-capped peaks"
-                fill
-                className="object-cover"
                 sizes="(min-width: 1024px) 360px, 90vw"
               />
             </div>
