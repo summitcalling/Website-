@@ -10,6 +10,7 @@ export const treks = [
     bestSeason: "Mar–May, Sep–Nov",
     image: "/treks/ebc-13.jpg",
     gallery: [
+      "/treks/ebc-11.jpg",
       "/treks/ebc-1.jpg",
       "/treks/ebc-2.jpg",
       "/treks/ebc-3.jpg",
@@ -19,7 +20,6 @@ export const treks = [
       "/treks/ebc-7.jpg",
       "/treks/ebc-9.jpg",
       "/treks/ebc-10.jpg",
-      "/treks/ebc-11.jpg",
       "/treks/ebc-12.jpg",
       "/treks/ebc-13.jpg",
     ],
