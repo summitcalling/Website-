@@ -6,6 +6,11 @@ import Link from "next/link";
 import { treks } from "@/data/treks";
 
 function TrekCard({ trek, i, className, sizes }) {
+  const packages = trek.details?.packages;
+  const lowestPriceUSD = packages?.length
+    ? Math.min(...packages.map((pkg) => pkg.priceUSD))
+    : null;
+
   return (
     <Link
       href={`/treks/${trek.slug}`}
@@ -34,7 +39,11 @@ function TrekCard({ trek, i, className, sizes }) {
             {trek.price ? "Starting from" : "Price"}
           </span>
           <span className="font-serif text-base font-semibold text-white">
-            {trek.price ? `₹${trek.price.toLocaleString("en-IN")}` : "On Request"}
+            {trek.price
+              ? `₹${trek.price.toLocaleString("en-IN")}${
+                  lowestPriceUSD ? ` | USD ${lowestPriceUSD.toLocaleString("en-US")}` : ""
+                }`
+              : "On Request"}
           </span>
         </div>
       </div>
