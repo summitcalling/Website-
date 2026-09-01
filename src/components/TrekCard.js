@@ -10,6 +10,11 @@ const difficultyColor = {
 };
 
 export default function TrekCard({ trek, index }) {
+  const packages = trek.details?.packages;
+  const lowestPriceUSD = packages?.length
+    ? Math.min(...packages.map((pkg) => pkg.priceUSD))
+    : null;
+
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow hover:shadow-lg">
       <Link href={`/treks/${trek.slug}`} className="relative block aspect-[1/1] shrink-0 overflow-hidden">
@@ -76,7 +81,11 @@ export default function TrekCard({ trek, index }) {
               {trek.price ? "From" : "Price"}
             </div>
             <div className="font-serif text-base font-semibold text-ink">
-              {trek.price ? `₹${trek.price.toLocaleString("en-IN")}` : "On Request"}
+              {trek.price
+                ? `₹${trek.price.toLocaleString("en-IN")}${
+                    lowestPriceUSD ? ` | USD ${lowestPriceUSD.toLocaleString("en-US")}` : ""
+                  }`
+                : "On Request"}
             </div>
           </div>
           <div className="flex items-center gap-2">
